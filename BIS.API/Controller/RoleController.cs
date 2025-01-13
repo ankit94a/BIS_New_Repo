@@ -16,8 +16,8 @@ namespace BIS.API.Controller
         [HttpGet]
         public IActionResult GetAll()
         {
-            int CorpsId = HttpContext.GetCorpsId();
-            int DivisionId = HttpContext.GetDivisionId();
+            long CorpsId = HttpContext.GetCorpsId();
+            long DivisionId = HttpContext.GetDivisionId();
             return Ok(_roleManager.GetAll(CorpsId, DivisionId));
         }
         [HttpPost]

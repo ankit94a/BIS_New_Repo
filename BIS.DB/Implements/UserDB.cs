@@ -7,7 +7,6 @@ using BIS.Common.Entities;
 using BIS.Common.Helpers;
 using BIS.DB.Interfaces;
 using Microsoft.Extensions.Logging;
-using static BIS.Common.Enum.Enum;
 
 namespace BIS.DB.Implements
 {
@@ -22,7 +21,7 @@ namespace BIS.DB.Implements
         {
             try
             {
-                var user = dbContext.UserDetails.Where(us => us.Username == username && us.Password == password).FirstOrDefault();
+                var user = dbContext.UserDetails.Where(us => us.Username == username).FirstOrDefault();
                 return user;
             }
             catch (Exception ex) 
@@ -31,15 +30,15 @@ namespace BIS.DB.Implements
                 throw;
             }           
         }
-        public List<Menus> GetMenuByRoleCorpsAndDivision(long corpsId, long divisionId, long roleId, RoleType roleType)
+        public List<Menus> GetMenuByRoleCorpsAndDivision(long corpsId, long divisionId, long roleId, string roleType)
         {
             try
             {
                 var query = dbContext.UserMenus.AsQueryable();
 
-                if (roleType == RoleType.SuperAdmin|| roleType == RoleType.Admin)
+                if (roleType == "SuperAdmin" || roleType == "Admin")
                 {
-                    query = query.Where(m => m.RoleId == 10);
+                    query = query;
                 }
                 else
                 {

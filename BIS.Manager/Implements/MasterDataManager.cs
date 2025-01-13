@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BIS.Common.Entities;
-using BIS.Common.Helpers;
 using BIS.DB.Interfaces;
 using BIS.Manager.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using static BIS.Common.Enum.Enum;
 
 namespace BIS.Manager.Implements
 {
@@ -19,25 +17,12 @@ namespace BIS.Manager.Implements
         {
             _masterDataDB = masterDataDB;
         }
-        public List<MasterData> GetAll(int corpsId, int divisionId)
+        public List<MasterData> GetAll(long corpsId,long divisionId)
         {
             return _masterDataDB.GetAll(corpsId,divisionId);
         }
-        public List<MasterData> GetAllMasterData(int corpsId, RoleType roleType, int divisionId = 0)
+        public List<MasterData> GetAllMasterData()
         {
-            if(roleType ==RoleType.SuperAdmin)
-            {
-
-            }else if(roleType == RoleType.Admin)
-            {
-
-            }
-            else
-            {
-                 
-                
-                
-            }
             return _masterDataDB.GetAllMasterData();
         }
         public long Add(MasterData masterData)
@@ -48,7 +33,7 @@ namespace BIS.Manager.Implements
         {
             throw new NotImplementedException();
         }
-        public MasterData GetBy(int Id, int CorpsId)
+        public MasterData GetBy(long Id, long CorpsId)
         {
             throw new NotImplementedException();
         }

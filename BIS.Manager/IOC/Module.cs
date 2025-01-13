@@ -20,7 +20,6 @@ namespace BIS.Manager.IOC
                 { typeof(IUserManager), typeof(UserManager) },
                  { typeof(ICorpsManager), typeof(CorpsManager) },
                   { typeof(IRoleManager), typeof(RoleManager) },
-                  { typeof(IGenerateReportManager), typeof(GenerateReportManager) },
             };
             return dic;
         }

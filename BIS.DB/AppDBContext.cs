@@ -15,6 +15,5 @@ namespace BIS.DB
         public DbSet<UserDetail> UserDetails { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Menus> UserMenus { get; set; }
-        public DbSet<GenerateReport> GenerateReports { get; set; }
     }
 }

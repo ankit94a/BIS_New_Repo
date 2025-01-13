@@ -11,9 +11,9 @@ namespace BIS.DB.Implements
     public class CorpsDB : ICorpsDB
     {
         private readonly AppDBContext dbContext;
-        public CorpsDB(AppDBContext dbContext) 
-        {
-            dbContext = dbContext;
+        public CorpsDB() 
+        { 
+
         }
         public List<Corps> GetAll()
         {

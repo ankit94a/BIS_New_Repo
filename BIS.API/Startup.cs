@@ -46,10 +46,7 @@ namespace BIS.API
             {
                 options.EnableForHttps = true;
             });
-            services.AddControllers().AddJsonOptions(options =>
-            {
-                options.JsonSerializerOptions.Converters.Add(new System.Text.Json.Serialization.JsonStringEnumConverter());
-            });
+            services.AddControllers();
             services.AddDbContext<AppDBContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("BISDbConn"));

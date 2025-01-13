@@ -8,21 +8,18 @@ using BIS.DB.Interfaces;
 
 namespace BIS.DB.Implements
 {
-    public  class RoleDB :IRoleDB, IBaseDB<Role>
+    public  class RoleDB : IRoleDB, IBaseDB<Role>
     {
-        private readonly AppDBContext _dbContext;
-        public RoleDB(AppDBContext dbContext) 
-        { 
-            _dbContext = dbContext;
-        }
+        private readonly AppDBContext dbContext;
+        public RoleDB() { }
         public List<Role> GetAll(long corpsId,long DivisonId)
         {
-            return _dbContext.Roles.Where(r => r.CorpsId == corpsId && r.DivisionId == DivisonId).ToList();
+            return dbContext.Roles.Where(r => r.CorpsId == corpsId && r.DivisionId == DivisonId).ToList();
         }
         public long Add(Role role)
         {
-            _dbContext.Roles.Add(role);
-            _dbContext.SaveChanges();
+            dbContext.Roles.Add(role);
+            dbContext.SaveChanges();
             return role.Id;
         }
         public long Update(Role role)

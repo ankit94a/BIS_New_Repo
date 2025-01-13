@@ -19,7 +19,7 @@ namespace BIS.Manager.Implements
             _roleDB = roleDB;
         }
 
-        public List<Role> GetAll(int corpsId, int divisonId)
+        public List<Role> GetAll(long corpsId,long divisonId)
         {
             return _roleDB.GetAll(corpsId,divisonId);
         }
@@ -31,7 +31,7 @@ namespace BIS.Manager.Implements
         {
             throw new NotImplementedException();
         }
-        public Role GetBy(int Id, int CorpsId)
+        public Role GetBy(long Id, long CorpsId)
         {
             throw new NotImplementedException();
         }

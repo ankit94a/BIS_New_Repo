@@ -5,9 +5,9 @@
     <span *ngFor="let menu of sideBarMenus">
   
       <a  mat-list-item (click)="addExpandClass(menu.text)"
-        routerLink="{{menu.code}}" routerLinkActive="active">
+        routerLink="{{menu.routerLink}}" routerLinkActive="active">
         <mat-icon>{{menu.icon}}</mat-icon><span class="nav-caption">
-          {{menu.name}}
+          {{menu.text}}
         </span>
       </a>
       <div >

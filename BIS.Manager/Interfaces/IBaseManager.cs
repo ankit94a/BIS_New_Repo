@@ -8,10 +8,10 @@ namespace BIS.Manager.Interfaces
 {
     public interface IBaseManager<T>
     {
-        List<T> GetAll(int CorpsId,int DivisionId);
+        List<T> GetAll(long CorpsId,long DivisionId);
         long Update(T obj);
         long Add(T obj);
-        T GetBy(int Id, int CorpsId);
+        T GetBy(long Id, long CorpsId);
         //bool Deactivate(long Id, long CorpsId, long UserId);
 
     }
