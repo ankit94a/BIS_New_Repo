@@ -4,7 +4,7 @@
       <div class="login-card-content">
         <!-- Left side for Image -->
         <div class="left-side">
-          <img src="/projects/clerk/public/assets/ArmyImage.jpg" alt="Image" class="login-image" style="width: 200px; height: 200px;"/>
+          <img src="/assets/indian_army.jpg" alt="Image" class="login-image" />
 
         </div>
 
@@ -12,7 +12,7 @@
         <div class="right-side">
           <mat-card-header>
             <div class="">
-              <h2 class="brand-name">BATTLEFIELD INDICATOR</h2>
+              <h2 class="brand-name"> AI Based <span class="logo-focused"> BATTLEFIELD INDICATOR</span> System</h2>
             </div>
           </mat-card-header>
 
@@ -39,7 +39,7 @@
                   placeholder="Enter your password"
                   required
                 />
-                <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
                   <mat-icon>{{ showPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
                 </button>
                 <mat-error *ngIf="loginform.get('password')?.touched && loginform.get('password')?.invalid">

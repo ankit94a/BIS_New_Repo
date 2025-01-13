@@ -14,10 +14,11 @@ namespace BIS.DB.IOC
         {
             var dic = new Dictionary<Type, Type>
             {
-                { typeof(IMasterDataDB), typeof(MasterDataDB) },
-                { typeof(IUserDB), typeof(UserDB) },
-                 { typeof(ICorpsDB), typeof(CorpsDB) },
-                  { typeof(IRoleDB), typeof(RoleDB) },
+                {typeof(IMasterDataDB), typeof(MasterDataDB)},
+                {typeof(IUserDB), typeof(UserDB)},
+                 {typeof(ICorpsDB), typeof(CorpsDB)},
+                  {typeof(IRoleDB), typeof(RoleDB)},
+                  {typeof(IGenerateReportDB), typeof(GenerateReportDB)},
             };
             return dic;
         }

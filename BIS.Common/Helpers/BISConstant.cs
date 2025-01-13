@@ -14,5 +14,11 @@ namespace BIS.Common.Helpers
         public const string UserId = "userid";
         public const string UserName = "username";
         public const string RoleType = "roletype";
+        public const string SuperAdmin = "superadmin";
+        public const string Admin = "admin";
+        public const string Staff = "staff";
+        public const string G1Int = "g1int";
+        public const string ColGs = "colgs";
+        public const string GOC = "goc";
     }
 }

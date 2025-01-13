@@ -18,7 +18,7 @@ namespace BIS.DB.Implements
         }
         public List<MasterData> GetAll(long corpsId,long DivisonId)
         {
-            return  _dbContext.MasterDatas.Where(m => m.ID == corpsId && m.DivisionId == DivisonId) .ToList();
+            return  _dbContext.MasterDatas.Where(m => m.ID == corpsId && m.DivisionId == DivisonId).ToList();
         }
         public List<MasterData> GetAllMasterData()
         {
