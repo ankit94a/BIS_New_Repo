@@ -1,0 +1,157 @@
+<!-- <BIS-dialog-title [dataObject]="masterData"></BIS-dialog-title> -->
+<form [formGroup]="masterData" (ngSubmit)="save()">
+ <div mat-dialog-title>
+    Add
+ </div>
+ <mat-dialog-content>
+    <div class="row">
+        <div class="col-md-4">
+          <mat-form-field>
+            <mat-label>Fmn</mat-label>
+            <mat-select formControlName="frmn" (selectionChange)="onFilterChange($event)">
+              @for (list of fmnList; track list) {
+              <mat-option [value]="list">{{list}}</mat-option>
+              }
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field>
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="reportedDate">
+            <mat-hint>(MM/DD/YYYY)</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field>
+            <mat-label>Input Level</mat-label>
+            <mat-select  formControlName="name">
+              <mat-option *ngFor="let item of dropdownItems" [value]="item.value">
+                {{ item.value }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+       
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+          <mat-form-field>
+            <mat-label>Sector</mat-label>
+            <mat-select formControlName="sector">
+              <mat-option *ngFor="let item of sectordropdownItems" [value]="item.value">
+                {{ item.value }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field>
+            <mat-label>Source</mat-label>
+            <mat-select formControlName="source">
+              <mat-option *ngFor="let item of sourcedropdownItems" [value]="item.value">
+                {{ item.value }}
+              </mat-option>
+      
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field>
+            <mat-label>Source Loc</mat-label>
+            <mat-select formControlName="sourceLoc">
+              <mat-option *ngFor="let item of sourceLocdropdownItems" [value]="item.value">
+                {{ item.value }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>  
+
+      <div class="row">
+        <div class="col-md-4">
+          <mat-form-field>
+            <mat-label>Type Of Loc</mat-label>
+            <mat-select formControlName="typeOfLoc">
+              <mat-option *ngFor="let item of typeOfLocdropdownItems" [value]="item.value">
+                {{ item.value }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field>
+            <mat-label>En Loc Name</mat-label>
+            <mat-select formControlName="enLocName">
+              <mat-option *ngFor="let item of enLocdropdownItems" [value]="item.value">
+                {{ item.value }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field>
+            <mat-label>Aspect</mat-label>
+            <mat-select [(value)]="selected" (change)="onChange($event)" formControlName="aspect">
+              <mat-option value="Svl / Counter Svl">Svl / Counter Svl</mat-option>
+              <mat-option value="Friction / Belligerence">Friction / Belligerence</mat-option>
+              <mat-option value="Ae Activity">Ae Activity</mat-option>
+              <mat-option value="Conc of Tps">Conc of Tps</mat-option>
+              <mat-option value="Armr / Arty / AD / Engrs Indn">Armr / Arty / AD / Engrs Indn</mat-option>
+              <mat-option value="Mob">Mob</mat-option>
+              <mat-option value="Infra Devp">Infra Devp</mat-option>
+              <mat-option value="Dumping of WLS">Dumping of WLS</mat-option>
+              <mat-option value="Heightened  Diplomatic Eng">Heightened Diplomatic Eng</mat-option>
+              <mat-option value="Collapse of Diplomatic Ties">Collapse of Diplomatic Ties</mat-option>
+              <mat-option value="Propoganda">Propoganda</mat-option>
+              <mat-option value="Econ">Econ</mat-option>
+              <mat-option value="Internal Issues">Internal Issues</mat-option>
+              <mat-option value="Cyber">Cyber</mat-option>
+              <mat-option value="Def">Def</mat-option>
+              <mat-option value="Interactions">Interactions</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          @if(selected == 'Svl / Counter Svl' || (isEdit  && masterData.value.aspect == 'Svl / Counter Svl') ){
+            <mat-form-field>
+              <mat-label>Indicators</mat-label>
+              <mat-select [(value)]="subselected" (change)="onChange2($event)" formControlName="indicator">
+                <mat-option value="Placement of addl Svl Eqpt">Placement of addl Svl Eqpt</mat-option>
+                <mat-option value="Incr Recce">Incr Recce</mat-option>
+                <mat-option value="Incr in OP loc">Incr in OP loc</mat-option>
+                <mat-option value="Jamming">Jamming</mat-option>
+                <mat-option value="Enhanced Tourist Influx">Enhanced Tourist Influx </mat-option>
+              </mat-select>
+            </mat-form-field>
+          }
+        </div>
+        <div class="col-md-6">
+          @if(selected == 'Friction / Belligerence' || (isEdit && masterData.value.aspect == 'Friction / Belligerence') ){
+            <mat-form-field>
+              <mat-label>Indicators</mat-label>
+              <mat-select [(value)]="subselected" (change)="onChange2($event)" formControlName="indicator">
+                <mat-option value="Face-off / Skirmish">Face-off / Skirmish</mat-option>
+                <mat-option value="Activation of Dormant Z">Activation of Dormant Z</mat-option>
+                <mat-option value="Setting_of_camp">Setting_of_camp</mat-option>
+                <mat-option value="Grazier Activity">Grazier Activity</mat-option>
+                <mat-option value="Aggressive recce">Aggressive recce</mat-option>
+              </mat-select>
+            </mat-form-field>
+          }
+        </div>
+      </div>
+ </mat-dialog-content>
+ <mat-dialog-actions align="end">
+    <button class="btn  btn-success btn-sm" type="submit" >Save</button>
+    <!-- <button type="button" class="btn btn-outline-danger btn-sm" (click)="resetObj()"
+      *ngIf="!dataObject.isView && !(dataObject.id>0)">Reset</button> -->
+    <button type="button" class="btn btn-outline-info btn-sm" (click)="closedialog()">Close</button>
+  </mat-dialog-actions>
+
+</form>

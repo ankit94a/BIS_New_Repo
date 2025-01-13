@@ -1,0 +1,218 @@
+<mat-card appearance="outlined">
+    <mat-card-header class="insync-header">
+        Dashboard
+    </mat-card-header>
+    <mat-card-content class="mat-content">
+
+        <div class="row">
+            <div class="col-sm-4">
+                <mat-card>
+                    <mat-card-title class="totals">Total Inputs : {{ totalRecords }}</mat-card-title>
+                </mat-card>
+            </div>
+            <div class="col-sm-4">
+                <mat-card>
+                    <mat-card-title class="totals">Total Today : {{ totalRecordsToday }}</mat-card-title>
+                </mat-card>
+            </div>
+            <div class="col-sm-4">
+                <mat-card>
+                    <mat-card-title class="totals">Total (07 Days) : {{ totalRecordsOneWeek }}</mat-card-title>
+                </mat-card>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm-6">
+                <ng-select appendTo="ng-select" [items]="fmnList" [multiple]="false" bindLabel="name"
+                    (change)="onFilterChange($event)" bindValue="name" 
+                    placeholder="Fmn"  [searchable]="true"
+                    (keydown.enter)="onFilterChange($event)">
+                    <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                        <div class="ng-value" *ngFor="let item of items">
+                            <span class="ng-value-label">{{item}}</span>
+                        </div>
+                    </ng-template>
+                </ng-select>
+            </div>
+            <div class="col-sm-6">
+                <ng-select appendTo="ng-select" [items]="sectorList" [multiple]="false" bindLabel="name"
+                     bindValue="name" 
+                    placeholder="Sector"  [searchable]="true">
+                    <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                        <div class="ng-value" *ngFor="let item of items">
+                            <span class="ng-value-label">{{item}}</span>
+                        </div>
+                    </ng-template>
+                </ng-select>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <mat-card class="card card-small">
+              <h3 class="card-title">Fmn wise Inputs</h3>
+              <div class="chart-container">
+                <canvas baseChart [data]="chartData" type='pie'></canvas>
+              </div>
+              <div class="card-footer">
+                <ul>
+                  <li> 1 : 10</li>
+                </ul>
+              </div>
+            </mat-card>
+            
+            <mat-card class="card card-small">
+                <h3 class="card-title adjust-font">Fmn wise (Last 30 Days)</h3>
+                <div class="chart-container">
+                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                </div>
+                <div class="card-footer">
+                  <ul>
+                    <li> 1 : 10</li>
+                  </ul>
+                </div>
+              </mat-card>
+
+              <mat-card class="card card-small">
+                <h3 class="card-title">Fmn wise (Today)</h3>
+                <div class="chart-container">
+                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                </div>
+                <div class="card-footer">
+                  <ul>
+                    <li> 1 : 10</li>
+                  </ul>
+                </div>
+              </mat-card>
+            <mat-card class="card card-large">
+              <h3 class="card-title">Fmn wise (Last 12 Months)</h3>
+              <div class="chart-container">
+                <canvas baseChart [data]="chartDataLineFrmn12Months" [options]="chartOptions" [type]="'line'"></canvas>
+              </div>
+              <div class="card-footer">
+                <ul>
+                  <li>val : val2</li>
+                </ul>
+              </div>
+            </mat-card>
+        </div>
+          <br>
+        
+        <div class="card-container">
+            <mat-card class="card card-small">
+              <h3 class="card-title">All Aspect</h3>
+              <div class="chart-container">
+                <canvas baseChart [data]="chartData" type='pie'></canvas>
+              </div>
+              <div class="card-footer">
+                <ul>
+                  <li> 1 : 10</li>
+                </ul>
+              </div>
+            </mat-card>
+            
+            <mat-card class="card card-small">
+                <h3 class="card-title adjust-font">Aspect (Last 30 Days)</h3>
+                <div class="chart-container">
+                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                </div>
+                <div class="card-footer">
+                  <ul>
+                    <li> 1 : 10</li>
+                  </ul>
+                </div>
+              </mat-card>
+
+              <mat-card class="card card-small">
+                <h3 class="card-title">Aspect Today</h3>
+                <div class="chart-container">
+                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                </div>
+                <div class="card-footer">
+                  <ul>
+                    <li> 1 : 10</li>
+                  </ul>
+                </div>
+              </mat-card>
+            <mat-card class="card card-large">
+              <h3 class="card-title">Aspect (Last 12 Months)</h3>
+              <div class="chart-container">
+                <canvas baseChart [data]="chartDataLineFrmn12Months" [options]="chartOptions" [type]="'line'"></canvas>
+              </div>
+              <div class="card-footer">
+                <ul>
+                  <li>val : val2</li>
+                </ul>
+              </div>
+            </mat-card>
+        </div>
+        <br>
+
+        <hr>
+        <div class="row">
+            <div class="col-sm-12">
+            <ng-select appendTo="ng-select" [items]="sectorList" [multiple]="false" bindLabel="name"
+                 bindValue="name" 
+                placeholder="Sector"  [searchable]="true">
+                <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
+                    <div class="ng-value" *ngFor="let item of items">
+                        <span class="ng-value-label">{{item}}</span>
+                    </div>
+                </ng-template>
+            </ng-select>
+            </div>
+        </div> 
+          
+        <div class="card-container">
+            <mat-card class="card card-equal">
+              <h3 class="card-title">Top 10 Indicators</h3>
+              <div class="chart-container">
+                <canvas baseChart [data]="chartData" type='pie'></canvas>
+              </div>
+              <div class="card-footer">
+                <ul>
+                  <li> 1 : 10</li>
+                </ul>
+              </div>
+            </mat-card>
+            
+            <mat-card class="card card-equal">
+                <h3 class="card-title adjust-font">Top 5 Indicators (Last 7 Days)</h3>
+                <div class="chart-container">
+                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                </div>
+                <div class="card-footer">
+                  <ul>
+                    <li> 1 : 10</li>
+                  </ul>
+                </div>
+              </mat-card>
+
+              <mat-card class="card card-equal">
+                <h3 class="card-title">Top 5 Location</h3>
+                <div class="chart-container">
+                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                </div>
+                <div class="card-footer">
+                  <ul>
+                    <li> 1 : 10</li>
+                  </ul>
+                </div>
+              </mat-card>
+
+              <mat-card class="card card-equal">
+                <h3 class="card-title">Top 5 Loc (7 Days)</h3>
+                <div class="chart-container">
+                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                </div>
+                <div class="card-footer">
+                  <ul>
+                    <li> 1 : 10</li>
+                  </ul>
+                </div>
+              </mat-card>
+        </div>
+    </mat-card-content>
+        
+</mat-card>
+
