@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit{
   loginLoading: boolean = false;
 
   constructor(private fb: FormBuilder, private router: Router,private apiService:ApiService,private authService:AuthService) {  this.loginform = this.fb.group({
-    username: ['', [Validators.required, Validators.email]],
+    username: ['', [Validators.required]],
     password: ['', [Validators.required]],
   });}
 
