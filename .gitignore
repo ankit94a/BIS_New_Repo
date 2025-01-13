@@ -1,0 +1,23 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/BIS.Api/obj
+/BIS.Common/obj
+/BIS.DB/obj
+/BIS.Manager/obj
+/BIS.Api/bin/Release/net8.0
+/BIS.Common/bin/Release/net8.0
+/BIS.Manager/bin/Release/net8.0
+/BIS.DB/bin/Release/net8.0
+/BIS.Api/bin/Debug/net8.0
+/BIS.Common/bin/Debug/net8.0
+/BIS.DB/bin/Debug/net8.0
+/BIS.Manager/bin/Debug/net8.0
+/BIS.Api/BIS.Web_App/.angular
+/BIS.Api/BIS.Web_App/package-lock.json
+/BIS.Api/BIS.Web_App/package-lock.json
+/BIS.Api/InSync.Api.csproj.user
+/BIS.Api/Properties/PublishProfiles/FolderProfile.pubxml.user
+/BIS.Api/.config/dotnet-tools.json
