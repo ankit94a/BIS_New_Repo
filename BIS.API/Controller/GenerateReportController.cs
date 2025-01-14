@@ -2,6 +2,7 @@
 using BIS.Manager.Interfaces;
 using InSync.Api.Helpers;
 using Microsoft.AspNetCore.Mvc;
+using static BIS.Common.Enum.Enum;
 
 namespace BIS.API.Controller
 {
@@ -21,6 +22,14 @@ namespace BIS.API.Controller
             int userId = HttpContext.GetUserId();
             report.CreatedBy = userId;
             return Ok(_generateReportManager.Add(report));
+        }
+        [HttpGet]
+        public IActionResult GetReport()
+        {
+            long CorpsId = HttpContext.GetCorpsId();
+            long DivisonId = HttpContext.GetDivisionId();
+            int userId = HttpContext.GetUserId();
+            return Ok(_generateReportManager.GetReportByUser(CorpsId, DivisonId, userId));
         }
     }
 }

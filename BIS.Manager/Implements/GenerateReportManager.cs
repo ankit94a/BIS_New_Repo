@@ -16,7 +16,10 @@ namespace BIS.Manager.Implements
         {
             _generateReportDB = generateReportDB;
         }
-
+        public List<GenerateReport> GetReportByUser(long corpsId, long divisionId, int userId)
+        {
+            return _generateReportDB.GetReportByUser(corpsId, divisionId, userId);
+        }
         public List<GenerateReport> GetAll(int corpsId, int divisonId)
         {
             return _generateReportDB.GetAll(corpsId, divisonId);

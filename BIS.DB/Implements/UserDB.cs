@@ -54,6 +54,14 @@ namespace BIS.DB.Implements
                 throw;
             }            
         }
+        public int GetUserIdByRoleType(RoleType roleType)
+        {
+            var user = dbContext.UserDetails
+                       .Where(us => us.RoleType == roleType)
+                       .FirstOrDefault();
+
+            return user?.Id ?? 0;
+        }
         public List<UserDetail> GetUserByCoprs(long corpsId)
         {
             try
