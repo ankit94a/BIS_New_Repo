@@ -39,5 +39,19 @@ namespace BIS.Common.Enum
             ReadAll,
             Delete
         }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum RoleType
+        {
+            Staff1 = 1,
+            Staff2,
+            G1Int,
+            Colgs,
+            ColInt,
+            Bgs,
+            Mggs,
+            Goc,
+            Admin,
+            SuperAdmin
+        }
     }
 }
