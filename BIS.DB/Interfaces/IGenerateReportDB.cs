@@ -9,5 +9,6 @@ namespace BIS.DB.Interfaces
 {
     public interface IGenerateReportDB : IBaseDB<GenerateReport>
     {
+        public List<GenerateReport> GetReportByUser(long corpsId, long divisionId, int userId);
     }
 }

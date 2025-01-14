@@ -14,5 +14,7 @@ namespace BIS.DB.Interfaces
         public List<Menus> GetMenuByRoleCorpsAndDivision(long corpsId, long divisionId, long roleId, RoleType roleType);
         public List<UserDetail> GetUserByCoprs(long corpsId);
         public long AddUser(UserDetail user);
+
+        public int GetUserIdByRoleType(RoleType roleType);
     }
 }

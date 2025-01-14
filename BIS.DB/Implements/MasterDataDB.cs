@@ -20,6 +20,10 @@ namespace BIS.DB.Implements
         {
             return  _dbContext.MasterDatas.Where(m => m.ID == corpsId && m.DivisionId == DivisonId) .ToList();
         }
+        public List<MasterData> GetByUserId(int userId)
+        {
+            return _dbContext.MasterDatas.Where(m => m.CreatedBy == userId).ToList();
+        }
         public List<MasterData> GetAllMasterData()
         {
             return _dbContext.MasterDatas.ToList();

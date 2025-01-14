@@ -14,9 +14,11 @@ namespace BIS.Manager.Implements
     public class MasterDataManager : IMasterDataManager
     {
         private IMasterDataDB _masterDataDB;
-        public MasterDataManager(IMasterDataDB masterDataDB)
+        private readonly IUserDB _userDB;
+        public MasterDataManager(IMasterDataDB masterDataDB, IUserDB userDB)
         {
             _masterDataDB = masterDataDB;
+            _userDB = userDB;
         }
         public List<MasterData> GetAll(int corpsId,int divisionId)
         {
@@ -24,6 +26,7 @@ namespace BIS.Manager.Implements
         }
         public List<MasterData> GetAllMasterData(int corpsId, RoleType roleType, int divisionId = 0)
         {
+            var masterDataList = new List<MasterData>();
             if (roleType == RoleType.SuperAdmin)
             {
 
@@ -35,10 +38,25 @@ namespace BIS.Manager.Implements
             else
             {
 
+                foreach (var item in Enum.GetValues(typeof(RoleType)).Cast<RoleType>().OrderByDescending(e => (int)e))
+                {
+                    Console.WriteLine(item);
+                    if ((int)item <= (int)roleType)
+                    {
+                        var userId = _userDB.GetUserIdByRoleType(item);
+                        // checking that user fill any masterdata or not
+                        if(userId > 0)
+                        {
+                            var dataList = _masterDataDB.GetByUserId(userId);
+                            masterDataList.AddRange(dataList);
+                        }                      
+                    }
+                }
+
 
 
             }
-            return _masterDataDB.GetAllMasterData();
+            return masterDataList;
         }
         public long Add(MasterData masterData)
         {

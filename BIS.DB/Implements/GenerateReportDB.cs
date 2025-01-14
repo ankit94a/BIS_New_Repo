@@ -15,6 +15,10 @@ namespace BIS.DB.Implements
         {
             _dbContext = dbContext;
         }
+        public List<GenerateReport> GetReportByUser(long corpsId, long divisionId, int userId)
+        {
+            return _dbContext.GenerateReports.Where(report => report.CreatedBy == userId).ToList();
+        }
         public List<GenerateReport> GetAll(long corpsId, long divisionId)
         {
             return _dbContext.GenerateReports.Where(r => r.CorpsId == corpsId && r.DivisionId == divisionId).ToList();
