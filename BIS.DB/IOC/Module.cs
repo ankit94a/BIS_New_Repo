@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BIS.Common.Entities;
 using BIS.DB.Implements;
 using BIS.DB.Interfaces;
 
@@ -18,6 +19,7 @@ namespace BIS.DB.IOC
                 { typeof(IUserDB), typeof(UserDB) },
                  { typeof(ICorpsDB), typeof(CorpsDB) },
                   { typeof(IRoleDB), typeof(RoleDB) },
+                  {typeof(IGenerateReportDB), typeof(GenerateReportDB)},
             };
             return dic;
         }

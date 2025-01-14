@@ -2,6 +2,7 @@
 using BIS.DB.Interfaces;
 using InSync.Api.Helpers;
 using Microsoft.AspNetCore.Mvc;
+using static BIS.Common.Enum.Enum;
 
 namespace BIS.API.Controller
 {
@@ -20,7 +21,7 @@ namespace BIS.API.Controller
             long corpsId = HttpContext.GetCorpsId();
             long divisionId = HttpContext.GetDivisionId();
             long roleId = HttpContext.GetRoleId();
-            string roleType = HttpContext.GetRoleType();
+            RoleType roleType = HttpContext.GetRoleType();
             return Ok(_userManager.GetMenuByRoleCorpsAndDivision(corpsId,divisionId,roleId, roleType));
         }
 
