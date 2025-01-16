@@ -11,5 +11,6 @@ namespace BIS.DB.Interfaces
     {
         public List<MasterData> GetAllMasterData();
         public List<MasterData> GetByUserId(int userId);
+        public List<MasterData> GetByIds(List<int> idsList);
     }
 }

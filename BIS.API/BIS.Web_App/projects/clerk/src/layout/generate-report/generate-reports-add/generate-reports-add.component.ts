@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { IgenerateReport } from 'projects/sharedlibrary/src/model/generatereport.model';
+import { GenerateReport } from 'projects/sharedlibrary/src/model/generatereport.model';
 import { ApiService } from 'projects/sharedlibrary/src/services/api.service';
 import { SharedLibraryModule } from 'projects/sharedlibrary/src/shared-library.module';
 
@@ -14,16 +14,30 @@ import { SharedLibraryModule } from 'projects/sharedlibrary/src/shared-library.m
 })
 export class GenerateReportsAddComponent implements OnInit {
   reportForm: FormGroup;
+  report:GenerateReport;
   currentDate = new Date()
   masterDataList = [];
   isNoDataFoundAlert: boolean = false;
   tableHeader = [];
   isAllChecked = false;
-  constructor(private apiService: ApiService, private toastr: ToastrService, private _formBuilder: FormBuilder, private dialogRef: MatDialogRef<GenerateReportsAddComponent>) {
-
+  constructor(@Inject(MAT_DIALOG_DATA) data, private apiService: ApiService, private toastr: ToastrService, private _formBuilder: FormBuilder, private dialogRef: MatDialogRef<GenerateReportsAddComponent>) {
+    if(data.id > 0){
+      this.report = data;
+      this.getReportById(data.masterDataIds);
+    }else{
+      this.createForm()
+    }
   }
   ngOnInit(): void {
-    this.createForm()
+    
+  }
+  getReportById(masterDataIds){
+    this.apiService.getWithHeaders('masterdata/idsList' + masterDataIds).subscribe(res =>{
+      if(res){
+        debugger
+        this.report.masterData = res;
+      }
+    })
   }
   // Create the form
   createForm() {
@@ -109,7 +123,7 @@ export class GenerateReportsAddComponent implements OnInit {
   }
   save() {
     debugger
-    const generateReportList: IgenerateReport = {
+    const generateReportList = {
       reportType: this.reportForm.value.reportType!,
       notes: this.reportForm.value.notes!,
       reportDate: this.reportForm.value.reportDate!,

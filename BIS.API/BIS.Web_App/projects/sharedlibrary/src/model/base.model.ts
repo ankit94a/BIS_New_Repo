@@ -1,9 +1,11 @@
 export class BaseEntity {
     id: number;
     isActive: boolean;
-    createdAt:Date;
-    lastUpdatedAt:Date;
+    createdOn:Date;
+    UpdatedOn:Date;
     createdBy:string;
-    lastUpdatedBy:string;
+    UpdatedBy:string;
     isView: boolean = false;
+    CorpsId:number;
+    DivisionId:number;
 }

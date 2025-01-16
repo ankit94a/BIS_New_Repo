@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,5 +18,18 @@ namespace BIS.Common.Entities
         public string? Notes { get; set; }
         public string? startDate { get; set; }
         public string? endDate { get; set; }
+        public string? MasterDataIds { get; set; }
+
+        // This property handles serialization/deserialization
+        //[NotMapped]
+        //public List<string>? MasterDataIds
+        //{
+        //    get => string.IsNullOrEmpty(MasterDataIdsSerialized)
+        //        ? new List<string>()
+        //        : MasterDataIdsSerialized.Split(',').ToList();
+        //    set => MasterDataIdsSerialized = value == null
+        //        ? null
+        //        : string.Join(',', value);
+        //}
     }
 }

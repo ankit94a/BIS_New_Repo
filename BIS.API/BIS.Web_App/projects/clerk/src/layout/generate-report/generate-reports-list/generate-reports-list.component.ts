@@ -3,7 +3,7 @@ import { TablePaginationSettingsConfig } from 'projects/sharedlibrary/src/compon
 import { BISMatDialogService } from 'projects/sharedlibrary/src/services/insync-mat-dialog.service';
 import { GenerateReportsAddComponent } from '../generate-reports-add/generate-reports-add.component';
 import { ZipperTableComponent } from 'projects/sharedlibrary/src/component/zipper-table/zipper-table.component';
-import { IgenerateReport } from 'projects/sharedlibrary/src/model/generatereport.model';
+import { GenerateReport } from 'projects/sharedlibrary/src/model/generatereport.model';
 import { ApiService } from 'projects/sharedlibrary/src/services/api.service';
 import { SharedLibraryModule } from 'projects/sharedlibrary/src/shared-library.module';
 import { BisdefaultDatePipe } from 'projects/sharedlibrary/src/pipe/bisdefault-date.pipe';
@@ -17,7 +17,7 @@ import { BisdefaultDatePipe } from 'projects/sharedlibrary/src/pipe/bisdefault-d
 })
 export class GenerateReportsListComponent extends TablePaginationSettingsConfig implements OnInit {
   isRefresh:boolean=false;
-  generateReportList: IgenerateReport[] = [];
+  generateReportList: GenerateReport[] = [];
   constructor(private dialogService:BISMatDialogService,private apiService:ApiService ,private datePipe:BisdefaultDatePipe){
     super();
     this.tablePaginationSettings.enableAction = true;
@@ -49,11 +49,17 @@ export class GenerateReportsListComponent extends TablePaginationSettingsConfig 
 
   }
   view($event){
-
+    debugger
+    this.dialogService.open(GenerateReportsAddComponent,$event).then(res =>{
+      if(res){
+        this.getReportData()
+      }
+    })
   }
   edit($event){
 
   }
+  
   columns = [
     {
       name: 'reportGenId', displayName: 'Report Id', isSearchable: false

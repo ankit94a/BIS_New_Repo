@@ -41,5 +41,10 @@ namespace BIS.API.Controller
             masterData.CreatedBy = userId;
             return Ok(_masterDataManager.Add(masterData));
         }
+        [HttpGet,Route("idsList{idsList}")]
+        public IActionResult GetByIds(string idsList)
+        {
+            return Ok(_masterDataManager.GetByIds(idsList));
+        }
     }
 }

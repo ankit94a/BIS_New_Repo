@@ -1,7 +1,6 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
-  debugger;
   const excludedUrls = ['auth/login'];
   const isExcluded = excludedUrls.some(url => req.url.includes(url));
   if (isExcluded) {

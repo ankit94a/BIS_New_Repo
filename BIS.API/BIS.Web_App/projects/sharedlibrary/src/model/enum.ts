@@ -5,8 +5,17 @@ export class EnumBase {
       public get PermissionItem() {
         return PermissionItem;
       }
+      public get RoleType(){
+        return RoleType;
+      }
+      public get NotifType(){
+        return NotifType;
+      }
 }
 
+export enum NotifType {
+  GenerateReport = "GenerateReport"
+}
 
 export enum PermissionItem {
     Dashboard = 'Dashboard',
@@ -42,4 +51,18 @@ export enum PermissionItem {
     ReadAll = 'ReadAll',
     Delete = 'Delete',
   
+  }
+
+  export enum RoleType
+  {
+      Staff1 = "Staff1",
+      Staff2 = "Staff2",
+      G1Int = "G1Int",
+      Colgs = "Colgs",
+      ColInt = "ColInt",
+      Bgs = "Bgs",
+      Mggs = "Mggs",
+      Goc = "Goc",
+      Admin = "Admin",
+      SuperAdmin = "SuperAdmin"
   }
