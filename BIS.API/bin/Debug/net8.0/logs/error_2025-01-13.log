@@ -118,3 +118,192 @@ System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or propert
    at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-13 12:58:09.5904||ERROR |An unhandled exception has occurred while executing the request. System.NullReferenceException: Object reference not set to an instance of an object.
+   at BIS.DB.Implements.CorpsDB.GetAll() in D:\CodeBase\BIS_New_Repo\BIS.DB\Implements\CorpsDB.cs:line 20
+   at BIS.Manager.Implements.CorpsManager.GetAll() in D:\CodeBase\BIS_New_Repo\BIS.Manager\Implements\CorpsManager.cs:line 21
+   at BIS.API.Controller.CorpsController.GetAll() in D:\CodeBase\BIS_New_Repo\BIS.API\Controller\CorpsController.cs:line 19
+   at lambda_method5(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-13 15:33:41.5506||ERROR |An exception occurred while iterating over the results of a query for context type 'BIS.DB.AppDBContext'.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method15(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext() System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method15(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2025-01-13 15:33:43.5742||ERROR |UserMenu loading error in method GetMenuByRoleCorpsAndDivision System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method15(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BIS.DB.Implements.UserDB.GetMenuByRoleCorpsAndDivision(Int64 corpsId, Int64 divisionId, Int64 roleId, String roleType) in D:\CodeBase\BIS_New_Repo\BIS.DB\Implements\UserDB.cs:line 47
+2025-01-13 15:33:43.6030||ERROR |An unhandled exception has occurred while executing the request. System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method15(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BIS.DB.Implements.UserDB.GetMenuByRoleCorpsAndDivision(Int64 corpsId, Int64 divisionId, Int64 roleId, String roleType) in D:\CodeBase\BIS_New_Repo\BIS.DB\Implements\UserDB.cs:line 47
+   at BIS.DB.Implements.UserManager.GetMenuByRoleCorpsAndDivision(Int64 corpsId, Int64 divisionId, Int64 roleId, String roleType) in D:\CodeBase\BIS_New_Repo\BIS.Manager\Implements\UserManager.cs:line 25
+   at BIS.API.Controller.UserController.GetMenuByRoleCorpsAndDivision() in D:\CodeBase\BIS_New_Repo\BIS.API\Controller\UserController.cs:line 24
+   at lambda_method7(Closure, Object, Object[])
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-13 18:40:38.6116||ERROR |An exception occurred while iterating over the results of a query for context type 'BIS.DB.AppDBContext'.
+System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext() System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2025-01-13 18:40:41.3544||ERROR |UserMenu loading error in method GetMenuByRoleCorpsAndDivision System.Data.SqlTypes.SqlNullValueException: Data is Null. This method or property cannot be called on Null values.
+   at Microsoft.Data.SqlClient.SqlBuffer.ThrowIfNull()
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method13(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at BIS.DB.Implements.UserDB.GetMenuByRoleCorpsAndDivision(Int64 corpsId, Int64 divisionId, Int64 roleId, String roleType) in D:\CodeBase\BIS_New_Repo\BIS.DB\Implements\UserDB.cs:line 47
+2025-01-13 18:43:14.5455||ERROR |An exception occurred while iterating over the results of a query for context type 'BIS.DB.AppDBContext'.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int16'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method15(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext() System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int16'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method15(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2025-01-13 18:43:16.9638||ERROR |User Loggin error in method GetUserByEmailPassword System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int16'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method15(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method16(Closure, QueryContext)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at BIS.DB.Implements.UserDB.GetUserByEmailPassword(String username, String password) in D:\CodeBase\BIS_New_Repo\BIS.DB\Implements\UserDB.cs:line 24
+2025-01-13 18:43:51.8219||ERROR |An exception occurred while iterating over the results of a query for context type 'BIS.DB.AppDBContext'.
+System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int16'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method15(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext() System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int16'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method15(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2025-01-13 18:43:54.2629||ERROR |User Loggin error in method GetUserByEmailPassword System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int16'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method15(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method16(Closure, QueryContext)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at BIS.DB.Implements.UserDB.GetUserByEmailPassword(String username, String password) in D:\CodeBase\BIS_New_Repo\BIS.DB\Implements\UserDB.cs:line 24
+2025-01-13 19:05:38.9884||ERROR |An unhandled exception has occurred while executing the request. System.InvalidCastException: Unable to cast object of type 'System.Int32' to type 'System.Int16'.
+   at Microsoft.Data.SqlClient.SqlBuffer.get_Int16()
+   at Microsoft.Data.SqlClient.SqlDataReader.GetInt16(Int32 i)
+   at lambda_method15(Closure, QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.TryGetSingle[TSource](IEnumerable`1 source, Boolean& found)
+   at lambda_method16(Closure, QueryContext)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.Execute[TResult](Expression query)
+   at Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryProvider.Execute[TResult](Expression expression)
+   at BIS.DB.Implements.UserDB.GetUserByEmailPassword(String username, String password) in D:\CodeBase\BIS_New_Repo\BIS.DB\Implements\UserDB.cs:line 24
+   at BIS.DB.Implements.UserManager.GetUserByEmailPassword(String email, String password) in D:\CodeBase\BIS_New_Repo\BIS.Manager\Implements\UserManager.cs:line 21
+   at BIS.API.Controller.AuthController.Login(Login login) in D:\CodeBase\BIS_New_Repo\BIS.API\Controller\AuthController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.ResponseCaching.ResponseCachingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.ResponseCompression.ResponseCompressionMiddleware.InvokeCore(HttpContext context)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)

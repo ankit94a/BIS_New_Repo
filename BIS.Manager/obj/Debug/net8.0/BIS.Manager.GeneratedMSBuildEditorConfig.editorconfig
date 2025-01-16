@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = BIS.Manager
-build_property.ProjectDir = C:\Users\acer\Downloads\BIS.API\BIS.API\BIS.Manager\
+build_property.ProjectDir = D:\CodeBase\BIS_New_Repo\BIS.Manager\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

@@ -1,8 +1,4 @@
 import {
-  MAT_FORM_FIELD
-} from "./chunk-4ADMJTUD.js";
-import "./chunk-VLR6PJK3.js";
-import {
   Overlay,
   OverlayConfig,
   OverlayModule
@@ -10,6 +6,10 @@ import {
 import {
   TemplatePortal
 } from "./chunk-LVUK5HLG.js";
+import {
+  MAT_FORM_FIELD
+} from "./chunk-4ADMJTUD.js";
+import "./chunk-VLR6PJK3.js";
 import {
   animate,
   group,
@@ -22,6 +22,9 @@ import {
   CdkScrollableModule,
   ViewportRuler
 } from "./chunk-26X3URFV.js";
+import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-YNA3DUT6.js";
 import "./chunk-TYFKFLWK.js";
 import {
   ActiveDescendantKeyManager,
@@ -51,9 +54,6 @@ import {
   Platform,
   _getEventTarget
 } from "./chunk-2UEFV3SB.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-YNA3DUT6.js";
 import {
   DOCUMENT
 } from "./chunk-7TOTBSK6.js";

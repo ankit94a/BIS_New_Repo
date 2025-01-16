@@ -615,11 +615,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\BIS.Common.csproj",
+      "projectUniqueName": "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\BIS.Common.csproj",
       "projectName": "BIS.Common",
-      "projectPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\BIS.Common.csproj",
+      "projectPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\BIS.Common.csproj",
       "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\obj\\",
+      "outputPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -24,3 +24,16 @@ C:\Users\acer\Downloads\BIS.API\BIS.API\BIS.Common\obj\Debug\net8.0\BIS.Common.d
 C:\Users\acer\Downloads\BIS.API\BIS.API\BIS.Common\obj\Debug\net8.0\refint\BIS.Common.dll
 C:\Users\acer\Downloads\BIS.API\BIS.API\BIS.Common\obj\Debug\net8.0\BIS.Common.pdb
 C:\Users\acer\Downloads\BIS.API\BIS.API\BIS.Common\obj\Debug\net8.0\ref\BIS.Common.dll
+D:\CodeBase\BIS_New_Repo\BIS.Common\bin\Debug\net8.0\BIS.Common.deps.json
+D:\CodeBase\BIS_New_Repo\BIS.Common\bin\Debug\net8.0\BIS.Common.dll
+D:\CodeBase\BIS_New_Repo\BIS.Common\bin\Debug\net8.0\BIS.Common.pdb
+D:\CodeBase\BIS_New_Repo\BIS.Common\obj\Debug\net8.0\BIS.Common.csproj.AssemblyReference.cache
+D:\CodeBase\BIS_New_Repo\BIS.Common\obj\Debug\net8.0\BIS.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\CodeBase\BIS_New_Repo\BIS.Common\obj\Debug\net8.0\BIS.Common.AssemblyInfoInputs.cache
+D:\CodeBase\BIS_New_Repo\BIS.Common\obj\Debug\net8.0\BIS.Common.AssemblyInfo.cs
+D:\CodeBase\BIS_New_Repo\BIS.Common\obj\Debug\net8.0\BIS.Common.csproj.CoreCompileInputs.cache
+D:\CodeBase\BIS_New_Repo\BIS.Common\obj\Debug\net8.0\BIS.Common.sourcelink.json
+D:\CodeBase\BIS_New_Repo\BIS.Common\obj\Debug\net8.0\BIS.Common.dll
+D:\CodeBase\BIS_New_Repo\BIS.Common\obj\Debug\net8.0\refint\BIS.Common.dll
+D:\CodeBase\BIS_New_Repo\BIS.Common\obj\Debug\net8.0\BIS.Common.pdb
+D:\CodeBase\BIS_New_Repo\BIS.Common\obj\Debug\net8.0\ref\BIS.Common.dll

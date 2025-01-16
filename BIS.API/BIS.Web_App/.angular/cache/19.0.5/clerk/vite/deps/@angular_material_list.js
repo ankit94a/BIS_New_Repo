@@ -2,6 +2,9 @@ import {
   MatDividerModule
 } from "./chunk-QKXY3YIQ.js";
 import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-YNA3DUT6.js";
+import {
   SelectionModel
 } from "./chunk-TYFKFLWK.js";
 import {
@@ -26,9 +29,6 @@ import {
   coerceBooleanProperty,
   coerceNumberProperty
 } from "./chunk-2UEFV3SB.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-YNA3DUT6.js";
 import {
   NgTemplateOutlet
 } from "./chunk-7TOTBSK6.js";

@@ -1,11 +1,11 @@
 import {
-  SharedResizeObserver
-} from "./chunk-VLR6PJK3.js";
-import {
   CdkPortal,
   CdkPortalOutlet,
   TemplatePortal
 } from "./chunk-LVUK5HLG.js";
+import {
+  SharedResizeObserver
+} from "./chunk-VLR6PJK3.js";
 import {
   animate,
   state,

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "yoJmXV6Ub20=",
+  "dgSpecHash": "x4K0BfCD9Tc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\BIS.Common.csproj",
+  "projectFilePath": "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\BIS.Common.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\6.0.0\\microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",

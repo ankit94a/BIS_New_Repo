@@ -1,4 +1,7 @@
 import {
+  NG_VALUE_ACCESSOR
+} from "./chunk-YNA3DUT6.js";
+import {
   UniqueSelectionDispatcher
 } from "./chunk-TYFKFLWK.js";
 import {
@@ -12,9 +15,6 @@ import {
   _StructuralStylesLoader
 } from "./chunk-O2LZADZT.js";
 import "./chunk-2UEFV3SB.js";
-import {
-  NG_VALUE_ACCESSOR
-} from "./chunk-YNA3DUT6.js";
 import "./chunk-7TOTBSK6.js";
 import {
   ANIMATION_MODULE_TYPE,

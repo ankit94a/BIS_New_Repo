@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+O0vHLhBkhI=",
+  "dgSpecHash": "i4aCCtFPhk4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Manager\\BIS.Manager.csproj",
+  "projectFilePath": "D:\\CodeBase\\BIS_New_Repo\\BIS.Manager\\BIS.Manager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\acer\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\acer\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

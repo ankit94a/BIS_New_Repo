@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.API\\BIS.API.csproj": {}
+    "D:\\CodeBase\\BIS_New_Repo\\BIS.API\\BIS.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.API\\BIS.API.csproj": {
+    "D:\\CodeBase\\BIS_New_Repo\\BIS.API\\BIS.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.API\\BIS.API.csproj",
+        "projectUniqueName": "D:\\CodeBase\\BIS_New_Repo\\BIS.API\\BIS.API.csproj",
         "projectName": "BIS.API",
-        "projectPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.API\\BIS.API.csproj",
+        "projectPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.API\\BIS.API.csproj",
         "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.API\\obj\\",
+        "outputPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -29,14 +29,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\BIS.Common.csproj": {
-                "projectPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\BIS.Common.csproj"
+              "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\BIS.Common.csproj": {
+                "projectPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\BIS.Common.csproj"
               },
-              "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.DB\\BIS.DB.csproj": {
-                "projectPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.DB\\BIS.DB.csproj"
+              "D:\\CodeBase\\BIS_New_Repo\\BIS.DB\\BIS.DB.csproj": {
+                "projectPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.DB\\BIS.DB.csproj"
               },
-              "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Manager\\BIS.Manager.csproj": {
-                "projectPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Manager\\BIS.Manager.csproj"
+              "D:\\CodeBase\\BIS_New_Repo\\BIS.Manager\\BIS.Manager.csproj": {
+                "projectPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.Manager\\BIS.Manager.csproj"
               }
             }
           }
@@ -126,14 +126,14 @@
         }
       }
     },
-    "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\BIS.Common.csproj": {
+    "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\BIS.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\BIS.Common.csproj",
+        "projectUniqueName": "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\BIS.Common.csproj",
         "projectName": "BIS.Common",
-        "projectPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\BIS.Common.csproj",
+        "projectPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\BIS.Common.csproj",
         "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\obj\\",
+        "outputPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -205,14 +205,14 @@
         }
       }
     },
-    "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.DB\\BIS.DB.csproj": {
+    "D:\\CodeBase\\BIS_New_Repo\\BIS.DB\\BIS.DB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.DB\\BIS.DB.csproj",
+        "projectUniqueName": "D:\\CodeBase\\BIS_New_Repo\\BIS.DB\\BIS.DB.csproj",
         "projectName": "BIS.DB",
-        "projectPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.DB\\BIS.DB.csproj",
+        "projectPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.DB\\BIS.DB.csproj",
         "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.DB\\obj\\",
+        "outputPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.DB\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -230,8 +230,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\BIS.Common.csproj": {
-                "projectPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\BIS.Common.csproj"
+              "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\BIS.Common.csproj": {
+                "projectPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\BIS.Common.csproj"
               }
             }
           }
@@ -290,14 +290,14 @@
         }
       }
     },
-    "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Manager\\BIS.Manager.csproj": {
+    "D:\\CodeBase\\BIS_New_Repo\\BIS.Manager\\BIS.Manager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Manager\\BIS.Manager.csproj",
+        "projectUniqueName": "D:\\CodeBase\\BIS_New_Repo\\BIS.Manager\\BIS.Manager.csproj",
         "projectName": "BIS.Manager",
-        "projectPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Manager\\BIS.Manager.csproj",
+        "projectPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.Manager\\BIS.Manager.csproj",
         "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Manager\\obj\\",
+        "outputPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.Manager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -315,11 +315,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\BIS.Common.csproj": {
-                "projectPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.Common\\BIS.Common.csproj"
+              "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\BIS.Common.csproj": {
+                "projectPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.Common\\BIS.Common.csproj"
               },
-              "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.DB\\BIS.DB.csproj": {
-                "projectPath": "C:\\Users\\acer\\Downloads\\BIS.API\\BIS.API\\BIS.DB\\BIS.DB.csproj"
+              "D:\\CodeBase\\BIS_New_Repo\\BIS.DB\\BIS.DB.csproj": {
+                "projectPath": "D:\\CodeBase\\BIS_New_Repo\\BIS.DB\\BIS.DB.csproj"
               }
             }
           }

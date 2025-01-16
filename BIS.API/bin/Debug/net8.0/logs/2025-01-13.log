@@ -364,3 +364,863 @@ FROM [UserMenus] AS [u]
 2025-01-13 11:54:34.4812||INFO |CORS policy execution successful. 
 2025-01-13 11:54:34.4812||INFO |Request finished HTTP/2 GET https://localhost:44338/api/Rpt/count/lastweek - 404 - - 1.4792ms 
 2025-01-13 11:54:34.4812||INFO |Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44338/api/Rpt/count/lastweek, Response status code: 404 
+2025-01-13 12:57:54.8833||INFO |User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2025-01-13 12:57:56.4195||INFO |Application started. Press Ctrl+C to shut down. 
+2025-01-13 12:57:56.4195||INFO |Hosting environment: Development 
+2025-01-13 12:57:56.4195||INFO |Content root path: D:\CodeBase\BIS_New_Repo\BIS.API 
+2025-01-13 12:57:56.5368||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 12:57:56.9123||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 374.7278ms 
+2025-01-13 12:57:57.2385||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 12:57:57.2385||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 12:57:57.2385||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 12:57:57.2450||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 6.5321ms 
+2025-01-13 12:57:57.2450||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 5.9594ms 
+2025-01-13 12:57:57.3143||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 73.8690ms 
+2025-01-13 12:57:58.0376||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 12:57:58.2338||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 196.2770ms 
+2025-01-13 12:58:07.5431||INFO |Request starting HTTP/2 GET https://localhost:44338/api/Corps - - - 
+2025-01-13 12:58:09.4065||INFO |No cached response available for this request. 
+2025-01-13 12:58:09.4065||INFO |Executing endpoint 'BIS.API.Controller.CorpsController.GetAll (BIS.API)' 
+2025-01-13 12:58:09.4373||INFO |Route matched with {action = "GetAll", controller = "Corps"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll() on controller BIS.API.Controller.CorpsController (BIS.API). 
+2025-01-13 12:58:09.4682||INFO |Executed action BIS.API.Controller.CorpsController.GetAll (BIS.API) in 18.3404ms 
+2025-01-13 12:58:09.4682||INFO |Executed endpoint 'BIS.API.Controller.CorpsController.GetAll (BIS.API)' 
+2025-01-13 12:58:09.6038||INFO |Request finished HTTP/2 GET https://localhost:44338/api/Corps - 500 - text/plain;+charset=utf-8 2060.6409ms 
+2025-01-13 15:33:35.5085||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/today - - - 
+2025-01-13 15:33:35.5073||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/ - - - 
+2025-01-13 15:33:35.5073||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/lastweek - - - 
+2025-01-13 15:33:35.5085||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/user/menu - - - 
+2025-01-13 15:33:35.6097||INFO |CORS policy execution successful. 
+2025-01-13 15:33:35.6097||INFO |CORS policy execution successful. 
+2025-01-13 15:33:35.6097||INFO |CORS policy execution successful. 
+2025-01-13 15:33:35.6097||INFO |CORS policy execution successful. 
+2025-01-13 15:33:35.6516||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/lastweek - 204 - - 156.4181ms 
+2025-01-13 15:33:35.6516||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/today - 204 - - 156.4181ms 
+2025-01-13 15:33:35.6516||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/user/menu - 204 - - 156.5014ms 
+2025-01-13 15:33:35.6516||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/ - 204 - - 156.5756ms 
+2025-01-13 15:33:35.6516||INFO |Request starting HTTP/2 GET https://localhost:44338/api/Rpt/count/ - - - 
+2025-01-13 15:33:35.6516||INFO |Request starting HTTP/2 GET https://localhost:44338/api/Rpt/count/today - - - 
+2025-01-13 15:33:35.6516||INFO |Request starting HTTP/2 GET https://localhost:44338/api/user/menu - - - 
+2025-01-13 15:33:35.6516||INFO |Request starting HTTP/2 GET https://localhost:44338/api/Rpt/count/lastweek - - - 
+2025-01-13 15:33:35.6743||INFO |CORS policy execution successful. 
+2025-01-13 15:33:35.6743||INFO |CORS policy execution successful. 
+2025-01-13 15:33:35.6743||INFO |CORS policy execution successful. 
+2025-01-13 15:33:35.6743||INFO |CORS policy execution successful. 
+2025-01-13 15:33:36.2580||INFO |Executing endpoint 'BIS.API.Controller.UserController.GetMenuByRoleCorpsAndDivision (BIS.API)' 
+2025-01-13 15:33:36.2861||INFO |Request finished HTTP/2 GET https://localhost:44338/api/Rpt/count/lastweek - 404 - - 626.4103ms 
+2025-01-13 15:33:36.2861||INFO |Request finished HTTP/2 GET https://localhost:44338/api/Rpt/count/today - 404 - - 627.2966ms 
+2025-01-13 15:33:36.2861||INFO |Request finished HTTP/2 GET https://localhost:44338/api/Rpt/count/ - 404 - - 629.2363ms 
+2025-01-13 15:33:36.3001||INFO |Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44338/api/Rpt/count/today, Response status code: 404 
+2025-01-13 15:33:36.3001||INFO |Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44338/api/Rpt/count/lastweek, Response status code: 404 
+2025-01-13 15:33:36.3001||INFO |Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44338/api/Rpt/count/, Response status code: 404 
+2025-01-13 15:33:36.3583||INFO |Route matched with {action = "GetMenuByRoleCorpsAndDivision", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetMenuByRoleCorpsAndDivision() on controller BIS.API.Controller.UserController (BIS.API). 
+2025-01-13 15:33:41.5044||INFO |Executed DbCommand (37ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Code], [u].[CorpsId], [u].[CreatedBy], [u].[CreatedOn], [u].[DivisionId], [u].[Icon], [u].[IsActive], [u].[IsDeleted], [u].[Name], [u].[RoleId], [u].[Status], [u].[UpdatedBy], [u].[UpdatedOn]
+FROM [UserMenus] AS [u] 
+2025-01-13 15:33:43.5742||INFO |Executed action BIS.API.Controller.UserController.GetMenuByRoleCorpsAndDivision (BIS.API) in 7223.2769ms 
+2025-01-13 15:33:43.5742||INFO |Executed endpoint 'BIS.API.Controller.UserController.GetMenuByRoleCorpsAndDivision (BIS.API)' 
+2025-01-13 15:33:43.6316||INFO |Request finished HTTP/2 GET https://localhost:44338/api/user/menu - 500 - text/plain;+charset=utf-8 7972.7878ms 
+2025-01-13 17:13:37.2711||INFO |User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2025-01-13 17:13:38.7561||INFO |Application started. Press Ctrl+C to shut down. 
+2025-01-13 17:13:38.7561||INFO |Hosting environment: Development 
+2025-01-13 17:13:38.7561||INFO |Content root path: D:\CodeBase\BIS_New_Repo\BIS.API 
+2025-01-13 17:13:38.7938||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:13:39.0874||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 292.8351ms 
+2025-01-13 17:13:39.5586||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:13:39.5586||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:13:39.5586||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 10.7510ms 
+2025-01-13 17:13:39.5586||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:13:39.5748||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 3.6624ms 
+2025-01-13 17:13:39.6212||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 58.7477ms 
+2025-01-13 17:13:40.2680||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:13:40.4604||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 192.3420ms 
+2025-01-13 17:16:16.9792||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:16:16.9792||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 7.6259ms 
+2025-01-13 17:16:17.4413||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:16:17.4413||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:16:17.4413||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 0.8746ms 
+2025-01-13 17:16:17.4413||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 1.0687ms 
+2025-01-13 17:16:17.4539||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:16:17.4725||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 17.9780ms 
+2025-01-13 17:16:17.9310||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:16:17.9543||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 22.8905ms 
+2025-01-13 17:16:31.3909||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:16:31.3909||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 4.5365ms 
+2025-01-13 17:16:31.8932||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:16:31.9061||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 12.8456ms 
+2025-01-13 17:16:31.9220||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:16:31.9220||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 4.5361ms 
+2025-01-13 17:16:32.0925||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:16:32.1093||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 16.7753ms 
+2025-01-13 17:16:32.2515||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:16:32.2515||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 6.6930ms 
+2025-01-13 17:16:32.7136||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:16:32.7136||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 9.7371ms 
+2025-01-13 17:16:33.1215||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:16:33.1391||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 17.5318ms 
+2025-01-13 17:16:33.5159||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:16:33.5301||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 14.1213ms 
+2025-01-13 17:16:33.9303||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:16:33.9318||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 1.3726ms 
+2025-01-13 17:16:33.9318||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:16:33.9318||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 1.3143ms 
+2025-01-13 17:16:33.9555||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:16:33.9704||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 14.8045ms 
+2025-01-13 17:16:34.2852||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:16:34.3155||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 30.2994ms 
+2025-01-13 17:17:26.2353||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/auth/login - - - 
+2025-01-13 17:17:26.2353||INFO |CORS policy execution failed. 
+2025-01-13 17:17:26.2353||INFO |Request origin http://localhost:64296 does not have permission to access the resource. 
+2025-01-13 17:17:26.2353||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/auth/login - 204 - - 7.6990ms 
+2025-01-13 17:20:18.7316||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:18.7316||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:20:18.7316||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.6424ms 
+2025-01-13 17:20:18.7316||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:20:18.7316||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.5449ms 
+2025-01-13 17:20:18.7316||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 11.9594ms 
+2025-01-13 17:20:18.7493||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:20:18.7493||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2737ms 
+2025-01-13 17:20:18.7493||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:20:18.7493||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1727ms 
+2025-01-13 17:20:18.7493||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:20:18.7493||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.3912ms 
+2025-01-13 17:20:18.7493||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:20:18.7493||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.6669ms 
+2025-01-13 17:20:19.4785||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui.css - - - 
+2025-01-13 17:20:19.5086||INFO |Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+2025-01-13 17:20:19.5086||INFO |Request starting HTTP/2 GET https://localhost:44338/index.css - - - 
+2025-01-13 17:20:19.5086||INFO |Sending file. Request path: '/index.css'. Physical path: 'N/A' 
+2025-01-13 17:20:19.5086||INFO |Request finished HTTP/2 GET https://localhost:44338/index.css - 200 202 text/css 0.9021ms 
+2025-01-13 17:20:19.5315||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui.css - 200 152035 text/css 52.9572ms 
+2025-01-13 17:20:19.6165||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui-bundle.js - - - 
+2025-01-13 17:20:19.6696||INFO |Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+2025-01-13 17:20:19.7110||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui-bundle.js - 200 1426050 text/javascript 94.4486ms 
+2025-01-13 17:20:19.7380||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui-standalone-preset.js - - - 
+2025-01-13 17:20:19.7465||INFO |Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+2025-01-13 17:20:19.7465||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui-standalone-preset.js - 200 230007 text/javascript 15.0024ms 
+2025-01-13 17:20:19.7704||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:20:19.7704||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 1.4501ms 
+2025-01-13 17:20:19.9412||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:20:19.9412||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 0.6447ms 
+2025-01-13 17:20:19.9412||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:20:20.0176||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 72.9272ms 
+2025-01-13 17:20:29.5428||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:20:29.5671||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 24.2400ms 
+2025-01-13 17:20:29.5913||INFO |Request starting HTTP/2 GET https://localhost:44338/favicon-32x32.png - - - 
+2025-01-13 17:20:29.5913||INFO |Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+2025-01-13 17:20:29.5913||INFO |Request finished HTTP/2 GET https://localhost:44338/favicon-32x32.png - 200 628 image/png 0.4426ms 
+2025-01-13 17:20:30.7409||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:30.7489||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 7.9504ms 
+2025-01-13 17:20:31.2979||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:31.2979||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 5.0431ms 
+2025-01-13 17:20:31.8163||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:31.8163||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.3744ms 
+2025-01-13 17:20:31.9618||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:31.9820||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 20.1695ms 
+2025-01-13 17:20:32.0133||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:32.0331||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 19.7561ms 
+2025-01-13 17:20:32.0331||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:32.0331||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.9198ms 
+2025-01-13 17:20:32.4972||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:32.4972||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 5.4826ms 
+2025-01-13 17:20:32.9373||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:32.9373||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 4.6391ms 
+2025-01-13 17:20:33.5881||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:33.5881||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 7.8213ms 
+2025-01-13 17:20:34.1202||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:34.1202||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 8.1630ms 
+2025-01-13 17:20:34.5965||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:34.5965||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.7017ms 
+2025-01-13 17:20:35.7948||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:35.8388||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 44.0598ms 
+2025-01-13 17:20:37.4503||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:37.4503||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 6.7938ms 
+2025-01-13 17:20:37.8883||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:37.9027||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 14.3241ms 
+2025-01-13 17:20:38.8266||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:39.0456||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:39.1102||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 283.6192ms 
+2025-01-13 17:20:39.1102||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 66.7662ms 
+2025-01-13 17:20:40.1597||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:40.1597||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 5.1350ms 
+2025-01-13 17:20:40.1988||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:40.1988||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.9529ms 
+2025-01-13 17:20:40.2246||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:40.2372||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 12.6659ms 
+2025-01-13 17:20:42.3895||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:42.3895||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.2737ms 
+2025-01-13 17:20:43.9572||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:43.9572||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.6557ms 
+2025-01-13 17:20:44.4936||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:44.5028||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 9.1208ms 
+2025-01-13 17:20:44.9618||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:44.9712||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 9.2027ms 
+2025-01-13 17:20:44.9961||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:44.9961||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 6.8015ms 
+2025-01-13 17:20:45.0223||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:45.0223||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.3563ms 
+2025-01-13 17:20:45.0624||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:45.0624||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 8.8065ms 
+2025-01-13 17:20:45.0761||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:45.0761||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 1.9798ms 
+2025-01-13 17:20:45.1217||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:45.1217||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.8708ms 
+2025-01-13 17:20:45.5297||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:45.5297||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.7163ms 
+2025-01-13 17:20:45.9733||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:45.9733||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.5207ms 
+2025-01-13 17:20:46.5533||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:46.5533||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.0496ms 
+2025-01-13 17:20:47.1446||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:47.1446||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.3356ms 
+2025-01-13 17:20:47.7395||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:20:47.7448||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 5.3186ms 
+2025-01-13 17:21:24.4657||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:21:24.4657||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 1.9073ms 
+2025-01-13 17:21:24.5263||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:21:24.5263||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1837ms 
+2025-01-13 17:21:24.7494||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:21:24.7494||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1678ms 
+2025-01-13 17:21:24.7494||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:21:24.7494||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.5615ms 
+2025-01-13 17:21:25.7579||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui.css - - - 
+2025-01-13 17:21:25.7579||INFO |Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+2025-01-13 17:21:25.7606||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui.css - 200 152035 text/css 2.6902ms 
+2025-01-13 17:21:25.7759||INFO |Request starting HTTP/2 GET https://localhost:44338/index.css - - - 
+2025-01-13 17:21:25.7759||INFO |Sending file. Request path: '/index.css'. Physical path: 'N/A' 
+2025-01-13 17:21:25.7759||INFO |Request finished HTTP/2 GET https://localhost:44338/index.css - 200 202 text/css 0.6605ms 
+2025-01-13 17:21:25.7759||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui-bundle.js - - - 
+2025-01-13 17:21:25.7759||INFO |Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+2025-01-13 17:21:25.8118||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui-bundle.js - 200 1426050 text/javascript 34.9779ms 
+2025-01-13 17:21:25.9260||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui-standalone-preset.js - - - 
+2025-01-13 17:21:25.9260||INFO |Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+2025-01-13 17:21:25.9260||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:21:25.9260||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 0.5139ms 
+2025-01-13 17:21:25.9260||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui-standalone-preset.js - 200 230007 text/javascript 4.4413ms 
+2025-01-13 17:21:25.9551||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:21:25.9551||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 0.2916ms 
+2025-01-13 17:21:25.9683||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:21:25.9683||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 4.8893ms 
+2025-01-13 17:21:26.8123||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:21:26.8324||INFO |Request starting HTTP/2 GET https://localhost:44338/favicon-32x32.png - - - 
+2025-01-13 17:21:26.8324||INFO |Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+2025-01-13 17:21:26.8324||INFO |Request finished HTTP/2 GET https://localhost:44338/favicon-32x32.png - 200 628 image/png 1.2700ms 
+2025-01-13 17:21:26.8410||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 28.6927ms 
+2025-01-13 17:22:00.4340||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:00.4340||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 9.8553ms 
+2025-01-13 17:22:00.4847||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:00.5460||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 61.3062ms 
+2025-01-13 17:22:01.2304||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:01.2304||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 499 - - 0.1004ms 
+2025-01-13 17:22:01.2567||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:22:01.2567||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 0.2499ms 
+2025-01-13 17:22:01.2567||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:22:01.2567||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 0.3647ms 
+2025-01-13 17:22:01.2567||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:22:01.3049||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 46.4100ms 
+2025-01-13 17:22:02.8759||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:22:02.8911||INFO |Request starting HTTP/2 GET https://localhost:44338/favicon-32x32.png - - - 
+2025-01-13 17:22:02.8911||INFO |Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+2025-01-13 17:22:02.8911||INFO |Request finished HTTP/2 GET https://localhost:44338/favicon-32x32.png - 200 628 image/png 0.3679ms 
+2025-01-13 17:22:02.8911||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 22.3884ms 
+2025-01-13 17:22:26.1086||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:26.1241||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 15.4936ms 
+2025-01-13 17:22:27.4956||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:27.4956||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 6.6824ms 
+2025-01-13 17:22:28.1808||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:28.1896||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 8.8014ms 
+2025-01-13 17:22:29.4915||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:29.4915||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2238ms 
+2025-01-13 17:22:29.4915||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:29.4969||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 4.1597ms 
+2025-01-13 17:22:29.5363||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:29.5363||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.7486ms 
+2025-01-13 17:22:29.5888||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:29.5888||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1810ms 
+2025-01-13 17:22:29.5888||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:29.5888||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0645ms 
+2025-01-13 17:22:29.5888||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:29.5888||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0665ms 
+2025-01-13 17:22:29.5888||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:29.5888||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0675ms 
+2025-01-13 17:22:29.6310||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:29.6310||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1801ms 
+2025-01-13 17:22:29.8913||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:29.8913||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 6.3757ms 
+2025-01-13 17:22:29.9226||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:29.9226||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 8.3419ms 
+2025-01-13 17:22:31.3686||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:31.3707||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.1624ms 
+2025-01-13 17:22:31.9025||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:31.9025||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.7735ms 
+2025-01-13 17:22:32.6364||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:32.6364||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.2006ms 
+2025-01-13 17:22:33.3309||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:33.3309||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.7989ms 
+2025-01-13 17:22:33.4529||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:33.4529||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2582ms 
+2025-01-13 17:22:33.4529||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:33.4672||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 9.5750ms 
+2025-01-13 17:22:33.4834||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:33.4834||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1864ms 
+2025-01-13 17:22:33.4834||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:33.4834||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1935ms 
+2025-01-13 17:22:33.4834||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:33.4834||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0881ms 
+2025-01-13 17:22:33.4834||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:33.4834||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:33.4834||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1516ms 
+2025-01-13 17:22:33.4834||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0911ms 
+2025-01-13 17:22:33.4834||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:33.4834||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0747ms 
+2025-01-13 17:22:33.4834||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:33.4834||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1672ms 
+2025-01-13 17:22:33.4834||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:33.4834||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0593ms 
+2025-01-13 17:22:33.9395||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:33.9395||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.2216ms 
+2025-01-13 17:22:34.6555||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:34.6555||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 9.6031ms 
+2025-01-13 17:22:35.2110||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:35.2242||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 13.1759ms 
+2025-01-13 17:22:35.2484||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:35.2674||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 18.9256ms 
+2025-01-13 17:22:35.3719||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:35.3719||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 5.3080ms 
+2025-01-13 17:22:36.0683||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:36.0683||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.0683||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1609ms 
+2025-01-13 17:22:36.0733||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 4.9908ms 
+2025-01-13 17:22:36.1013||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1013||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1714ms 
+2025-01-13 17:22:36.1067||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1067||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1830ms 
+2025-01-13 17:22:36.1067||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1067||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1067||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1701ms 
+2025-01-13 17:22:36.1067||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1067||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1313ms 
+2025-01-13 17:22:36.1067||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0745ms 
+2025-01-13 17:22:36.1067||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1067||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1530ms 
+2025-01-13 17:22:36.1067||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1067||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0836ms 
+2025-01-13 17:22:36.1067||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1067||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.3181ms 
+2025-01-13 17:22:36.1396||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1396||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2816ms 
+2025-01-13 17:22:36.1396||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1396||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1138ms 
+2025-01-13 17:22:36.1396||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1396||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0739ms 
+2025-01-13 17:22:36.1396||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1396||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1302ms 
+2025-01-13 17:22:36.1396||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1396||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1047ms 
+2025-01-13 17:22:36.1396||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1396||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.4454ms 
+2025-01-13 17:22:36.1396||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1396||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1396||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1609ms 
+2025-01-13 17:22:36.1396||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1399ms 
+2025-01-13 17:22:36.1396||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1396||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:36.1396||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0819ms 
+2025-01-13 17:22:36.1396||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0759ms 
+2025-01-13 17:22:36.5483||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:36.5483||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.2199ms 
+2025-01-13 17:22:36.7054||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:36.7153||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 9.9212ms 
+2025-01-13 17:22:53.9003||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:22:53.9003||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 5.3163ms 
+2025-01-13 17:22:53.9803||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui.css?nonce=1736769158053 - - - 
+2025-01-13 17:22:53.9803||INFO |Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+2025-01-13 17:22:53.9803||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui.css?nonce=1736769158053 - 200 152035 text/css 1.7610ms 
+2025-01-13 17:22:54.0721||INFO |Request starting HTTP/2 GET https://localhost:44338/index.css?nonce=1736769158056 - - - 
+2025-01-13 17:22:54.0721||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:54.0721||INFO |Sending file. Request path: '/index.css'. Physical path: 'N/A' 
+2025-01-13 17:22:54.0721||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1923ms 
+2025-01-13 17:22:54.0721||INFO |Request finished HTTP/2 GET https://localhost:44338/index.css?nonce=1736769158056 - 200 202 text/css 0.3989ms 
+2025-01-13 17:22:54.0721||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:54.0721||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:54.0721||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1420ms 
+2025-01-13 17:22:54.0721||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1208ms 
+2025-01-13 17:22:54.0721||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:22:54.0721||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0865ms 
+2025-01-13 17:22:54.6321||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:22:54.6321||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 0.3787ms 
+2025-01-13 17:22:54.6321||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:22:54.6321||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:22:54.6357||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 1.3831ms 
+2025-01-13 17:22:54.6357||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 16.5585ms 
+2025-01-13 17:22:54.7573||INFO |Request starting HTTP/2 GET https://localhost:44338/favicon-32x32.png - - - 
+2025-01-13 17:22:54.7573||INFO |Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+2025-01-13 17:22:54.7573||INFO |Request finished HTTP/2 GET https://localhost:44338/favicon-32x32.png - 200 628 image/png 0.4684ms 
+2025-01-13 17:22:55.5331||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:22:55.5567||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 23.4916ms 
+2025-01-13 17:22:55.6752||INFO |Request starting HTTP/2 GET https://localhost:44338/favicon-32x32.png - - - 
+2025-01-13 17:22:55.6752||INFO |Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+2025-01-13 17:22:55.6752||INFO |Request finished HTTP/2 GET https://localhost:44338/favicon-32x32.png - 200 628 image/png 0.4370ms 
+2025-01-13 17:42:14.0160||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:14.0160||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 4.9929ms 
+2025-01-13 17:42:14.1047||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui.css - - - 
+2025-01-13 17:42:14.1047||INFO |Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+2025-01-13 17:42:14.1047||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui.css - 200 152035 text/css 6.5265ms 
+2025-01-13 17:42:14.4360||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui-bundle.js - - - 
+2025-01-13 17:42:14.4360||INFO |Request starting HTTP/2 GET https://localhost:44338/index.css - - - 
+2025-01-13 17:42:14.4360||INFO |Sending file. Request path: '/index.css'. Physical path: 'N/A' 
+2025-01-13 17:42:14.4360||INFO |Request finished HTTP/2 GET https://localhost:44338/index.css - 200 202 text/css 0.4515ms 
+2025-01-13 17:42:14.4535||INFO |Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+2025-01-13 17:42:14.4644||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui-standalone-preset.js - - - 
+2025-01-13 17:42:14.4644||INFO |Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+2025-01-13 17:42:14.4644||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui-standalone-preset.js - 200 230007 text/javascript 10.5801ms 
+2025-01-13 17:42:14.5017||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui-bundle.js - 200 1426050 text/javascript 65.6749ms 
+2025-01-13 17:42:14.5017||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:42:14.5017||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 0.4325ms 
+2025-01-13 17:42:14.5307||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:42:14.5307||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 1.1361ms 
+2025-01-13 17:42:14.5307||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:42:14.5436||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 9.0951ms 
+2025-01-13 17:42:15.2605||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:42:15.2824||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 21.8384ms 
+2025-01-13 17:42:19.3943||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:19.4039||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 9.3706ms 
+2025-01-13 17:42:20.6740||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:20.6905||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 16.5336ms 
+2025-01-13 17:42:25.2653||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:25.3460||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 80.7568ms 
+2025-01-13 17:42:26.2201||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:26.2201||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.5938ms 
+2025-01-13 17:42:27.3518||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:27.5002||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:27.7641||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:27.7641||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:42:27.7641||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2049ms 
+2025-01-13 17:42:27.8536||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:27.9624||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 610.6003ms 
+2025-01-13 17:42:27.9632||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 199.1385ms 
+2025-01-13 17:42:27.9632||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 111.0795ms 
+2025-01-13 17:42:27.9632||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 465.5627ms 
+2025-01-13 17:42:29.4847||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:29.4847||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 7.0718ms 
+2025-01-13 17:42:29.9024||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:30.0276||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 125.2201ms 
+2025-01-13 17:42:35.1970||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:35.2039||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 7.5608ms 
+2025-01-13 17:42:36.4628||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:36.4910||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 28.2188ms 
+2025-01-13 17:42:37.0139||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:37.0139||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 7.0141ms 
+2025-01-13 17:42:37.4091||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:37.4209||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 11.7407ms 
+2025-01-13 17:42:37.8150||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:37.8150||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 4.7023ms 
+2025-01-13 17:42:38.2740||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:38.2797||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 5.7047ms 
+2025-01-13 17:42:38.8551||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:38.9024||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 47.2848ms 
+2025-01-13 17:42:39.6443||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:39.6443||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.2719ms 
+2025-01-13 17:42:40.0484||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:42:40.0484||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.5755ms 
+2025-01-13 17:42:40.0657||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:40.1052||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 39.5022ms 
+2025-01-13 17:42:40.5064||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:42:40.5064||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1625ms 
+2025-01-13 17:42:40.9679||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:40.9679||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 8.6430ms 
+2025-01-13 17:42:41.4370||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:41.4370||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:42:41.4370||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2888ms 
+2025-01-13 17:42:41.4370||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 5.7249ms 
+2025-01-13 17:42:41.4948||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:42:41.4948||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2859ms 
+2025-01-13 17:42:41.4948||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:42:41.4948||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.9995ms 
+2025-01-13 17:42:41.4948||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:41.5158||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 13.4942ms 
+2025-01-13 17:42:42.0663||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:42.0663||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 5.4332ms 
+2025-01-13 17:42:42.8813||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:42.8888||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 7.4670ms 
+2025-01-13 17:42:43.5902||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:43.6131||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 22.4217ms 
+2025-01-13 17:42:43.9962||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:43.9962||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.2711ms 
+2025-01-13 17:42:44.4952||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:44.5262||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 30.9272ms 
+2025-01-13 17:42:45.0723||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:45.2027||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 130.4102ms 
+2025-01-13 17:42:45.2195||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:45.2195||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.6239ms 
+2025-01-13 17:42:46.9529||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:46.9529||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 7.3193ms 
+2025-01-13 17:42:46.9823||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:46.9823||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 7.4386ms 
+2025-01-13 17:42:46.9962||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:46.9962||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 9.2752ms 
+2025-01-13 17:42:47.4174||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:47.4174||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 1.7890ms 
+2025-01-13 17:42:47.8350||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:47.8446||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 9.6014ms 
+2025-01-13 17:42:47.9614||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:47.9801||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 18.6730ms 
+2025-01-13 17:42:48.0330||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:48.0731||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:48.0996||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:48.1493||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 49.7297ms 
+2025-01-13 17:42:48.1493||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 76.4246ms 
+2025-01-13 17:42:48.1553||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 122.2448ms 
+2025-01-13 17:42:48.1876||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:48.1876||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 6.2224ms 
+2025-01-13 17:42:48.9622||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:48.9652||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.0428ms 
+2025-01-13 17:42:49.3332||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:49.3332||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.6493ms 
+2025-01-13 17:42:49.7232||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:49.7573||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 34.0881ms 
+2025-01-13 17:42:50.3435||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:50.3550||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 11.4235ms 
+2025-01-13 17:42:50.8237||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:50.8237||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.6212ms 
+2025-01-13 17:42:51.2790||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:51.2790||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.1393ms 
+2025-01-13 17:42:51.3058||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:51.3135||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 7.6624ms 
+2025-01-13 17:42:51.8644||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:51.8698||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 5.3826ms 
+2025-01-13 17:42:52.3209||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:52.3261||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 6.0630ms 
+2025-01-13 17:42:52.3635||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:52.3705||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 6.9784ms 
+2025-01-13 17:42:52.3705||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:52.3872||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 4.2768ms 
+2025-01-13 17:42:52.4010||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:52.4010||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 5.4702ms 
+2025-01-13 17:42:52.4274||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:52.4274||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.1130ms 
+2025-01-13 17:42:52.5559||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:52.5589||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.8872ms 
+2025-01-13 17:42:53.3082||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:53.3082||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.3001ms 
+2025-01-13 17:42:53.8988||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:42:53.8988||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1602ms 
+2025-01-13 17:42:54.0301||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:42:54.0301||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1476ms 
+2025-01-13 17:42:54.0301||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:54.0301||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:42:54.0301||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.8514ms 
+2025-01-13 17:42:54.0301||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 1.6574ms 
+2025-01-13 17:42:54.0716||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:54.0735||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 1.9515ms 
+2025-01-13 17:42:54.1142||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:54.1142||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.9291ms 
+2025-01-13 17:42:55.2516||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:42:55.2516||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2388ms 
+2025-01-13 17:42:55.2516||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:55.2516||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.7692ms 
+2025-01-13 17:42:55.2690||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:55.2690||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.0783ms 
+2025-01-13 17:42:55.6763||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:42:55.6827||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 6.3475ms 
+2025-01-13 17:45:42.5406||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui.css?nonce=1736770363309 - - - 
+2025-01-13 17:45:42.5406||INFO |Request starting HTTP/2 GET https://localhost:44338/index.css?nonce=1736770363310 - - - 
+2025-01-13 17:45:42.5413||INFO |Sending file. Request path: '/index.css'. Physical path: 'N/A' 
+2025-01-13 17:45:42.5413||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:45:42.5413||INFO |Request finished HTTP/2 GET https://localhost:44338/index.css?nonce=1736770363310 - 200 202 text/css 0.5492ms 
+2025-01-13 17:45:42.5413||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:42.5413||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1653ms 
+2025-01-13 17:45:42.5413||INFO |Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+2025-01-13 17:45:42.5413||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:42.5413||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2083ms 
+2025-01-13 17:45:42.5413||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui.css?nonce=1736770363309 - 200 152035 text/css 4.8514ms 
+2025-01-13 17:45:42.5413||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 4.8929ms 
+2025-01-13 17:45:42.5413||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:42.5413||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:42.5413||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:42.5413||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:42.5413||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1094ms 
+2025-01-13 17:45:42.5413||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1564ms 
+2025-01-13 17:45:42.5413||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1348ms 
+2025-01-13 17:45:42.5413||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1226ms 
+2025-01-13 17:45:42.5413||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:42.5413||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:42.5413||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1220ms 
+2025-01-13 17:45:42.5413||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1394ms 
+2025-01-13 17:45:43.1605||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1605||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1645ms 
+2025-01-13 17:45:43.1792||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1792||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.4033ms 
+2025-01-13 17:45:43.1792||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1792||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.7433ms 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1750ms 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1900ms 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1414ms 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1158ms 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1551ms 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0572ms 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1597ms 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1223ms 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0486ms 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1809ms 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.6589ms 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1874ms 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2460ms 
+2025-01-13 17:45:43.1820||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1820||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1309ms 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2229ms 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1976ms 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1444ms 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2018ms 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1977ms 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1079ms 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0996ms 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0791ms 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0623ms 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0829ms 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2855ms 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.3411ms 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.5468ms 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.2143ms 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 1.1660ms 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 1.0363ms 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 1.1004ms 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 1.0239ms 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.0927ms 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1134ms 
+2025-01-13 17:45:43.1982||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - - - 
+2025-01-13 17:45:43.1982||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/clear-browser-cache - 200 - - 0.1590ms 
+2025-01-13 17:45:44.4587||INFO |Request starting HTTP/2 GET https://localhost:44338/index.css - - - 
+2025-01-13 17:45:44.4587||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui.css - - - 
+2025-01-13 17:45:44.4587||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui-bundle.js - - - 
+2025-01-13 17:45:44.4587||INFO |Sending file. Request path: '/index.css'. Physical path: 'N/A' 
+2025-01-13 17:45:44.4587||INFO |Request finished HTTP/2 GET https://localhost:44338/index.css - 200 202 text/css 0.8636ms 
+2025-01-13 17:45:44.4587||INFO |Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A' 
+2025-01-13 17:45:44.4638||INFO |Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A' 
+2025-01-13 17:45:44.4638||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui.css - 200 152035 text/css 6.0330ms 
+2025-01-13 17:45:44.5036||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui-bundle.js - 200 1426050 text/javascript 44.6433ms 
+2025-01-13 17:45:44.7134||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger-ui-standalone-preset.js - - - 
+2025-01-13 17:45:44.7134||INFO |Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A' 
+2025-01-13 17:45:44.7134||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger-ui-standalone-preset.js - 200 230007 text/javascript 7.1240ms 
+2025-01-13 17:45:44.7408||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:45:44.7408||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 0.4534ms 
+2025-01-13 17:45:44.8504||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:45:44.8504||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 0.7281ms 
+2025-01-13 17:45:44.9437||INFO |Request starting HTTP/2 GET https://localhost:44338/favicon-32x32.png - - - 
+2025-01-13 17:45:44.9437||INFO |Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A' 
+2025-01-13 17:45:44.9437||INFO |Request finished HTTP/2 GET https://localhost:44338/favicon-32x32.png - 200 628 image/png 0.3723ms 
+2025-01-13 17:45:44.9437||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:45:44.9519||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 7.6458ms 
+2025-01-13 17:45:45.6176||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:45:45.6330||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 15.3521ms 
+2025-01-13 17:46:51.9768||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:46:51.9799||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 3.0608ms 
+2025-01-13 17:46:52.3831||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:46:52.3831||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 0.4610ms 
+2025-01-13 17:46:52.3991||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:46:52.3991||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 0.5579ms 
+2025-01-13 17:46:52.4201||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:46:52.4201||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 9.0459ms 
+2025-01-13 17:46:53.1307||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:46:53.1517||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 21.0236ms 
+2025-01-13 17:47:04.9182||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:47:04.9182||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 7.8534ms 
+2025-01-13 17:47:05.4981||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:47:05.4981||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 0.4411ms 
+2025-01-13 17:47:05.6129||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:47:05.6129||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 0.6171ms 
+2025-01-13 17:47:05.6129||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:47:05.6318||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 18.0776ms 
+2025-01-13 17:47:06.3725||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:47:06.3889||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 16.3218ms 
+2025-01-13 17:47:27.6078||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/auth/login - - - 
+2025-01-13 17:47:27.6078||INFO |CORS policy execution failed. 
+2025-01-13 17:47:27.6078||INFO |Request origin http://localhost:65348 does not have permission to access the resource. 
+2025-01-13 17:47:27.6078||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/auth/login - 204 - - 2.1517ms 
+2025-01-13 17:48:09.4907||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:48:09.4907||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 2.1768ms 
+2025-01-13 17:48:09.5945||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:48:09.5945||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:48:09.5945||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 0.6520ms 
+2025-01-13 17:48:09.5945||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:48:09.5945||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 0.3924ms 
+2025-01-13 17:48:09.6051||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 10.2996ms 
+2025-01-13 17:48:10.1472||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:48:10.1669||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 19.6706ms 
+2025-01-13 17:48:27.2811||INFO |User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2025-01-13 17:48:28.3790||INFO |Application started. Press Ctrl+C to shut down. 
+2025-01-13 17:48:28.3954||INFO |Hosting environment: Development 
+2025-01-13 17:48:28.3954||INFO |Content root path: D:\CodeBase\BIS_New_Repo\BIS.API 
+2025-01-13 17:48:28.4675||INFO |Request starting HTTP/2 GET https://localhost:44338/ - - - 
+2025-01-13 17:48:28.7706||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:48:28.7913||INFO |Request finished HTTP/2 GET https://localhost:44338/ - 301 - - 337.5213ms 
+2025-01-13 17:48:28.9574||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 186.8041ms 
+2025-01-13 17:48:29.6445||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:48:29.6445||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:48:29.6512||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 6.0201ms 
+2025-01-13 17:48:29.6512||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 11.7466ms 
+2025-01-13 17:48:29.7028||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:48:29.8016||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 98.7908ms 
+2025-01-13 17:48:30.8175||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:48:31.0605||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 243.1527ms 
+2025-01-13 17:59:47.9421||INFO |User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2025-01-13 17:59:48.7176||INFO |Application started. Press Ctrl+C to shut down. 
+2025-01-13 17:59:48.7176||INFO |Hosting environment: Development 
+2025-01-13 17:59:48.7176||INFO |Content root path: D:\CodeBase\BIS_New_Repo\BIS.API 
+2025-01-13 17:59:48.7657||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 17:59:49.1305||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 380.9610ms 
+2025-01-13 17:59:49.5283||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 17:59:49.5283||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 17:59:49.5283||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 12.0701ms 
+2025-01-13 17:59:49.5283||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 5.0690ms 
+2025-01-13 17:59:49.5449||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 17:59:49.6190||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 74.1262ms 
+2025-01-13 17:59:50.5620||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 17:59:50.7864||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 224.8568ms 
+2025-01-13 18:21:12.3057||INFO |User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2025-01-13 18:21:13.0826||INFO |Application started. Press Ctrl+C to shut down. 
+2025-01-13 18:21:13.0826||INFO |Hosting environment: Development 
+2025-01-13 18:21:13.0897||INFO |Content root path: D:\CodeBase\BIS_New_Repo\BIS.API 
+2025-01-13 18:21:13.1197||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 18:21:13.4837||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 371.4102ms 
+2025-01-13 18:21:13.8332||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 18:21:13.8332||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 18:21:13.8332||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 18:21:13.8517||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 14.2212ms 
+2025-01-13 18:21:13.8612||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 18.9897ms 
+2025-01-13 18:21:13.9258||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 91.1530ms 
+2025-01-13 18:21:14.4520||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 18:21:14.7644||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 312.5579ms 
+2025-01-13 18:21:36.5548||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/auth/login - - - 
+2025-01-13 18:21:36.5646||INFO |CORS policy execution failed. 
+2025-01-13 18:21:36.5646||INFO |Request origin http://localhost:65348 does not have permission to access the resource. 
+2025-01-13 18:21:36.5808||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/auth/login - 204 - - 26.1857ms 
+2025-01-13 18:40:31.9323||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/user/menu - - - 
+2025-01-13 18:40:31.9323||INFO |CORS policy execution successful. 
+2025-01-13 18:40:31.9323||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/user/menu - 204 - - 10.1474ms 
+2025-01-13 18:40:31.9654||INFO |Request starting HTTP/2 GET https://localhost:44338/api/user/menu - - - 
+2025-01-13 18:40:31.9654||INFO |CORS policy execution successful. 
+2025-01-13 18:40:31.9947||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/today - - - 
+2025-01-13 18:40:31.9947||INFO |CORS policy execution successful. 
+2025-01-13 18:40:31.9947||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/today - 204 - - 0.7525ms 
+2025-01-13 18:40:31.9947||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/ - - - 
+2025-01-13 18:40:31.9947||INFO |CORS policy execution successful. 
+2025-01-13 18:40:31.9947||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/lastweek - - - 
+2025-01-13 18:40:31.9947||INFO |CORS policy execution successful. 
+2025-01-13 18:40:31.9947||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/lastweek - 204 - - 0.5759ms 
+2025-01-13 18:40:32.0227||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/ - 204 - - 1.0454ms 
+2025-01-13 18:40:32.0325||INFO |Request starting HTTP/2 GET https://localhost:44338/api/Rpt/count/ - - - 
+2025-01-13 18:40:32.0325||INFO |Request starting HTTP/2 GET https://localhost:44338/api/Rpt/count/today - - - 
+2025-01-13 18:40:32.0325||INFO |CORS policy execution successful. 
+2025-01-13 18:40:32.0325||INFO |CORS policy execution successful. 
+2025-01-13 18:40:32.0485||INFO |Request starting HTTP/2 GET https://localhost:44338/api/Rpt/count/lastweek - - - 
+2025-01-13 18:40:32.0485||INFO |CORS policy execution successful. 
+2025-01-13 18:40:34.7322||INFO |Executing endpoint 'BIS.API.Controller.UserController.GetMenuByRoleCorpsAndDivision (BIS.API)' 
+2025-01-13 18:40:34.7322||INFO |Request finished HTTP/2 GET https://localhost:44338/api/Rpt/count/ - 404 - - 2705.5708ms 
+2025-01-13 18:40:34.7322||INFO |Request finished HTTP/2 GET https://localhost:44338/api/Rpt/count/lastweek - 404 - - 2692.8359ms 
+2025-01-13 18:40:34.7322||INFO |Request finished HTTP/2 GET https://localhost:44338/api/Rpt/count/today - 404 - - 2706.2839ms 
+2025-01-13 18:40:34.7322||INFO |Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44338/api/Rpt/count/lastweek, Response status code: 404 
+2025-01-13 18:40:34.7322||INFO |Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44338/api/Rpt/count/, Response status code: 404 
+2025-01-13 18:40:34.7322||INFO |Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44338/api/Rpt/count/today, Response status code: 404 
+2025-01-13 18:40:34.7641||INFO |Route matched with {action = "GetMenuByRoleCorpsAndDivision", controller = "User"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetMenuByRoleCorpsAndDivision() on controller BIS.API.Controller.UserController (BIS.API). 
+2025-01-13 18:40:38.4992||INFO |Executed DbCommand (52ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Code], [u].[CorpsId], [u].[CreatedBy], [u].[CreatedOn], [u].[DivisionId], [u].[Icon], [u].[IsActive], [u].[IsDeleted], [u].[Name], [u].[RoleId], [u].[Status], [u].[UpdatedBy], [u].[UpdatedOn]
+FROM [UserMenus] AS [u] 
+2025-01-13 18:40:41.3544||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/user/menu - - - 
+2025-01-13 18:40:41.3544||INFO |CORS policy execution successful. 
+2025-01-13 18:40:41.3544||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/user/menu - 204 - - 0.8578ms 
+2025-01-13 18:41:33.7302||INFO |User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2025-01-13 18:41:34.6015||INFO |Application started. Press Ctrl+C to shut down. 
+2025-01-13 18:41:34.6054||INFO |Hosting environment: Development 
+2025-01-13 18:41:34.6054||INFO |Content root path: D:\CodeBase\BIS_New_Repo\BIS.API 
+2025-01-13 18:41:34.6372||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/lastweek - - - 
+2025-01-13 18:41:34.6372||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 18:41:34.6924||INFO |CORS policy execution successful. 
+2025-01-13 18:41:34.7191||INFO |Request starting HTTP/2 GET https://localhost:44338/api/Rpt/count/lastweek - - - 
+2025-01-13 18:41:34.7191||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/Rpt/count/lastweek - 204 - - 98.1526ms 
+2025-01-13 18:41:34.7318||INFO |CORS policy execution successful. 
+2025-01-13 18:41:35.0870||INFO |Request finished HTTP/2 GET https://localhost:44338/api/Rpt/count/lastweek - 404 - - 368.2150ms 
+2025-01-13 18:41:35.0870||INFO |Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:44338/api/Rpt/count/lastweek, Response status code: 404 
+2025-01-13 18:41:35.1060||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 481.8189ms 
+2025-01-13 18:41:35.5629||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 18:41:35.5629||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 18:41:35.5629||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 3.6476ms 
+2025-01-13 18:41:35.5629||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 6.2956ms 
+2025-01-13 18:41:35.6738||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 18:41:35.7405||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 66.7574ms 
+2025-01-13 18:41:36.4732||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 18:41:36.6847||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 211.5297ms 
+2025-01-13 18:43:10.4667||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/auth/login - - - 
+2025-01-13 18:43:10.4667||INFO |CORS policy execution successful. 
+2025-01-13 18:43:10.4667||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/auth/login - 204 - - 2.2553ms 
+2025-01-13 18:43:10.4667||INFO |Request starting HTTP/2 POST https://localhost:44338/api/auth/login - application/json 41 
+2025-01-13 18:43:10.4667||INFO |CORS policy execution successful. 
+2025-01-13 18:43:10.4916||INFO |Executing endpoint 'BIS.API.Controller.AuthController.Login (BIS.API)' 
+2025-01-13 18:43:10.5297||INFO |Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Object Login(BIS.Common.Entities.Auth.Login) on controller BIS.API.Controller.AuthController (BIS.API). 
+2025-01-13 18:43:14.4348||INFO |Executed DbCommand (242ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CorpsId], [u].[CreatedBy], [u].[CreatedOn], [u].[DivisionId], [u].[Email], [u].[Failattempt], [u].[IsActive], [u].[IsDeleted], [u].[Islocked], [u].[Name], [u].[Password], [u].[Phone], [u].[RoleId], [u].[RoleType], [u].[UpdatedBy], [u].[UpdatedOn], [u].[UserRoleId], [u].[Username]
+FROM [UserDetails] AS [u]
+WHERE [u].[Username] = @__username_0 
+2025-01-13 18:43:46.6808||INFO |User profile is available. Using 'C:\Users\acer\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+2025-01-13 18:43:47.4435||INFO |Application started. Press Ctrl+C to shut down. 
+2025-01-13 18:43:47.4473||INFO |Hosting environment: Development 
+2025-01-13 18:43:47.4473||INFO |Content root path: D:\CodeBase\BIS_New_Repo\BIS.API 
+2025-01-13 18:43:47.4808||INFO |Request starting HTTP/2 GET https://localhost:44338/index.html - - - 
+2025-01-13 18:43:47.4808||INFO |Request starting HTTP/2 POST https://localhost:44338/api/auth/login - application/json 41 
+2025-01-13 18:43:47.5720||INFO |CORS policy execution successful. 
+2025-01-13 18:43:47.7919||INFO |Executing endpoint 'BIS.API.Controller.AuthController.Login (BIS.API)' 
+2025-01-13 18:43:47.8766||INFO |Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Object Login(BIS.Common.Entities.Auth.Login) on controller BIS.API.Controller.AuthController (BIS.API). 
+2025-01-13 18:43:48.1448||INFO |Request finished HTTP/2 GET https://localhost:44338/index.html - 200 - text/html;charset=utf-8 676.4960ms 
+2025-01-13 18:43:48.5676||INFO |Request starting HTTP/2 GET https://localhost:44338/index.js - - - 
+2025-01-13 18:43:48.5780||INFO |Request finished HTTP/2 GET https://localhost:44338/index.js - 200 - application/javascript;charset=utf-8 10.2054ms 
+2025-01-13 18:43:48.5914||INFO |Request starting HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - - - 
+2025-01-13 18:43:48.5914||INFO |Request finished HTTP/2 GET https://localhost:44338/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript;+charset=utf-8 7.0998ms 
+2025-01-13 18:43:48.6144||INFO |Request starting HTTP/2 GET https://localhost:44338/_vs/browserLink - - - 
+2025-01-13 18:43:48.6935||INFO |Request finished HTTP/2 GET https://localhost:44338/_vs/browserLink - 200 - text/javascript;+charset=UTF-8 79.1291ms 
+2025-01-13 18:43:49.5973||INFO |Request starting HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - - - 
+2025-01-13 18:43:49.8279||INFO |Request finished HTTP/2 GET https://localhost:44338/swagger/v1/swagger.json - 200 - application/json;charset=utf-8 230.8541ms 
+2025-01-13 18:43:51.6667||INFO |Executed DbCommand (76ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[CorpsId], [u].[CreatedBy], [u].[CreatedOn], [u].[DivisionId], [u].[Email], [u].[Failattempt], [u].[IsActive], [u].[IsDeleted], [u].[Islocked], [u].[Name], [u].[Password], [u].[Phone], [u].[RoleId], [u].[RoleType], [u].[UpdatedBy], [u].[UpdatedOn], [u].[UserRoleId], [u].[Username]
+FROM [UserDetails] AS [u]
+WHERE [u].[Username] = @__username_0 
+2025-01-13 19:05:38.8459||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/auth/login - - - 
+2025-01-13 19:05:38.8843||INFO |Request starting HTTP/2 OPTIONS https://localhost:44338/api/auth/login - - - 
+2025-01-13 19:05:38.8894||INFO |CORS policy execution successful. 
+2025-01-13 19:05:38.8894||INFO |CORS policy execution successful. 
+2025-01-13 19:05:38.9012||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/auth/login - 204 - - 18.0831ms 
+2025-01-13 19:05:38.9012||INFO |Request finished HTTP/2 OPTIONS https://localhost:44338/api/auth/login - 204 - - 57.2621ms 
+2025-01-13 19:05:38.9012||INFO |Executed action BIS.API.Controller.AuthController.Login (BIS.API) in 1311024.2817ms 
+2025-01-13 19:05:38.9184||INFO |Executed endpoint 'BIS.API.Controller.AuthController.Login (BIS.API)' 
+2025-01-13 19:05:39.0422||INFO |Request finished HTTP/2 POST https://localhost:44338/api/auth/login - 500 - text/plain;+charset=utf-8 1311577.4059ms 
