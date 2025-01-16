@@ -58,6 +58,12 @@ namespace BIS.Manager.Implements
             }
             return masterDataList;
         }
+        public List<MasterData> GetByIds(string idsList)
+        {
+            // in idsList there is value "[18,55,90]" convert this string into array
+            var idsArray = idsList.Trim('[', ']').Split(',')  .Select(id => int.Parse(id)).ToList();
+            return _masterDataDB.GetByIds(idsArray);
+        }
         public long Add(MasterData masterData)
         {
             throw new NotImplementedException();

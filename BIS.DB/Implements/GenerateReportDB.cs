@@ -17,7 +17,8 @@ namespace BIS.DB.Implements
         }
         public List<GenerateReport> GetReportByUser(long corpsId, long divisionId, int userId)
         {
-            return _dbContext.GenerateReports.Where(report => report.CreatedBy == userId).ToList();
+            var result = _dbContext.GenerateReports.Where(report => report.CreatedBy == userId).ToList();
+            return result;
         }
         public List<GenerateReport> GetAll(long corpsId, long divisionId)
         {

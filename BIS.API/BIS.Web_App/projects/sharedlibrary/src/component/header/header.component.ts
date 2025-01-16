@@ -2,13 +2,14 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { SharedLibraryModule } from '../../shared-library.module';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { NotificationComponent } from '../notification/notification.component';
 // import { AuthHelper } from 'projects/shared/src/helpers/auth-helper';
 // import { SharedModule } from 'projects/shared/src/public-api';
 
 @Component({
   selector: 'app-header',
   standalone:true,
-  imports:[SharedLibraryModule,RouterModule],
+  imports:[SharedLibraryModule,RouterModule,NotificationComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
