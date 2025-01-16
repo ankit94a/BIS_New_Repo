@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BIS.Common.Entities;
 using BIS.DB.Interfaces;
+using static BIS.Common.Enum.Enum;
 
 namespace BIS.DB.Implements
 {
@@ -20,7 +21,7 @@ namespace BIS.DB.Implements
         {
             return _userDB.GetUserByEmailPassword(email, password);
         }
-        public List<Menus> GetMenuByRoleCorpsAndDivision(long corpsId, long divisionId, long roleId, string roleType)
+        public List<Menus> GetMenuByRoleCorpsAndDivision(long corpsId, long divisionId, long roleId, RoleType roleType)
         {
             return _userDB.GetMenuByRoleCorpsAndDivision(corpsId,divisionId, roleId, roleType);
         }

@@ -10,18 +10,18 @@ namespace BIS.DB.Implements
 {
     public class CorpsDB : ICorpsDB
     {
-        private readonly AppDBContext dbContext;
-        public CorpsDB() 
+        private readonly AppDBContext _dbContext;
+        public CorpsDB(AppDBContext dbContext) 
         { 
-
+            _dbContext = dbContext;
         }
         public List<Corps> GetAll()
         {
-            return dbContext.Corps.ToList();
+            return _dbContext.Corps.ToList();
         }
         public List<Divisons> GetDivisonByCorps(long corpsId) 
         {
-            return dbContext.Divisons.Where(d => d.CorpsId == corpsId).ToList();
+            return _dbContext.Divisons.Where(d => d.CorpsId == corpsId).ToList();
         }
     }
 }

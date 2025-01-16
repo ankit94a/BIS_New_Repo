@@ -10,16 +10,19 @@ namespace BIS.DB.Implements
 {
     public  class RoleDB : IRoleDB, IBaseDB<Role>
     {
-        private readonly AppDBContext dbContext;
-        public RoleDB() { }
+        private readonly AppDBContext _dbContext;
+        public RoleDB(AppDBContext dBContext)
+        { 
+            _dbContext = dBContext;
+        }
         public List<Role> GetAll(long corpsId,long DivisonId)
         {
-            return dbContext.Roles.Where(r => r.CorpsId == corpsId && r.DivisionId == DivisonId).ToList();
+            return _dbContext.Roles.Where(r => r.CorpsId == corpsId && r.DivisionId == DivisonId).ToList();
         }
         public long Add(Role role)
         {
-            dbContext.Roles.Add(role);
-            dbContext.SaveChanges();
+            _dbContext.Roles.Add(role);
+            _dbContext.SaveChanges();
             return role.Id;
         }
         public long Update(Role role)

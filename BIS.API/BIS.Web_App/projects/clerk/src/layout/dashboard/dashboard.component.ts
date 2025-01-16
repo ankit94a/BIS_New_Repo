@@ -4,6 +4,7 @@ import { ApiService } from '../../../../sharedlibrary/src/services/api.service';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartData, ChartOptions } from 'chart.js';
 import { DashboardFmnAspect } from 'projects/sharedlibrary/src/model/dashboard-fmn-aspect';
+import { FilterModel } from 'projects/sharedlibrary/src/model/dashboard.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,7 +17,8 @@ export class DashboardComponent implements OnInit {
     totalRecordsToday: number = 0;
     totalRecordsOneWeek: number = 0;
     fmnList: string[] = ["33 Corps", "27 Mtn Div", "17 Mtn Div", "111 Sub Area", "20 Mtn Div", "3 Corps", "2 Mtn Div", "56 Mtn Div", "57 Mtn Div", "4 Corps", "5 Mtn Div", "21 Mtn Div", "71 Mtn Div", "17 Corps", "59 Mtn Div", "23 Mtn Div"];
-    sectorList: any = []
+    sectorList: any = [];
+    filterModel:FilterModel=new FilterModel()
     constructor(private apiService:ApiService){
 
     }
@@ -25,7 +27,9 @@ export class DashboardComponent implements OnInit {
       this.getTotalCount();
       this.getWeekCount();
     }
-    onFilterChange(value){       
+    onFilterChange(value){  
+      debugger;
+      this.filterModel     
         switch (value) {
           case '4 Corps':
             this.sectorList = ['Zimthang', 'Lungro La', 'Bum La','Landa', 'Yangtse', 'Mago Chuna', 'Dominated Areas'];

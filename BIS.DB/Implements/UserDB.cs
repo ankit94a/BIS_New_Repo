@@ -7,6 +7,7 @@ using BIS.Common.Entities;
 using BIS.Common.Helpers;
 using BIS.DB.Interfaces;
 using Microsoft.Extensions.Logging;
+using static BIS.Common.Enum.Enum;
 
 namespace BIS.DB.Implements
 {
@@ -21,7 +22,7 @@ namespace BIS.DB.Implements
         {
             try
             {
-                var user = dbContext.UserDetails.Where(us => us.Username == username).FirstOrDefault();
+                var user = dbContext.UserDetails.Where(us => us.Username == username && us.Password == password).FirstOrDefault();
                 return user;
             }
             catch (Exception ex) 
@@ -30,15 +31,15 @@ namespace BIS.DB.Implements
                 throw;
             }           
         }
-        public List<Menus> GetMenuByRoleCorpsAndDivision(long corpsId, long divisionId, long roleId, string roleType)
+        public List<Menus> GetMenuByRoleCorpsAndDivision(long corpsId, long divisionId, long roleId, RoleType roleType)
         {
             try
             {
                 var query = dbContext.UserMenus.AsQueryable();
 
-                if (roleType == "SuperAdmin" || roleType == "Admin")
+                if (roleType == RoleType.SuperAdmin || roleType == RoleType.Admin)
                 {
-                    query = query;
+                    query = query.Where(m => m.RoleId == 10); 
                 }
                 else
                 {
@@ -52,6 +53,14 @@ namespace BIS.DB.Implements
                 BISLogger.Error(ex, "UserMenu loading error in method GetMenuByRoleCorpsAndDivision");
                 throw;
             }            
+        }
+        public int GetUserIdByRoleType(RoleType roleType)
+        {
+            var user = dbContext.UserDetails
+                       .Where(us => us.RoleType == roleType)
+                       .FirstOrDefault();
+
+            return user?.Id ?? 0;
         }
         public List<UserDetail> GetUserByCoprs(long corpsId)
         {

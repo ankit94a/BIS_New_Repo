@@ -18,8 +18,12 @@ namespace BIS.Manager.IOC
             {
                 { typeof(IMasterDataManager), typeof(MasterDataManager) },
                 { typeof(IUserManager), typeof(UserManager) },
-                 { typeof(ICorpsManager), typeof(CorpsManager) },
-                  { typeof(IRoleManager), typeof(RoleManager) },
+                { typeof(ICorpsManager), typeof(CorpsManager) },
+                { typeof(IRoleManager), typeof(RoleManager) },
+                { typeof(IGenerateReportManager), typeof(GenerateReportManager) },
+                { typeof(ISmartAnalysisManager), typeof(SmartAnalysisManager) },
+                { typeof(IDashboardManager), typeof(DashboardManager) },
+                { typeof(ICdrDashboardManager), typeof(CdrDashboardManager) },
             };
             return dic;
         }

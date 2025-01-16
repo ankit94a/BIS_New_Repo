@@ -341,7 +341,6 @@ D:\CodeBase\BIS_New_Repo\BIS.API\obj\Debug\net8.0\BIS.API.GeneratedMSBuildEditor
 D:\CodeBase\BIS_New_Repo\BIS.API\obj\Debug\net8.0\BIS.API.AssemblyInfoInputs.cache
 D:\CodeBase\BIS_New_Repo\BIS.API\obj\Debug\net8.0\BIS.API.AssemblyInfo.cs
 D:\CodeBase\BIS_New_Repo\BIS.API\obj\Debug\net8.0\BIS.API.csproj.CoreCompileInputs.cache
-D:\CodeBase\BIS_New_Repo\BIS.API\obj\Debug\net8.0\BIS.API.MvcApplicationPartsAssemblyInfo.cs
 D:\CodeBase\BIS_New_Repo\BIS.API\obj\Debug\net8.0\BIS.API.MvcApplicationPartsAssemblyInfo.cache
 D:\CodeBase\BIS_New_Repo\BIS.API\obj\Debug\net8.0\BIS.API.sourcelink.json
 D:\CodeBase\BIS_New_Repo\BIS.API\obj\Debug\net8.0\staticwebassets.build.json

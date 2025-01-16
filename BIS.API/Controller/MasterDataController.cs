@@ -3,6 +3,7 @@ using BIS.Manager.Interfaces;
 using InSync.Api.Helpers;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using static BIS.Common.Enum.Enum;
 
 namespace BIS.API.Controller
 {
@@ -14,26 +15,36 @@ namespace BIS.API.Controller
          public MasterDataController(IMasterDataManager masterDataManager)
         {
             _masterDataManager = masterDataManager;
-        }   
-
-        [HttpGet]
-        public IActionResult GetAll()
-        {
-            long CorpsId = HttpContext.GetCorpsId();
-            long DivisonId = HttpContext.GetDivisionId();
-            return Ok(_masterDataManager.GetAll(CorpsId,DivisonId));
         }
-        [HttpGet,Route("getall")]
+
+        //[HttpGet]
+        //public IActionResult GetAll()
+        //{
+        //    long CorpsId = HttpContext.GetCorpsId();
+        //    long DivisonId = HttpContext.GetDivisionId();
+        //    return Ok(_masterDataManager.GetAll(CorpsId,DivisonId));
+        //}
+        [HttpGet]
         public IActionResult GetAllMasterData()
         {
-            return Ok(_masterDataManager.GetAllMasterData());
+            RoleType roleType = HttpContext.GetRoleType();
+            int CorpsId = HttpContext.GetCorpsId();
+            int DivisonId = HttpContext.GetDivisionId();
+            return Ok(_masterDataManager.GetAllMasterData(CorpsId, roleType, DivisonId));
         }
         [HttpPost]
         public IActionResult AddData(MasterData masterData)
         {
-            long CorpsId = HttpContext.GetCorpsId();
-            long DivisonId = HttpContext.GetDivisionId();
+            int CorpsId = HttpContext.GetCorpsId();
+            int DivisonId = HttpContext.GetDivisionId();
+            int userId = HttpContext.GetUserId();
+            masterData.CreatedBy = userId;
             return Ok(_masterDataManager.Add(masterData));
+        }
+        [HttpGet,Route("idsList{idsList}")]
+        public IActionResult GetByIds(string idsList)
+        {
+            return Ok(_masterDataManager.GetByIds(idsList));
         }
     }
 }

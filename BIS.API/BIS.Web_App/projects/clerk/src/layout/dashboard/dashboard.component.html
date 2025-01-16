@@ -23,28 +23,34 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-sm-6">
-                <ng-select appendTo="ng-select" [items]="fmnList" [multiple]="false" bindLabel="name"
-                    (change)="onFilterChange($event)" bindValue="name" 
-                    placeholder="Fmn"  [searchable]="true"
+            <div class="col-sm-5">
+                <ng-select appendTo="ng-select" [items]="fmnList" [multiple]="true" 
+                    (change)="onFilterChange($event)"  [closeOnSelect]="false"
+                    placeholder="Fmn"  [searchable]="true" [(ngModel)]="filterModel.frmn"
                     (keydown.enter)="onFilterChange($event)">
                     <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
                         <div class="ng-value" *ngFor="let item of items">
                             <span class="ng-value-label">{{item}}</span>
+                            <span class="ng-value-icon right px-1" (click)="clear(item)" aria-hidden="true">×</span>
                         </div>
                     </ng-template>
                 </ng-select>
+                
             </div>
-            <div class="col-sm-6">
-                <ng-select appendTo="ng-select" [items]="sectorList" [multiple]="false" bindLabel="name"
-                     bindValue="name" 
+            <div class="col-sm-5">
+                <ng-select appendTo="ng-select" [items]="sectorList" [multiple]="true" bindLabel="name"
+                     bindValue="name" [closeOnSelect]="false" [(ngModel)]="filterModel.sector"
                     placeholder="Sector"  [searchable]="true">
                     <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
                         <div class="ng-value" *ngFor="let item of items">
                             <span class="ng-value-label">{{item}}</span>
+                            <span class="ng-value-icon right px-1" (click)="clear(item)" aria-hidden="true">×</span>
                         </div>
                     </ng-template>
                 </ng-select>
+            </div>
+            <div class="col-sm-1 btn-float-down">
+                <button class="btn btn-sm btn-outline-primary btn-height">Search</button>
             </div>
         </div>
 
