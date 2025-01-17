@@ -1,5 +1,5 @@
 import { BaseEntity } from "./base.model";
-import { ImasterData } from "./masterdata.model"
+import { masterData } from "./masterdata.model"
 
 export class GenerateReport extends BaseEntity {
 
@@ -11,6 +11,6 @@ export class GenerateReport extends BaseEntity {
   notes: string;
   startDate: string;
   endDate:string
-  masterData:ImasterData[]
+  masterData:masterData[]
   MasterDataIds:string;
 }

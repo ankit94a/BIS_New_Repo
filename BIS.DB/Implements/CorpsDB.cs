@@ -4,7 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BIS.Common.Entities;
+using BIS.Common.Helpers;
 using BIS.DB.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace BIS.DB.Implements
 {
@@ -21,7 +23,35 @@ namespace BIS.DB.Implements
         }
         public List<Divisons> GetDivisonByCorps(long corpsId) 
         {
-            return _dbContext.Divisons.Where(d => d.CorpsId == corpsId).ToList();
+            return _dbContext.Divisions.Where(d => d.CorpsId == corpsId).ToList();
+        }
+
+        public string GetNameByCorpsId(long corpsId)
+        {
+            try
+            {
+                var CorpsName = _dbContext.Corps.Where(us => us.Id == corpsId).Select(us => us.Name).FirstOrDefault();
+                return CorpsName;
+            }
+            catch (Exception ex)
+            {
+                BISLogger.Error(ex, "Getting user list error in for CorpsId = " + corpsId);
+                throw;
+            }
+        }
+
+        public string GetNameByDivisionId(int? divisionId)
+        {
+            try
+            {
+                var DivisionName = _dbContext.Divisions.Where(us => us.Id == divisionId).Select(us => us.Name).FirstOrDefault();
+                return DivisionName;
+            }
+            catch (Exception ex)
+            {
+                BISLogger.Error(ex, "Getting user list error in for CorpsId = " + divisionId);
+                throw;
+            }
         }
     }
 }

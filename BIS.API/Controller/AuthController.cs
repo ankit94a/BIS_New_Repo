@@ -1,6 +1,7 @@
 ﻿using BIS.Api.Authorization;
 using BIS.Common.Entities.Auth;
 using BIS.DB.Interfaces;
+using BIS.Manager.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,10 +12,12 @@ namespace BIS.API.Controller
     {
         private readonly IUserManager _userManager;
         readonly IJwtManager _jwtManager;
-        public AuthController(IUserManager userManager,IJwtManager jwtManager)
+        readonly ICorpsManager _corpsManager;
+        public AuthController(IUserManager userManager,IJwtManager jwtManager,ICorpsManager corpsManager)
         {
             _userManager = userManager;
             _jwtManager = jwtManager;
+            _corpsManager = corpsManager;
         }
 
         //[AllowAnonymous]
@@ -27,7 +30,16 @@ namespace BIS.API.Controller
             if (user != null)
             {
                 var jwtToken = _jwtManager.GenerateJwtToken(user);
-                response = Ok(new { token = jwtToken, name = user.Name });
+                var model = new
+                {
+                    corpsName = _corpsManager.GetNameByCorpsId(user.CorpsId),
+                    divisionName = _corpsManager.GetNameByDivisionId(user.DivisionId),
+                    userName = user.Name,
+                    roleType = user.RoleType
+
+
+                };
+                response = Ok(new { token = jwtToken, user = model });
             }
             return response;
         }
