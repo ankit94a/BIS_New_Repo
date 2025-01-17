@@ -29,6 +29,16 @@ namespace BIS.DB.Implements
         {
             return _userDB.GetUserByCoprs(corpsId);
         }
+
+        public string GetUserNameByCorps(long corpsId)
+        {
+            return _userDB.GetUserNameByCoprs(corpsId);
+        }
+
+        public string GetUserNameByDivision(long divisionId)
+        {
+            return _userDB.GetUserNameByDivision(divisionId);
+        }
         public long AddUser(UserDetail user)
         {
             return _userDB.AddUser(user);

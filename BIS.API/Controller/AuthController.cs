@@ -27,7 +27,16 @@ namespace BIS.API.Controller
             if (user != null)
             {
                 var jwtToken = _jwtManager.GenerateJwtToken(user);
-                response = Ok(new { token = jwtToken, name = user.Name });
+                var model = new
+                {
+                    corpsName = _userManager.GetUserNameByCorps(user.CorpsId),
+                    divisionName = _userManager.GetUserNameByDivision(user.DivisionId),
+                    userName = user.Name,
+                    roleType = user.RoleType
+                   
+
+                };
+                response = Ok(new { token = jwtToken,user = model });
             }
             return response;
         }

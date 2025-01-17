@@ -16,5 +16,8 @@ namespace BIS.DB.Interfaces
         public long AddUser(UserDetail user);
 
         public int GetUserIdByRoleType(RoleType roleType);
+
+        public string GetUserNameByCoprs(long corpsId);
+        public string GetUserNameByDivision(long divisionId);
     }
 }

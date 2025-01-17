@@ -74,6 +74,35 @@ namespace BIS.DB.Implements
                 throw;
             }            
         }
+
+        public string GetUserNameByCoprs(long corpsId)
+        {
+            try
+            { 
+                var CorpsName = dbContext.Corps.Where(us => us.CorpsId == corpsId).Select(us => us.Name).FirstOrDefault(); 
+                return CorpsName;
+            }
+            catch (Exception ex)
+            {
+                BISLogger.Error(ex, "Getting user list error in for CorpsId = " + corpsId);
+                throw;
+            }
+        }
+
+        public string GetUserNameByDivision(long divisionId)
+        {
+            try
+            {
+                var DivisionName = dbContext.Divisons.Where(us => us.DivisionId == divisionId).Select(us => us.Name).FirstOrDefault();
+                return DivisionName;
+            }
+            catch (Exception ex)
+            {
+                BISLogger.Error(ex, "Getting user list error in for CorpsId = " + divisionId);
+                throw;
+            }
+        }
+
         public long AddUser(UserDetail user)
         {
             try
