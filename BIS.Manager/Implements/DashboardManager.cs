@@ -115,5 +115,21 @@ namespace BIS.Manager.Implements
                 return null;
             }
         }
+        public DashboardChart GetIndicatorData(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel,bool isTopTen = true)
+        {
+            if (isTopTen)
+            {
+                return _dashboardDB.GetTop10Indicator(corpsId, divisionId, filterModel);
+            }
+            else
+            {
+                return _dashboardDB.GetTop5IndicatorLast7Days(corpsId, divisionId, filterModel);
+            }
+        }
+        public DashboardChart GetTopFiveLocation(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel, bool isTopFive7Days = true)
+        {
+                return _dashboardDB.GetTopFiveLocation(corpsId, divisionId, filterModel, isTopFive7Days);
+            
+        }
     }
 }

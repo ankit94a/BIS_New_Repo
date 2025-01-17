@@ -155,7 +155,7 @@
             <mat-card class="card card-large">
               <h3 class="card-title">Aspect (Last 12 Months)</h3>
               <div class="chart-container">
-                <canvas baseChart [data]="chartDataLineFrmn12Months" [options]="lineChartOptions" [type]="'line'"></canvas>
+                <canvas baseChart [data]="aspect12MonthsChartData" [options]="lineChartOptions" [type]="'line'"></canvas>
               </div>
               <!-- <div class="card-footer">
                 <ul>
@@ -168,10 +168,9 @@
 
         <hr>
         <div class="row">
-            <div class="col-sm-12">
-            <ng-select appendTo="ng-select" [items]="sectorList" [multiple]="false" bindLabel="name"
-                 bindValue="name" 
-                placeholder="Sector"  [searchable]="true">
+            <div class="col-sm-10">
+            <ng-select appendTo="ng-select" [items]="sectorList" [multiple]="true" [(ngModel)]="indicatorFilter.sector"
+                placeholder="Sector"  [searchable]="true" [closeOnSelect]="false">
                 <ng-template ng-multi-label-tmp let-items="items" let-clear="clear">
                     <div class="ng-value" *ngFor="let item of items">
                         <span class="ng-value-label">{{item}}</span>
@@ -179,55 +178,58 @@
                 </ng-template>
             </ng-select>
             </div>
+            <div class="col-sm-1 btn-float-down">
+              <button class="btn btn-sm btn-outline-primary btn-height" (click)="getIndicatorAndLocation()">Search</button>
+          </div>
         </div> 
           
         <div class="card-container">
             <mat-card class="card card-equal">
               <h3 class="card-title">Top 10 Indicators</h3>
               <div class="chart-container">
-                <canvas baseChart [data]="chartData" type='pie'></canvas>
+                <canvas baseChart [data]="indicatorData" type='pie' [options]="ChartOptions"></canvas>
               </div>
-              <div class="card-footer">
+              <!-- <div class="card-footer">
                 <ul>
                   <li> 1 : 10</li>
                 </ul>
-              </div>
+              </div> -->
             </mat-card>
             
             <mat-card class="card card-equal">
                 <h3 class="card-title adjust-font">Top 5 Indicators (Last 7 Days)</h3>
                 <div class="chart-container">
-                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                  <canvas baseChart [data]="indicatorTop5Data" type='pie' [options]="ChartOptions"></canvas>
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer">
                   <ul>
                     <li> 1 : 10</li>
                   </ul>
-                </div>
+                </div> -->
               </mat-card>
 
               <mat-card class="card card-equal">
                 <h3 class="card-title">Top 5 Location</h3>
                 <div class="chart-container">
-                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                  <canvas baseChart [data]="enLocationData" type='pie' [options]="ChartOptions"></canvas>
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer">
                   <ul>
                     <li> 1 : 10</li>
                   </ul>
-                </div>
+                </div> -->
               </mat-card>
 
               <mat-card class="card card-equal">
                 <h3 class="card-title">Top 5 Loc (7 Days)</h3>
                 <div class="chart-container">
-                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                  <canvas baseChart [data]="enLocationData7Days" type='pie' [options]="ChartOptions"></canvas>
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer">
                   <ul>
                     <li> 1 : 10</li>
                   </ul>
-                </div>
+                </div> -->
               </mat-card>
         </div>
     </mat-card-content>
