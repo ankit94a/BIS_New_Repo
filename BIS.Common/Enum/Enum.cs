@@ -53,5 +53,12 @@ namespace BIS.Common.Enum
             Admin,
             SuperAdmin
         }
+        public enum DaysMonthFilter
+        {
+            All = 1,
+            Days30,
+            Today,
+            Months12
+        }
     }
 }

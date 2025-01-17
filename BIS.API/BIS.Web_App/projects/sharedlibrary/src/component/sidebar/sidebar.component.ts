@@ -24,7 +24,7 @@ export class SidebarComponent implements OnInit {
     //   this.sideBarMenus = data;
     // });
     // debugger
-    let userrole = this.authService.getUserRole();
+    let userrole = this.authService.getRoleType();
     this.apiService.getWithHeaders('user/menu').subscribe(res =>{
       if(res){
         this.sideBarMenus = res;

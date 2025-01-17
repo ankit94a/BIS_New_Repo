@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BIS.Common.Entities;
+using BIS.DB.Implements;
+using static BIS.Common.Enum.Enum;
 
 namespace BIS.DB.Interfaces
 {
     public interface IDashboardDB
     {
-
+        public List<MasterData> GetDivisionFrmChart(long corpsId, long divisionId, FilterModel filterModel);
+        public DashboardChart GetAllMasterDataCount(long corpsId,long divisionId);
+        public DashboardChart GetFrmnChart(long corpsId, long divisionId, DaysMonthFilter daysMonthFilter, FilterModel filterModel);
+        public DashboardChart GetAspectChart(long corpsId, long divisionId, DaysMonthFilter daysMonthFilter, FilterModel filterModel);
     }
 }

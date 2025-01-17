@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedLibraryModule } from '../../../../../sharedlibrary/src/shared-library.module';
 import { TablePaginationSettingsConfig } from '../../../../../sharedlibrary/src/component/zipper-table/table-settings.model';
 import { ApiService } from '../../../../../sharedlibrary/src/services/api.service';
-import { ImasterData } from '../../../../../sharedlibrary/src/model/masterdata.model';
+import { masterData } from '../../../../../sharedlibrary/src/model/masterdata.model';
 import { ZipperTableComponent } from '../../../../../sharedlibrary/src/component/zipper-table/zipper-table.component';
 import { BISMatDialogService, } from 'projects/sharedlibrary/src/services/insync-mat-dialog.service';
 import { MasterDataAddComponent } from '../master-data-add/master-data-add.component';
@@ -15,7 +15,7 @@ import { BisdefaultDatePipe } from 'projects/sharedlibrary/src/pipe/bisdefault-d
   styleUrl: './master-data.component.scss'
 })
 export class MasterDataComponent extends TablePaginationSettingsConfig implements OnInit {
-  DataList:ImasterData[] = [];
+  DataList:masterData[] = [];
   isRefresh=false;
   constructor(private apiService:ApiService,private dialogService:BISMatDialogService){
     super();

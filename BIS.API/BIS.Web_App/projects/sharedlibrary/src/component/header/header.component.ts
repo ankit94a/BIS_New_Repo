@@ -18,9 +18,11 @@ export class HeaderComponent implements OnInit {
   @Output() toggleSideBarForMe: EventEmitter<any> = new EventEmitter();
   // companyName: string;
   // userName:string;
+  facilityName:string;
   constructor(private authService:AuthService) { }
 
   ngOnInit(): void {
+    this.facilityName = this.authService.getDivisionName() ? this.authService.getDivisionName() : this.authService.getCorpsName();
     // this.companyName = localStorage.getItem('company');
     // this.userName = localStorage.getItem('name')
   }

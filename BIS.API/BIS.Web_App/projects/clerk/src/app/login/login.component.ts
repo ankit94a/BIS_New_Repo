@@ -46,8 +46,9 @@ export class LoginComponent implements OnInit{
 
     this.apiService.postWithHeader('auth/login',loginData).subscribe((res)=>{
       if(res){
+        debugger
         this.authService.setToken(res.token);
-        this.authService.setUserRole(res.userRole);
+        this.authService.setUserDetails(res.user);
         this.router.navigateByUrl('/dashboard');
       }else{
         this.router.navigateByUrl('/');
