@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BIS.Common.Entities;
 using BIS.DB.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using static BIS.Common.Enum.Enum;
 
 namespace BIS.DB.Implements
@@ -143,17 +144,16 @@ namespace BIS.DB.Implements
                 query = query.Where(ms => filterModel.Sector.Contains(ms.Sector));
             }
             IEnumerable<dynamic> result;
-            if (daysMonthFilter != DaysMonthFilter.Months12)
+            if (daysMonthFilter == DaysMonthFilter.Months12)
             {
-                result = query.Where(m => (long)m.CorpsId == corpsId && (long?)m.DivisionId == divisionId).Where(m => m.CreatedOn >= filterDate)
-                                .GroupBy(m => new { Year = m.CreatedOn.Value.Year, Month = m.CreatedOn.Value.Month,m.Aspect })
+                result = query.Where(m => m.Aspect != null && m.Aspect != "" && m.CreatedOn >= filterDate)
+                                .GroupBy(m => new { Year = m.CreatedOn.Value.Year, Month = m.CreatedOn.Value.Month })
                                 .Select(g => new
                                 {
                                     MonthYear = new DateTime(g.Key.Year, g.Key.Month, 1).ToString("MMM") + " " + g.Key.Year,
                                     Count = g.Count(),
                                     Year = g.Key.Year,
                                     Month = g.Key.Month,
-                                    Aspect = g.Key.Aspect,
                                 })
                                 .OrderBy(e => e.Year)
                                 .ThenBy(e => e.Month)
@@ -161,7 +161,6 @@ namespace BIS.DB.Implements
                                 {
                                     MonthYear = e.MonthYear,
                                     Count = e.Count,
-                                    Aspect = e.Aspect
                                 }).ToList();
 
                 foreach (var item in result)
@@ -176,23 +175,100 @@ namespace BIS.DB.Implements
             }
             else
             {
-                result = query.GroupBy(ms => ms.Aspect).Select(group => new
+                result = query.Where(m => m.Aspect != null && m.Aspect != "").GroupBy(ms => ms.Aspect).Select(group => new
                 {
                     Aspect = group.Key,
                     Count = group.Count()
                 }).ToList();
                 foreach (var item in result)
                 {
-                    if (item.Aspect != "" && item.Aspect != null)
-                    {
+                    //if (item.Aspect != "" && item.Aspect != null)
+                    //{
                         chart.Name.Add(item.Aspect);
                         chart.Count.Add(item.Count);
-                    }
+                    //}
                 }
                 return chart;
             }                     
         }
-       
+
+        public DashboardChart GetTop10Indicator(long corpsId, long divisionId, FilterModel filterModel)
+        {
+            var chart = new DashboardChart();
+            var query = _dbContext.MasterDatas.Where(m => m.CorpsId == corpsId && m.DivisionId == divisionId && m.Indicator != null && m.Indicator != "");
+
+            // handling sector filter
+            if (filterModel != null && filterModel.Sector.Count > 0)
+            {
+                query = query.Where(ms => filterModel.Sector.Contains(ms.Sector));
+            }
+            var result = query.GroupBy(ms => ms.Indicator).Select(g => new { Indicator = g.Key, Count = g.Count() })
+                    .OrderByDescending(g => g.Count)
+                    .Take(10).ToList();
+            foreach(var item in result)
+            {
+                chart.Name.Add(item.Indicator);
+                chart.Count.Add(item.Count);
+            }
+            return chart;
+        }
+
+        public DashboardChart GetTop5IndicatorLast7Days(long corpsId, long divisionId, FilterModel filterModel)
+        {
+            var chart = new DashboardChart();
+
+            var query = _dbContext.MasterDatas.Where(m => m.CorpsId == corpsId && m.DivisionId == divisionId && m.Indicator != null && m.Indicator != "" && m.CreatedOn.Value.Date >= DateTime.UtcNow.AddDays(-7).Date);
+
+            if (filterModel != null && filterModel.Sector.Count > 0)
+            {
+                query = query.Where(ms => filterModel.Sector.Contains(ms.Sector));
+            }
+
+            var result = query.GroupBy(ms => ms.Indicator).Select(g => new
+                {
+                    Indicator = g.Key,
+                    Count = g.Count()
+                })
+                .OrderByDescending(g => g.Count).Take(5).ToList();
+
+            foreach (var item in result)
+            {
+                chart.Name.Add(item.Indicator);
+                chart.Count.Add(item.Count);
+            }
+
+            return chart;
+        }
+        public DashboardChart GetTopFiveLocation(long corpsId, long divisionId, FilterModel filterModel, bool isTopFive7Days = true)
+        {
+            var chart = new DashboardChart();
+
+            var query = _dbContext.MasterDatas.Where(m => m.CorpsId == corpsId && m.DivisionId == divisionId && m.EnLocName != null && m.EnLocName != "");
+
+            if (isTopFive7Days)
+            {
+                query = query.Where(m => m.CreatedOn.Value.Date >= DateTime.UtcNow.AddDays(-7).Date);
+            }
+            if (filterModel != null && filterModel.Sector.Count > 0)
+            {
+                query = query.Where(ms => filterModel.Sector.Contains(ms.Sector));
+            }
+
+            var result = query.GroupBy(ms => ms.EnLocName).Select(g => new
+            {
+                EnLocName = g.Key,
+                Count = g.Count()
+            })
+                .OrderByDescending(g => g.Count).Take(5).ToList();
+
+            foreach (var item in result)
+            {
+                chart.Name.Add(item.EnLocName);
+                chart.Count.Add(item.Count);
+            }
+
+            return chart;
+        }
         public List<MasterData> GetDivisionFrmChart(long corpsId, long divisionId, FilterModel filterModel)
         {
             var query = _dbContext.MasterDatas.Where(ms => ms.CorpsId == corpsId);
