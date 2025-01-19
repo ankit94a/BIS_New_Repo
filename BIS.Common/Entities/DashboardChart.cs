@@ -8,17 +8,17 @@ namespace BIS.Common.Entities
 {
     public class DashboardChart
     {
-        public int? Count { get; set; }
-        public string? Name { get; set; }
+        public List<int>? Count { get; set; } = new List<int>();
+        public List<string>? Name { get; set; } = new List<string>();
     }
     public class FilterModel
     {
-        public List<string> Frmn { get; set; }
-        public List<string> Sector { get; set; }
-        public List<string> Aspects { get; set; }
-        public List<string> Source { get; set; }
-        public List<string> Indicator { get; set; }
-        public DateTime startDate { get; set; }
-        public DateTime endDate { get; set; }
+        public List<string>? Frmn { get; set; }
+        public List<string>? Sector { get; set; }
+        public List<string>? Aspects { get; set; }
+        public List<string>? Source { get; set; } 
+        public List<string>? Indicator { get; set; } 
+        public DateTime? startDate { get; set; }
+        public DateTime? endDate { get; set; }
     }
 }

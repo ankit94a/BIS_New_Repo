@@ -10,7 +10,7 @@ namespace BIS.DB
         {
         }
         public DbSet<Corps> Corps { get; set; }
-        public DbSet<Divisons> Divisons { get; set; }
+        public DbSet<Divisons> Divisions { get; set; }
         public DbSet<MasterData> MasterDatas { get; set; }
         public DbSet<UserDetail> UserDetails { get; set; }
         public DbSet<Role> Roles { get; set; }

@@ -12,6 +12,12 @@ export class AuthService {
     const token = localStorage.getItem('BIS_TOKEN');
     return token ? true : false;
   }
+  setUserDetails(user){
+    localStorage.setItem("BIS_RoleType",user.roleType);
+    localStorage.setItem("BIS_UserName",user.userName);
+    localStorage.setItem("BIS_CorpsName",user.corpsName);
+    localStorage.setItem("BIS_DivisionName",user.divisionName);
+  }
   setToken(token:string){
     localStorage.setItem("BIS_TOKEN",token);
   }
@@ -19,21 +25,29 @@ export class AuthService {
   getToken(){
     return localStorage.getItem("BIS_TOKEN");
   }
-  setUserName(name:string){
-    localStorage.setItem("BIS_UserName",name);
-  }
-  setUserRole(name:string){
-    localStorage.setItem("BIS_UserRole",name);
-  }
+  // setUserName(name:string){
+  //   localStorage.setItem("BIS_UserName",name);
+  // }
+  // setUserRole(name:string){
+  //   localStorage.setItem("BIS_UserRole",name);
+  // }
   getUserName(){
     return localStorage.getItem("BIS_UserName");
   }
-  getUserRole(){
-    return localStorage.getItem("BIS_UserRole");
+  getRoleType(){
+    return localStorage.getItem("BIS_RoleType");
+  }
+  getCorpsName(){
+    return localStorage.getItem("BIS_CorpsName");
+  }
+  getDivisionName(){
+    return localStorage.getItem("BIS_DivisionName");
   }
   clear() {
     localStorage.removeItem('BIS_TOKEN');
-    localStorage.removeItem('BIS_UserRole');
+    localStorage.removeItem('BIS_RoleType');
+    localStorage.removeItem('BIS_CorpsName');
+    localStorage.removeItem('BIS_DivisionName');
     this.navigateToLogin(this.router.routerState.snapshot.url);
     
   }

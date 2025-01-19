@@ -17,10 +17,110 @@ namespace BIS.Manager.Implements
         {
             _dashboardDB = dashboardDB;
         }
+<<<<<<< HEAD
         public List<DashboardChart> GetFmnWiseData(long corpsId, long divisionId, RoleType roleType)
         {
             var data = new List<DashboardChart>();
             return data;
+=======
+        public DashboardChart GetAllFmnOrAspectData(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel,bool isFrmn)
+        {
+            //case 1 role is belonging to division
+            if (divisionId > 0)
+            {
+                // case 1.1 sector and aspect is empty any of one
+                // case 1.2 sector and aspect any of have value
+                // case 1.3 handling frmn and aspect base chart
+                var result = new DashboardChart();
+                if (isFrmn)
+                {
+                    return _dashboardDB.GetFrmnChart(corpsId, divisionId, DaysMonthFilter.All, filterModel);
+                }
+                else
+                {
+                    return _dashboardDB.GetAspectChart(corpsId, divisionId, DaysMonthFilter.All, filterModel);
+                }
+                
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public DashboardChart Get30DaysFmnOrAspectData(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel, bool isFrmn)
+        {
+            //case 1 role is belonging to division
+            if (divisionId > 0)
+            {
+                // case 1.1 sector and aspect is empty any of one
+                // case 1.2 sector and aspect any of have value
+                // case 1.3 handling frmn and aspect base chart
+                var result = new DashboardChart();
+                if (isFrmn)
+                {
+                    return _dashboardDB.GetFrmnChart(corpsId, divisionId, DaysMonthFilter.Days30, filterModel);
+                }
+                else
+                {
+                    return _dashboardDB.GetAspectChart(corpsId, divisionId, DaysMonthFilter.Days30, filterModel);
+                }
+                
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public DashboardChart GetTodayFmnOrAspectData(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel, bool isFrmn=true)
+        {
+            //case 1 role is belonging to division
+            if (divisionId > 0)
+            {
+                // case 1.1 sector and aspect is empty any of one
+                // case 1.2 sector and aspect of have value
+                // case 1.3 handling frmn and aspect base chart
+                var result = new DashboardChart();
+                if (isFrmn)
+                {
+                    return _dashboardDB.GetFrmnChart(corpsId, divisionId, DaysMonthFilter.Today, filterModel);
+                }
+                else
+                {
+                    return _dashboardDB.GetAspectChart(corpsId, divisionId, DaysMonthFilter.Today, filterModel);
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public DashboardChart Get12MonthsFmnOrAspectData(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel, bool isFrmn)
+        {
+            //case 1 role is belonging to division
+            if (divisionId > 0)
+            {
+                // case 1.1 sector and aspect is empty any of one
+                // case 1.2 sector and aspect any of have value
+                // case 1.3 handling frmn and aspect base chart
+                var result = new DashboardChart();
+                if (isFrmn)
+                {
+                    return _dashboardDB.GetFrmnChart(corpsId, divisionId, DaysMonthFilter.Months12, filterModel);
+                }
+                else
+                {
+                    return _dashboardDB.GetAspectChart(corpsId, divisionId, DaysMonthFilter.Months12, filterModel);
+                }
+
+            }
+            // case 2 role is belonging to corps
+            else
+            {
+                return null;
+            }
+>>>>>>> 77e7d16f26dfa448ddfd6675b8f0cc7564004cbf
         }
     }
 }

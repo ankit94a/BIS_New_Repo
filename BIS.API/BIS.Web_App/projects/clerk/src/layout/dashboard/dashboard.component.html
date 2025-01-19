@@ -24,7 +24,7 @@
         <br>
         <div class="row">
             <div class="col-sm-5">
-                <ng-select appendTo="ng-select" [items]="fmnList" [multiple]="true" 
+                <ng-select appendTo="ng-select" [items]="frmnList" [multiple]="true" 
                     (change)="onFilterChange($event)"  [closeOnSelect]="false"
                     placeholder="Fmn"  [searchable]="true" [(ngModel)]="filterModel.frmn"
                     (keydown.enter)="onFilterChange($event)">
@@ -50,7 +50,7 @@
                 </ng-select>
             </div>
             <div class="col-sm-1 btn-float-down">
-                <button class="btn btn-sm btn-outline-primary btn-height">Search</button>
+                <button class="btn btn-sm btn-outline-primary btn-height" (click)="getFrmAndAspect()">Search</button>
             </div>
         </div>
 
@@ -58,98 +58,110 @@
             <mat-card class="card card-small">
               <h3 class="card-title">Fmn wise Inputs</h3>
               <div class="chart-container">
-                <canvas baseChart [data]="chartData" type='pie'></canvas>
+                <canvas baseChart [data]="frmInputChartData" type="pie" [options]="ChartOptions"></canvas>
               </div>
-              <div class="card-footer">
+              <!-- <div class="card-footer">
                 <ul>
                   <li> 1 : 10</li>
                 </ul>
-              </div>
+              </div> -->
             </mat-card>
             
             <mat-card class="card card-small">
                 <h3 class="card-title adjust-font">Fmn wise (Last 30 Days)</h3>
                 <div class="chart-container">
-                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                  <canvas baseChart [data]="frm30DaysChartData" type='pie' [options]="ChartOptions"></canvas>
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer">
                   <ul>
                     <li> 1 : 10</li>
                   </ul>
-                </div>
+                </div> -->
               </mat-card>
 
               <mat-card class="card card-small">
                 <h3 class="card-title">Fmn wise (Today)</h3>
                 <div class="chart-container">
-                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                  <canvas baseChart [data]="frmTodayChartData" type='pie' [options]="ChartOptions"></canvas>
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer">
                   <ul>
                     <li> 1 : 10</li>
                   </ul>
-                </div>
+                </div> -->
               </mat-card>
             <mat-card class="card card-large">
               <h3 class="card-title">Fmn wise (Last 12 Months)</h3>
               <div class="chart-container">
-                <canvas baseChart [data]="chartDataLineFrmn12Months" [options]="chartOptions" [type]="'line'"></canvas>
+                <canvas baseChart [data]="frm12MonthsChartData" [options]="lineChartOptions" [type]="'line'"></canvas>
               </div>
-              <div class="card-footer">
+              <!-- <div class="card-footer">
                 <ul>
                   <li>val : val2</li>
                 </ul>
-              </div>
+              </div> -->
             </mat-card>
         </div>
           <br>
         
         <div class="card-container">
-            <mat-card class="card card-small">
-              <h3 class="card-title">All Aspect</h3>
-              <div class="chart-container">
-                <canvas baseChart [data]="chartData" type='pie'></canvas>
-              </div>
-              <div class="card-footer">
-                <ul>
-                  <li> 1 : 10</li>
-                </ul>
-              </div>
-            </mat-card>
+          <mat-card class="card card-small">
+            <h3 class="card-title">All Aspect</h3>
+            <div class="chart-container">
+              <canvas baseChart [data]="aspectAllChartData" type="pie" [options]="ChartOptions"></canvas>
+            </div>
+            <!-- <div class="card-footer">
+              <ul *ngIf="aspectAllChartData?.labels?.length > 0">
+                <li *ngFor="let label of aspectAllChartData.labels | slice: 0:3; let i = index">
+                  <span
+                    class="color-box"
+                    [style.color]="aspectAllChartData.datasets[0]?.backgroundColor?.[i]"
+                  > {{ label }}</span>
+                  
+                </li>
+              </ul>
+              <span *ngIf="aspectAllChartData?.labels?.length > 3" class="more-labels">
+                &#x2026;
+              </span>
+            </div> -->
+          </mat-card>
+          
+          
+          
             
             <mat-card class="card card-small">
                 <h3 class="card-title adjust-font">Aspect (Last 30 Days)</h3>
                 <div class="chart-container">
-                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                  <canvas baseChart [data]="aspect30DaysChartData" type='pie' [options]="ChartOptions"></canvas>
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer">
                   <ul>
                     <li> 1 : 10</li>
                   </ul>
-                </div>
+                </div> -->
               </mat-card>
 
               <mat-card class="card card-small">
                 <h3 class="card-title">Aspect Today</h3>
                 <div class="chart-container">
-                  <canvas baseChart [data]="chartData" type='pie'></canvas>
+                  <canvas baseChart [data]="aspectTodayChartData" type='pie' [options]="ChartOptions"></canvas>
                 </div>
-                <div class="card-footer">
+                <!-- <div class="card-footer">
                   <ul>
                     <li> 1 : 10</li>
                   </ul>
-                </div>
+                </div> -->
               </mat-card>
             <mat-card class="card card-large">
               <h3 class="card-title">Aspect (Last 12 Months)</h3>
               <div class="chart-container">
-                <canvas baseChart [data]="chartDataLineFrmn12Months" [options]="chartOptions" [type]="'line'"></canvas>
+                <canvas baseChart [data]="chartDataLineFrmn12Months" [options]="lineChartOptions" [type]="'line'"></canvas>
               </div>
-              <div class="card-footer">
+              <!-- <div class="card-footer">
                 <ul>
                   <li>val : val2</li>
                 </ul>
-              </div>
+              </div> -->
             </mat-card>
         </div>
         <br>

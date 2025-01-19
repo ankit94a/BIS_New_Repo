@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BIS.Common.Entities;
+using BIS.DB.Implements;
 using BIS.DB.Interfaces;
 using BIS.Manager.Interfaces;
 
@@ -23,6 +24,15 @@ namespace BIS.Manager.Implements
         public List<Divisons> GetDivisonByCorps(long corpsId)
         { 
             return _corpsDB.GetDivisonByCorps(corpsId);
+        }
+        public string GetNameByCorpsId(long corpsId)
+        {
+            return _corpsDB.GetNameByCorpsId(corpsId);
+        }
+
+        public string GetNameByDivisionId(int? divisionId)
+        {
+            return _corpsDB.GetNameByDivisionId(divisionId);
         }
     }
 }
