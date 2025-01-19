@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BIS.DB.Interfaces;
 using BIS.Manager.Interfaces;
+using BIS.DB.Implements;
 
 namespace BIS.Manager.Implements
 {
@@ -21,6 +22,16 @@ namespace BIS.Manager.Implements
         public List<Aspect> GetAllAspect()
         {
             return _attributeDB.GetAllAspect();
+        }
+
+        public List<Indicator> GetIndicatorByAspect(int aspectId)
+        {
+            return _attributeDB.GetIndicatorByAspect(aspectId);
+        }
+
+        public List<IndicatorSubFields> GetIndicatorSubfield(int indicatortId)
+        {
+            return _attributeDB.GetIndicatorSubField(indicatortId);
         }
     }
 }

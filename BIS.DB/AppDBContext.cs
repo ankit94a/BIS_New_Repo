@@ -17,5 +17,7 @@ namespace BIS.DB
         public DbSet<Menus> UserMenus { get; set; }
         public DbSet<GenerateReport> GenerateReports { get; set; }
         public DbSet<Aspect> MasterAspects { get; set; }
+        public DbSet<Indicator> MasterIndicators { get; set; }
+        public DbSet<IndicatorSubFields> IndicatorSubFields { get; set; }
     }
 }

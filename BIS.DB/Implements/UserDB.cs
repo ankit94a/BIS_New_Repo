@@ -93,7 +93,7 @@ namespace BIS.DB.Implements
         {
             try
             {
-                var DivisionName = dbContext.Divisons.Where(us => us.DivisionId == divisionId).Select(us => us.Name).FirstOrDefault();
+                var DivisionName = dbContext.Divisions.Where(us => us.DivisionId == divisionId).Select(us => us.Name).FirstOrDefault();
                 return DivisionName;
             }
             catch (Exception ex)

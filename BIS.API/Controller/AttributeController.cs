@@ -18,5 +18,19 @@ namespace BIS.API.Controller
         {
             return Ok(_attributeManager.GetAllAspect());
         }
+
+
+     
+        [HttpGet, Route("allIndicator/{aspectId}")]
+        public IActionResult GetIndicatorByAspect(int aspectId)
+        {
+            return Ok(_attributeManager.GetIndicatorByAspect(aspectId));
+        }
+
+        [HttpGet, Route("indicatorSubField/{indicatortId}")]
+        public IActionResult GetIndicatorSubfield(int indicatortId)
+        {
+            return Ok(_attributeManager.GetIndicatorSubfield(indicatortId));
+        }
     }
 }

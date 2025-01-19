@@ -10,5 +10,7 @@ namespace BIS.Manager.Interfaces
     public interface IAttributeManager
     {
         public List<Aspect> GetAllAspect();
+        public List<Indicator> GetIndicatorByAspect(int aspectId);
+        public List<IndicatorSubFields> GetIndicatorSubfield(int indicatortId);
     }
 }

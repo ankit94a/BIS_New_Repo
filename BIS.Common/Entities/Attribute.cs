@@ -14,7 +14,7 @@ namespace BIS.Common.Entities
     public class Indicator : BaseEntity
     {
         public string Name { get; set; }
-        public int AspectId { get; set; }
+        public int MasterAspectID { get; set; }
 
     }
     public class IndicatorSubFields : BaseEntity

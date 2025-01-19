@@ -19,5 +19,15 @@ namespace BIS.DB.Implements
         {
             return _dbContext.MasterAspects.ToList();
         }
+            
+        public List<Indicator> GetIndicatorByAspect(int aspectId)
+        {
+            return _dbContext.MasterIndicators.Where(d => d.MasterAspectID == aspectId).ToList();
+        }
+
+        public List<IndicatorSubFields> GetIndicatorSubField(int indicatorId)
+        {
+            return _dbContext.IndicatorSubFields.Where(d => d.IndicatorId == indicatorId).ToList();
+        }
     }
 }
