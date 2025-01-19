@@ -15,5 +15,8 @@ namespace BIS.Manager.Interfaces
         public DashboardChart Get30DaysFmnOrAspectData(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel,bool isFrmn = true);
         public DashboardChart GetTodayFmnOrAspectData(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel, bool isFrmn = true);
         public DashboardChart Get12MonthsFmnOrAspectData(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel, bool isFrmn = true);
+        public DashboardChart GetIndicatorData(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel, bool isTopTen = true);
+
+        public DashboardChart GetTopFiveLocation(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel, bool isTopFive7Days = true);
     }
 }

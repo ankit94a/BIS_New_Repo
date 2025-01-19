@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit {
   frmnList:string[]=[];
   sectorList: any = [];
   filterModel: FilterModel = new FilterModel();
+  indicatorFilter:FilterModel = new FilterModel();
 
   frmInputChartData:ChartData<'pie'>;
   frm30DaysChartData:ChartData<'pie'>;
@@ -39,12 +40,22 @@ export class DashboardComponent implements OnInit {
   };
   aspect30DaysChartData:ChartData<'pie'>;
   aspectTodayChartData:ChartData<'pie'>;
+  aspect12MonthsChartData:ChartData<'line'>;
+
+  // Indicator
+  indicatorData:ChartData<'pie'>;
+  indicatorTop5Data:ChartData<'pie'>;
+
+  // EnLocation
+  enLocationData:ChartData<'pie'>;
+  enLocationData7Days:ChartData<'pie'>;
   constructor(private apiService: ApiService,private authService:AuthService) {
     if(this.authService.getDivisionName){
       this.frmnList.push(this.authService.getDivisionName());
       this.filterModel.frmn = this.frmnList;
       this.onFilterChange(this.frmnList[0])
       this.getFrmAndAspect();
+      this.getIndicatorAndLocation();
     }
   }
   ngOnInit(): void {
@@ -61,10 +72,17 @@ export class DashboardComponent implements OnInit {
     this.getAspectAllData()
     this.getAspect30DaysData();
     this.getAspectTodayData();
+    this.getAspect12MonthsData();
+  }
+  getIndicatorAndLocation(){
+    this.getIndicatorData();
+    this.getTop5IndicatorData();
+    this.getTop5EnLocationData();
+    this.getTop5EnLoc7DaysData();
   }
   // Getting Frmn Chart Data
   getFrmInputData(){
-    this.apiService.postWithHeader('dashboard',this.filterModel).subscribe(res =>{
+    this.apiService.postWithHeader('dashboard/fmn',this.filterModel).subscribe(res =>{
       if(res){     
         this.frmInputChartData = {
           labels: res.name,
@@ -76,7 +94,7 @@ export class DashboardComponent implements OnInit {
     })
   }
   getFrm30DaysData(){
-    this.apiService.postWithHeader('dashboard/fmn30days',this.filterModel).subscribe(res =>{
+    this.apiService.postWithHeader('dashboard/fmn/30days',this.filterModel).subscribe(res =>{
       if(res){   
         this.frm30DaysChartData = {
           labels: res.name,
@@ -88,7 +106,7 @@ export class DashboardComponent implements OnInit {
     })
   }
   getFrmTodayData(){
-    this.apiService.postWithHeader('dashboard/today',this.filterModel).subscribe(res =>{
+    this.apiService.postWithHeader('dashboard/fmn/today',this.filterModel).subscribe(res =>{
       if(res){   
         this.frmTodayChartData = {
           labels: res.name,
@@ -100,9 +118,8 @@ export class DashboardComponent implements OnInit {
     })
   }
   getFrm12MonthsData(){
-    this.apiService.postWithHeader('dashboard/fmnLast12Months',this.filterModel).subscribe(res =>{
+    this.apiService.postWithHeader('dashboard/fmn/last12Months',this.filterModel).subscribe(res =>{
       if(res){   
-        debugger
         this.frm12MonthsChartData = {
           labels: res.name,
           datasets: [
@@ -120,7 +137,7 @@ export class DashboardComponent implements OnInit {
   }
   // Getting Aspect Chart Data
   getAspectAllData(){
-    this.apiService.postWithHeader('dashboard/allaspect',this.filterModel).subscribe(res =>{
+    this.apiService.postWithHeader('dashboard/aspect',this.filterModel).subscribe(res =>{
       if(res){     
         this.aspectAllChartData = {
           labels: res.name,
@@ -135,7 +152,7 @@ export class DashboardComponent implements OnInit {
   }
   
   getAspect30DaysData(){
-    this.apiService.postWithHeader('dashboard/aspect30days',this.filterModel).subscribe(res =>{
+    this.apiService.postWithHeader('dashboard/aspect/30days',this.filterModel).subscribe(res =>{
       if(res){   
         this.aspect30DaysChartData = {
           labels: res.name,
@@ -150,7 +167,7 @@ export class DashboardComponent implements OnInit {
     })
   }
   getAspectTodayData(){
-    this.apiService.postWithHeader('dashboard/aspecttoday',this.filterModel).subscribe(res =>{
+    this.apiService.postWithHeader('dashboard/aspect/today',this.filterModel).subscribe(res =>{
       if(res){   
         this.aspectTodayChartData = {
           labels: res.name,
@@ -158,6 +175,74 @@ export class DashboardComponent implements OnInit {
             { data: res.count, label: res.name 
               // ,backgroundColor:this.bgColor
             },
+          ],
+        };
+      }
+    })
+  }
+  getAspect12MonthsData(){
+    this.apiService.postWithHeader('dashboard/aspect/last12Months',this.filterModel).subscribe(res =>{
+      if(res){   
+        this.aspect12MonthsChartData = {
+          labels: res.name,
+          datasets: [
+            { data: res.count, label: res.name,
+              backgroundColor: 'rgba(151, 126, 201, 0.5)', // Semi-transparent blue
+              borderColor: 'rgba(150, 68, 150, 0.5)', // Solid blue
+              borderWidth: 1.2,
+              fill: true, // Fill area under the line
+              tension: 0.4, // Adds smoothness to the line
+            },
+          ],
+        };
+      }
+    })
+  }
+  // Getting Indicator Chart Data
+  getIndicatorData(){
+    this.apiService.postWithHeader('dashboard/indicator',this.indicatorFilter).subscribe(res =>{
+      if(res){     
+        this.indicatorData = {
+          labels: res.name,
+          datasets: [
+            { data: res.count, label: res.name },
+          ],
+        };
+      }
+    })
+  }
+
+  getTop5IndicatorData(){
+    this.apiService.postWithHeader('dashboard/indicator/top5',this.indicatorFilter).subscribe(res =>{
+      if(res){     
+        this.indicatorTop5Data = {
+          labels: res.name,
+          datasets: [
+            { data: res.count, label: res.name },
+          ],
+        };
+      }
+    })
+  }
+  getTop5EnLocationData(){
+    this.apiService.postWithHeader('dashboard/location',this.indicatorFilter).subscribe(res =>{
+      if(res){     
+        this.enLocationData = {
+          labels: res.name,
+          datasets: [
+            { data: res.count, label: res.name },
+          ],
+        };
+      }
+    })
+  }
+  getTop5EnLoc7DaysData(){
+    this.apiService.postWithHeader('dashboard/location/7days',this.filterModel).subscribe(res =>{
+      if(res){     
+        this.enLocationData7Days = {
+          labels: res.name,
+          datasets: [
+            { data: res.count, label: res.name },
           ],
         };
       }
@@ -195,7 +280,7 @@ export class DashboardComponent implements OnInit {
           label: function (tooltipItem) {
             const dataLabel = tooltipItem.label;
             const dataValue = tooltipItem.raw;
-            return `${dataValue}`; 
+            return ` ${dataValue}`; 
           }
         }
       }
@@ -218,7 +303,7 @@ export class DashboardComponent implements OnInit {
         callbacks: {
           label: function (tooltipItem) {
             const dataValue = tooltipItem.raw;
-            return `${dataValue}`; 
+            return ` ${dataValue}`; 
           }
         }
       }
