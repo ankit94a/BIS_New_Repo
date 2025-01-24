@@ -1,13 +1,12 @@
 <!-- <BIS-dialog-title [dataObject]="masterData"></BIS-dialog-title> -->
 <form [formGroup]="createData" (ngSubmit)="save()">
   <div mat-dialog-title>
-    Add
+    Add Master Data
   </div>
   <mat-dialog-content>
     <mat-horizontal-stepper [linear]="true" #stepper [selectedIndex]="currentStepIndex">
       <!-- Step 1: Aspect Dropdown -->
       <mat-step [stepControl]="createData">
-
         <div class="row">
           <div class="col-md-4">
             <mat-form-field>
@@ -21,7 +20,7 @@
           </div>
           <div class="col-md-4">
             <mat-form-field>
-              <mat-label>Choose a date</mat-label>
+              <mat-label>Select date</mat-label>
               <input matInput [matDatepicker]="picker" formControlName="reportedDate">
               <mat-hint>(MM/DD/YYYY)</mat-hint>
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
@@ -31,9 +30,9 @@
           <div class="col-md-4">
             <mat-form-field>
               <mat-label>Input Level</mat-label>
-              <mat-select formControlName="name">
-                <mat-option *ngFor="let item of dropdownItems" [value]="item.value">
-                  {{ item.value }}
+              <mat-select formControlName="inputLevel">
+                <mat-option *ngFor="let item of inputLevels" [value]="item.name">
+                  {{ item.name }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -45,8 +44,8 @@
             <mat-form-field>
               <mat-label>Sector</mat-label>
               <mat-select formControlName="sector">
-                <mat-option *ngFor="let item of sectordropdownItems" [value]="item.value">
-                  {{ item.value }}
+                <mat-option *ngFor="let item of sectors" [value]="item.name">
+                  {{ item.name }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -55,8 +54,8 @@
             <mat-form-field>
               <mat-label>Source</mat-label>
               <mat-select formControlName="source">
-                <mat-option *ngFor="let item of sourcedropdownItems" [value]="item.value">
-                  {{ item.value }}
+                <mat-option *ngFor="let item of sourceList" [value]="item.name">
+                  {{ item.name }}
                 </mat-option>
 
               </mat-select>
@@ -66,8 +65,8 @@
             <mat-form-field>
               <mat-label>Source Loc</mat-label>
               <mat-select formControlName="sourceLoc">
-                <mat-option *ngFor="let item of sourceLocdropdownItems" [value]="item.value">
-                  {{ item.value }}
+                <mat-option *ngFor="let item of sourceLoc" [value]="item.name">
+                  {{ item.name }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -79,8 +78,8 @@
             <mat-form-field>
               <mat-label>Type Of Loc</mat-label>
               <mat-select formControlName="typeOfLoc">
-                <mat-option *ngFor="let item of typeOfLocdropdownItems" [value]="item.value">
-                  {{ item.value }}
+                <mat-option *ngFor="let item of typeOfLoc" [value]="item.name">
+                  {{ item.name }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -89,8 +88,8 @@
             <mat-form-field>
               <mat-label>En Loc Name</mat-label>
               <mat-select formControlName="enLocName">
-                <mat-option *ngFor="let item of enLocdropdownItems" [value]="item.value">
-                  {{ item.value }}
+                <mat-option *ngFor="let item of enemyLocations" [value]="item.name">
+                  {{ item.name }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -98,59 +97,27 @@
           <div class="col-md-4">
             <mat-form-field>
               <mat-label>Aspect</mat-label>
-              <mat-select [(value)]="selected" (selectionChange)="onChange($event)" formControlName="aspect">
-                <mat-option> None</mat-option>
-                <mat-option *ngFor="let option of aspectOptions" [value]="option">
-                  {{ option }}
+              <mat-select (selectionChange)="getIndicator($event)" formControlName="aspect">
+                <mat-option *ngFor="let option of aspectList" [value]="option.id">
+                  {{ option.name }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
           </div>
         </div>
         <div align="end">
-          <button mat-button matStepperNext align="end">Next</button>
-        </div>
-        
+          <button mat-button matStepperNext type="button">Next</button>
+        </div> 
       </mat-step>
-      <!-- <div class="row">
-        <div class="col-md-6">
-          @if(selected == 'Svl / Counter Svl' || (isEdit  && masterData.value.aspect == 'Svl / Counter Svl') ){
+    
+      <mat-step *ngIf="indicators.length > 0" [stepControl]="createData">
+        <div class="row">
+          <div class="col-md-12">
             <mat-form-field>
-              <mat-label>Indicators</mat-label>
-              <mat-select [(value)]="subselected" (change)="onChange2($event)" formControlName="indicator">
-                <mat-option value="Placement of addl Svl Eqpt">Placement of addl Svl Eqpt</mat-option>
-                <mat-option value="Incr Recce">Incr Recce</mat-option>
-                <mat-option value="Incr in OP loc">Incr in OP loc</mat-option>
-                <mat-option value="Jamming">Jamming</mat-option>
-                <mat-option value="Enhanced Tourist Influx">Enhanced Tourist Influx </mat-option>
-              </mat-select>
-            </mat-form-field>
-          }
-        </div>
-        <div class="col-md-6">
-          @if(selected == 'Friction / Belligerence' || (isEdit && masterData.value.aspect == 'Friction / Belligerence') ){
-            <mat-form-field>
-              <mat-label>Indicators</mat-label>
-              <mat-select [(value)]="subselected" (change)="onChange2($event)" formControlName="indicator">
-                <mat-option value="Face-off / Skirmish">Face-off / Skirmish</mat-option>
-                <mat-option value="Activation of Dormant Z">Activation of Dormant Z</mat-option>
-                <mat-option value="Setting_of_camp">Setting_of_camp</mat-option>
-                <mat-option value="Grazier Activity">Grazier Activity</mat-option>
-                <mat-option value="Aggressive recce">Aggressive recce</mat-option>
-              </mat-select>
-            </mat-form-field>
-          }
-        </div>
-      </div> -->
-
-      <mat-step *ngIf="selected" [stepControl]="createData">
-        <div class="row" *ngIf="selected">
-          <div class="col-md-4">
-            <mat-form-field *ngIf="indicators.length > 0">
               <mat-label>Indicators</mat-label>
               <mat-select [(value)]="subselected" (selectionChange)="onChange2($event)" formControlName="indicator">
-                <mat-option *ngFor="let indicator of indicators" [value]="indicator">
-                  {{ indicator }}
+                <mat-option *ngFor="let indicator of indicators" [value]="indicator.name">
+                  {{ indicator.name }}
                 </mat-option>
               </mat-select>
             </mat-form-field>
@@ -158,8 +125,8 @@
         </div>
 
         <div *ngIf="dynamicFields.length > 0">
-          <div class="row" *ngFor="let field of dynamicFields">
-            <div class="col-md-4">
+          <div class="row">
+            <div class="col-md-4" *ngFor="let field of dynamicFields">
               <mat-form-field *ngIf="field.type === 'string'">
                 <mat-label>{{ field.label }}</mat-label>
                 <input matInput [formControlName]="field.name" />
@@ -183,6 +150,7 @@
             </div>
           </div>
         </div>
+        
         <div *ngIf="dynamicDropdownOptions.length > 0">
           <div class="row">
             <div class="col-md-4">
@@ -216,22 +184,10 @@
           </div>
         </div>
         <div align="end">
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext align="end">Next</button>
+          <button mat-button matStepperPrevious type="button">Back</button>
+          <button mat-button type="submit">Save</button>
         </div>
       </mat-step>
     </mat-horizontal-stepper>
   </mat-dialog-content>
-  
-  <!-- <mat-dialog-actions align="end">
-    <button class="btn  btn-success btn-sm" type="submit">Save</button>
-    <button type="button" routerLink="/master-data" class="btn btn-outline-info btn-sm" (click)="closedialog()">Close</button>
-  </mat-dialog-actions> -->
-
 </form>
-<!-- <mat-dialog-actions align="end">
-
-  <button mat-button (click)="onBack(stepper)" *ngIf="currentStepIndex > 0">Back</button>
-
-  <button mat-button (click)="onNext(stepper)" *ngIf="selected && currentStepIndex < 2">Next</button>
-</mat-dialog-actions> -->

@@ -14,7 +14,13 @@ namespace BIS.API.Controller
         { 
             _dashboardManager = dashboardManager;
         }
-
+        [HttpGet,Route("count")]
+        public IActionResult GetInputCounts()
+        {
+            int corpsId = HttpContext.GetCorpsId();
+            int divisionId = HttpContext.GetDivisionId();
+            return Ok(_dashboardManager.GetInputCounts(corpsId,divisionId));
+        }
         [HttpPost,Route("fmn")]
         public IActionResult GetFmnWiseData([FromBody] FilterModel filterModel)
         {

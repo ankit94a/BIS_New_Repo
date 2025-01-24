@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { BISDialogTitleComponent } from 'projects/sharedlibrary/src/component/edusynk-dialog-title/edusynk-dialog-title.component';
-import { masterData } from 'projects/sharedlibrary/src/model/masterdata.model';
+import { EnemyLocation, masterData, MasterInputLevels, MasterLoc, MasterSector, Source } from 'projects/sharedlibrary/src/model/masterdata.model';
 import { CommonModule, DatePipe, NgClass } from '@angular/common';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ApiService } from 'projects/sharedlibrary/src/services/api.service';
@@ -13,6 +13,7 @@ import { BISMatDialogService, } from 'projects/sharedlibrary/src/services/insync
 import { MasterDataComponent } from '../master-data-list/master-data.component';
 import { MatDialogRef } from '@angular/material/dialog';
 import { AuthService } from 'projects/sharedlibrary/src/services/auth.service';
+import { Aspect, Indicator } from 'projects/sharedlibrary/src/model/attribute.model';
 
 @Component({
   selector: 'app-master-data-add',
@@ -24,29 +25,62 @@ import { AuthService } from 'projects/sharedlibrary/src/services/auth.service';
   ]
 })
 export class MasterDataAddComponent implements OnInit {
+  aspectList:Aspect[]=[]
   createData;
   isEdit = false;
   // fmnList: string[] = ["33 Corps", "27 Mtn Div", "17 Mtn Div", "111 Sub Area", "20 Mtn Div", "3 Corps", "2 Mtn Div", "56 Mtn Div", "57 Mtn Div", "4 Corps", "5 Mtn Div", "21 Mtn Div", "71 Mtn Div", "17 Corps", "59 Mtn Div", "23 Mtn Div"];
   fmnList: string[] = []
-  dropdownItems: any[] = [];
+  
   sectorList = [];
   formBuilder = inject(FormBuilder);
   toastr = inject(ToastrService);
   selectedValue: string = '';  // To hold the selected value from the dropdown
-  sectordropdownItems: any[] = [];
-  sourcedropdownItems: any[] = [];
-  enLocdropdownItems: any[] = [];
-  sourceLocdropdownItems: any[] = [];
-  typeOfLocdropdownItems: any[] = [];
-  selected = 'any';
-  selectedType = 'Svl / Counter Svl';
-  subselectedType = 'any';
+  // sectordropdownItems: any[] = [];
+  // sourcedropdownItems: any[] = [];
+  // enLocdropdownItems: any[] = [];
+  // sourceLocdropdownItems: any[] = [];
+  // typeOfLocdropdownItems: any[] = [];
+  // selected = 'any';
+  // selectedType = 'Svl / Counter Svl';
+  // subselectedType = 'any';
   subselected = 'Svl / Counter Svl';
   router = inject(Router);
   route = inject(ActivatedRoute);
-  constructor(private authService:AuthService, private apiService: ApiService,private datePipe: DatePipe,private dialogService:BISMatDialogService,private dialogref:MatDialogRef<MasterDataAddComponent>) {
+  // improvement
+  indicatorSubFieldList=[];
+  sectors:MasterSector[] = [];
+  inputLevels: MasterInputLevels[] = [];
+  sourceList:Source[]=[];
+  sourceLoc:MasterLoc[] = [];
+  typeOfLoc:MasterLoc[] = [];
+  enemyLocations:EnemyLocation[] = [];
+  constructor(private authService:AuthService, private apiService: ApiService,private datePipe: DatePipe,private dialogref:MatDialogRef<MasterDataAddComponent>) {
     this.indicators = [];
   }
+
+  getAspect(){
+    this.apiService.getWithHeaders('attribute/allaspect').subscribe(res =>{
+      if(res){
+        this.aspectList = res;
+      }
+    })
+  }
+  getIndicator(event){
+    debugger
+    this.apiService.getWithHeaders('attribute/allIndicator/' + event.value).subscribe(res =>{
+      if(res){
+        debugger
+        this.indicators = res;
+      }
+    })
+  }
+  // getIndicatorSubFields(event){
+  //   this.apiService.getWithHeaders('attribute/indicatorSubField/' + event.value).subscribe(res =>{
+  //     if(res){
+  //       this.indicatorSubFieldList = res;
+  //     }
+  //   })
+  // }
   ngOnInit(): void {
     this.createData = this.formBuilder.group({
       // reportedDate: ['', Validators.required],
@@ -62,6 +96,7 @@ export class MasterDataAddComponent implements OnInit {
       // typeOfLoc: ['', Validators.required],
       // enLocName: ['', Validators.required],
       // aspect: [''],
+      inputLevel: ['',],
       reportedDate: ['',],
       masterInputlevelID: [0],
       masterSectorID: [0],
@@ -535,65 +570,65 @@ export class MasterDataAddComponent implements OnInit {
     });
     if (this.authService.getDivisionName()) {
       const divisionName = this.authService.getDivisionName();
-      this.fmnList.push(divisionName); // Add to the list
-
-      // Set the value of 'frmn' control in the form
+      this.fmnList.push(divisionName); 
       this.createData.get('frmn')?.setValue(divisionName);
     }
+    this.getData();
+    
+  }
+  getData(){
+    this.getAspect();
     this.getInputLevel();
     this.getSector();
     this.getSource();
     this.getSourceLoc();
     this.getTypeOfLoc();
     this.getEnLoc();
-    
   }
-
   getSector() {
-    this.apiService.getWithHeaders('MasterData/MasterSector').subscribe(res => {
+    this.apiService.getWithHeaders('MasterData/sector').subscribe(res => {
       if (res) {
-        this.sectordropdownItems = res;
+        this.sectors = res;
       }
     })
   }
 
   getSource() {
-    this.apiService.getWithHeaders('MasterData/MasterSource').subscribe(res => {
+    this.apiService.getWithHeaders('MasterData/source').subscribe(res => {
       if (res) {
-        this.sourcedropdownItems = res;
+        this.sourceList = res;
       }
     })
   }
 
   getEnLoc() {
-    this.apiService.getWithHeaders('MasterData/MasterEnLoc').subscribe(res => {
+    this.apiService.getWithHeaders('MasterData/enloc').subscribe(res => {
       if (res) {
-        this.enLocdropdownItems = res;
+        this.enemyLocations = res;
       }
     })
   }
 
   getSourceLoc() {
-    this.apiService.getWithHeaders('MasterData/MasterLoc').subscribe(res => {
+    this.apiService.getWithHeaders('MasterData/loc/'+true).subscribe(res => {
       if (res) {
-        this.sourceLocdropdownItems = res;
+        this.sourceLoc = res;
       }
     })
   }
 
   getTypeOfLoc() {
-    this.apiService.getWithHeaders('MasterData/TypeOfLoc').subscribe(res => {
+    this.apiService.getWithHeaders('MasterData/loc/' + false).subscribe(res => {
       if (res) {
-        this.typeOfLocdropdownItems = res;
+        this.typeOfLoc = res;
       }
     })
   }
 
   save() { 
-    console.log(this.createData.value);
     const masterData = {
       reportedDate: this.datePipe.transform(this.createData.value.reportedDate, 'yyyy-MM-dd'),
-      name: this.createData.value.name!,
+      inputLevel: this.createData.value.inputLevel!,
       sector: this.createData.value.sector!,
       fmn: this.createData.value.fmn!,
       source: this.createData.value.source!,
@@ -1058,17 +1093,13 @@ export class MasterDataAddComponent implements OnInit {
       cfvBetween: this.createData.value.cfvBetween!,
       cfvTimeFrom: this.createData.value.cfvTimeFrom!,
       cfvTimeTo: this.createData.value.cfvTimeTo!,
-      id: 0,
-      masterInputlevelID: 0,
-      masterSectorID: 0
     }
     this.apiService.postWithHeader('masterData',masterData).subscribe(res =>{
       if (res) {
-        return res;
-       
+        this.toastr.success("Record Saved");
+        this.dialogref.close(true);     
       }
-      this.toastr.success("Record Saved");
-      this.dialogref.close(true);
+      
       // this.router.navigateByUrl("")
     })
 
@@ -1080,9 +1111,9 @@ export class MasterDataAddComponent implements OnInit {
   }
 
   getInputLevel() {
-    this.apiService.getWithHeaders('MasterData/MasterInputLvl').subscribe(res => {
+    this.apiService.getWithHeaders('MasterData/inputlevels').subscribe(res => {
       if (res) {
-        this.dropdownItems = res;
+        this.inputLevels = res;
       }
     })
   }
@@ -1131,164 +1162,164 @@ export class MasterDataAddComponent implements OnInit {
     }
   }
 
-  indicators: string[] = [];
+  indicators: Indicator[] = [];
   dynamicFields: Array<any> = [];
   dynamicDropdownOptions: Array<any> = [];  // Holds dynamic dropdown options for the selected indicator
   dynamicDropdownLabel: string = '';  // Label for the dynamic dropdown
   currentStepIndex: number = 0;
   additionalFields: Array<any> = [];
-  aspectOptions: string[] = [
-    'Svl / Counter Svl',
-    'Friction / Belligerence',
-    'Ae Activity',
-    'Conc of Tps',
-    'Armr / Arty / AD / Engrs Indn',
-    'Mob',
-    'Infra Devp',
-    'Dumping of WLS',
-    'Heightened Diplomatic Eng',
-    'Collapse of Diplomatic Ties',
-    'Propoganda',
-    'Econ',
-    'Internal Issues',
-    'Cyber',
-    'Def',
-    'Interactions'
-  ];
-  indicatorOptions = {
-    'Svl / Counter Svl': [
-      'Placement of addl Svl Eqpt',
-      'Incr Recce',
-      'Incr in OP loc',
-      'Jamming',
-      'Enhanced Tourist Influx',
-    ],
-    'Friction / Belligerence': [
-      'Face-off / Skirmish',
-      'Activation of Dormant Z',
-      'Setting_of_camp',
-      'Grazier Activity',
-      'Aggressive recce',
-    ],
-    'Ae Activity': [
-      'Drone Activity / Incursion',
-      'Comb Ac in Proximity',
-      'Fighter_activity_near_LAC',
-      'Airspace Violation'
-    ],
-    'Conc of Tps': [
-      'Enhanced Str / Force Posturing',
-      'Res Build Up',
-      'Conc of A vehs',
-      'Trg Ex'
-    ],
-    'Armr / Arty / AD / Engrs Indn': [
-      'A Vehs Mov',
-      'Arty Guns / LRVs Mov',
-      'Arty Amn Dumping',
-      'Engr Coln Mov'
-    ],
-    'Mob': [
-      'Incr Vehs in Stg As',
-      'Incr Lgs Cvys',
-      'Incr Lgs Trains',
-      'Incr Radio Tfc',
-      'Trg Ex(Mob)',
-      'Re-loc of Forces',
-      'TRSO Mov'
-    ],
-    'Infra Devp': [
-      'Constr of Op Wks',
-      'Bdr Infra Devp',
-      'Def Improvement',
-      'Gun As / SAM sites',
-      'Amn Dumps / Caches / Msl Silos Devp',
-      'Addl Billeting',
-      'Comn Infra Devp - Rd/ Br/ Rail/ Air',
-      'Comn Tower / Radome Contsr'
-    ],
-    'Dumping of WLS': [
-      'Lgs Dumping',
-      'Br Stores Dumping',
-      'Engr Stores Dumping'
-    ],
-    'Heightened Diplomatic Eng': [
-      'Vis',
-      'Bilatera l/ Multilateral Mtgs',
-      'Conf',
-      'Alliances',
-      'Collusivity',
-      'Jt Ventures'
-    ],
-    'Collapse of Diplomatic Ties': [
-      'Expulsion / Arrest of Diplomats',
-      'Closure of Diplomatic Msns',
-      'Recalling of Diplomats',
-      'Disregard to Agreements / Protocols / MOUs',
-      'Cartographic Aggression'
-    ],
-    'Propoganda': [
-      'Misinfo / Disinfo',
-      'Display of Mil Prowess',
-      'Media Rhetoric',
-      'Engr IS Disturbances'
-    ],
-    'Econ': [
-      'Trade Embargo',
-      'Sanctions',
-      'Energy Sup Disruption',
-      'Tenders',
-      'Opening / Closure Trade Routes'
-    ],
-    'Internal Issues': [
-      'Pol Unrest',
-      'Regional Unrest Impact',
-      'Energy Sup Disruption',
-      'Fin Instability',
-      'Hlth Concerns'
-    ],
-    'Cyber': [
-      'Heightened Cyber Ops',
-      'Tgt Critical Infra / NWs',
-      'Hiring of Tech Skilled Indls'
-    ],
-    'Def': [
-      'Incr Def Spending',
-      'Incr Production',
-      'Enhanced Tibetan Rect',
-      'Embodiment of Res',
-      'Forced Conscription',
-      'Incr Port Calls',
-      'Mil Alliances',
-      'Intensified EW Activities'
-    ],
-    'Interactions': [
-      'BPMs',
-      'Bdr Interactions',
-      'Cease Fire Violations'
-    ]
-    // Add more aspect-specific indicators here
-  };
+  // aspectOptions: string[] = [
+  //   'Svl / Counter Svl',
+  //   'Friction / Belligerence',
+  //   'Ae Activity',
+  //   'Conc of Tps',
+  //   'Armr / Arty / AD / Engrs Indn',
+  //   'Mob',
+  //   'Infra Devp',
+  //   'Dumping of WLS',
+  //   'Heightened Diplomatic Eng',
+  //   'Collapse of Diplomatic Ties',
+  //   'Propoganda',
+  //   'Econ',
+  //   'Internal Issues',
+  //   'Cyber',
+  //   'Def',
+  //   'Interactions'
+  // ];
+  // indicatorOptions = {
+  //   'Svl / Counter Svl': [
+  //     'Placement of addl Svl Eqpt',
+  //     'Incr Recce',
+  //     'Incr in OP loc',
+  //     'Jamming',
+  //     'Enhanced Tourist Influx',
+  //   ],
+  //   'Friction / Belligerence': [
+  //     'Face-off / Skirmish',
+  //     'Activation of Dormant Z',
+  //     'Setting_of_camp',
+  //     'Grazier Activity',
+  //     'Aggressive recce',
+  //   ],
+  //   'Ae Activity': [
+  //     'Drone Activity / Incursion',
+  //     'Comb Ac in Proximity',
+  //     'Fighter_activity_near_LAC',
+  //     'Airspace Violation'
+  //   ],
+  //   'Conc of Tps': [
+  //     'Enhanced Str / Force Posturing',
+  //     'Res Build Up',
+  //     'Conc of A vehs',
+  //     'Trg Ex'
+  //   ],
+  //   'Armr / Arty / AD / Engrs Indn': [
+  //     'A Vehs Mov',
+  //     'Arty Guns / LRVs Mov',
+  //     'Arty Amn Dumping',
+  //     'Engr Coln Mov'
+  //   ],
+  //   'Mob': [
+  //     'Incr Vehs in Stg As',
+  //     'Incr Lgs Cvys',
+  //     'Incr Lgs Trains',
+  //     'Incr Radio Tfc',
+  //     'Trg Ex(Mob)',
+  //     'Re-loc of Forces',
+  //     'TRSO Mov'
+  //   ],
+  //   'Infra Devp': [
+  //     'Constr of Op Wks',
+  //     'Bdr Infra Devp',
+  //     'Def Improvement',
+  //     'Gun As / SAM sites',
+  //     'Amn Dumps / Caches / Msl Silos Devp',
+  //     'Addl Billeting',
+  //     'Comn Infra Devp - Rd/ Br/ Rail/ Air',
+  //     'Comn Tower / Radome Contsr'
+  //   ],
+  //   'Dumping of WLS': [
+  //     'Lgs Dumping',
+  //     'Br Stores Dumping',
+  //     'Engr Stores Dumping'
+  //   ],
+  //   'Heightened Diplomatic Eng': [
+  //     'Vis',
+  //     'Bilatera l/ Multilateral Mtgs',
+  //     'Conf',
+  //     'Alliances',
+  //     'Collusivity',
+  //     'Jt Ventures'
+  //   ],
+  //   'Collapse of Diplomatic Ties': [
+  //     'Expulsion / Arrest of Diplomats',
+  //     'Closure of Diplomatic Msns',
+  //     'Recalling of Diplomats',
+  //     'Disregard to Agreements / Protocols / MOUs',
+  //     'Cartographic Aggression'
+  //   ],
+  //   'Propoganda': [
+  //     'Misinfo / Disinfo',
+  //     'Display of Mil Prowess',
+  //     'Media Rhetoric',
+  //     'Engr IS Disturbances'
+  //   ],
+  //   'Econ': [
+  //     'Trade Embargo',
+  //     'Sanctions',
+  //     'Energy Sup Disruption',
+  //     'Tenders',
+  //     'Opening / Closure Trade Routes'
+  //   ],
+  //   'Internal Issues': [
+  //     'Pol Unrest',
+  //     'Regional Unrest Impact',
+  //     'Energy Sup Disruption',
+  //     'Fin Instability',
+  //     'Hlth Concerns'
+  //   ],
+  //   'Cyber': [
+  //     'Heightened Cyber Ops',
+  //     'Tgt Critical Infra / NWs',
+  //     'Hiring of Tech Skilled Indls'
+  //   ],
+  //   'Def': [
+  //     'Incr Def Spending',
+  //     'Incr Production',
+  //     'Enhanced Tibetan Rect',
+  //     'Embodiment of Res',
+  //     'Forced Conscription',
+  //     'Incr Port Calls',
+  //     'Mil Alliances',
+  //     'Intensified EW Activities'
+  //   ],
+  //   'Interactions': [
+  //     'BPMs',
+  //     'Bdr Interactions',
+  //     'Cease Fire Violations'
+  //   ]
+  //   // Add more aspect-specific indicators here
+  // };
 
-  onChange(event: any) {
-    const selectedAspect = this.selected;
+  // onChange(event: any) {
+  //   const selectedAspect = this.selected;
 
-    // Update indicators based on selected aspect
-    if (this.indicatorOptions[selectedAspect]) {
-      this.indicators = this.indicatorOptions[selectedAspect];
-      this.subselected = ''; // Reset the selected indicator
-      this.dynamicFields = []; // Clear any previously displayed dynamic fields
-      this.dynamicDropdownOptions = []; // Clear dropdown options
-      this.dynamicDropdownLabel = ''; // Reset   dropdown label
-      this.additionalFields = [];// Clear additional fields
-      this.currentStepIndex = 1;
-    } else {
-      this.indicators = []; // If no matching aspect, clear the indicators
-    }
+  //   // Update indicators based on selected aspect
+  //   if (this.indicatorOptions[selectedAspect]) {
+  //     this.indicators = this.indicatorOptions[selectedAspect];
+  //     this.subselected = ''; // Reset the selected indicator
+  //     this.dynamicFields = []; // Clear any previously displayed dynamic fields
+  //     this.dynamicDropdownOptions = []; // Clear dropdown options
+  //     this.dynamicDropdownLabel = ''; // Reset   dropdown label
+  //     this.additionalFields = [];// Clear additional fields
+  //     this.currentStepIndex = 1;
+  //   } else {
+  //     this.indicators = []; // If no matching aspect, clear the indicators
+  //   }
 
-    // Reset subselected (indicator) to clear any previously selected value
-    this.subselected = '';
-  }
+  //   // Reset subselected (indicator) to clear any previously selected value
+  //   this.subselected = '';
+  // }
 
   onChange2($event) {
     const selectedIndicator = this.subselected;
@@ -1301,7 +1332,7 @@ export class MasterDataAddComponent implements OnInit {
       this.dynamicDropdownOptions = dropdownFields[0].options || [];
       this.dynamicDropdownLabel = dropdownFields[0].label;
     }
-
+    // setting formControl to the reactive form based on type
     fields.forEach(field => {
       if (!this.createData.contains(field.name)) {
         if (field.type === 'dropdown') {

@@ -15,21 +15,21 @@ namespace BIS.API.Controller
             _generateReportManager = generateReportManager;
         }
         [HttpPost]
-        public IActionResult AddReport(GenerateReport report)
+        public IActionResult AddReport([FromBody] GenerateReport report)
         {
-            long CorpsId = HttpContext.GetCorpsId();
-            long DivisonId = HttpContext.GetDivisionId();
-            int userId = HttpContext.GetUserId();
-            report.CreatedBy = userId;
-            return Ok(_generateReportManager.Add(report));
+            report.CorpsId = HttpContext.GetCorpsId();
+            report.DivisionId = HttpContext.GetDivisionId();
+            report.CreatedBy = HttpContext.GetUserId();
+            var roleType = HttpContext.GetRoleType();
+            return Ok(_generateReportManager.AddReport(report,roleType));
         }
         [HttpGet]
         public IActionResult GetReport()
         {
             long CorpsId = HttpContext.GetCorpsId();
-            long DivisonId = HttpContext.GetDivisionId();
+            long DivisionId = HttpContext.GetDivisionId();
             int userId = HttpContext.GetUserId();
-            return Ok(_generateReportManager.GetReportByUser(CorpsId, DivisonId, userId));
+            return Ok(_generateReportManager.GetReportByUser(CorpsId, DivisionId, userId));
         }
     }
 }

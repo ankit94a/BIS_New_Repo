@@ -11,6 +11,7 @@ namespace BIS.DB.Interfaces
 {
     public interface IDashboardDB
     {
+        public DashboardInputCount GetInputCounts(int corpsId, int divisionId);
         public List<MasterData> GetDivisionFrmChart(long corpsId, long divisionId, FilterModel filterModel);
         public DashboardChart GetAllMasterDataCount(long corpsId,long divisionId);
         public DashboardChart GetFrmnChart(long corpsId, long divisionId, DaysMonthFilter daysMonthFilter, FilterModel filterModel);

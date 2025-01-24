@@ -20,6 +20,7 @@ namespace BIS.Common.Entities
         public string? endDate { get; set; }
         public string? MasterDataIds { get; set; }
 
+        //public List<MasterData>? MasterData { get; set; }
         // This property handles serialization/deserialization
         //[NotMapped]
         //public List<string>? MasterDataIds

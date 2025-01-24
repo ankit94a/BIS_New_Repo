@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace BIS.Common.Entities
 {
-    public class Corps : BaseEntity
+    public class Corps : CommonModel
     {
         public string Name { get; set; }
 
     }
-    public class Divisons : BaseEntity
+    public class Divisons : CommonModel
     {
+        public int CorpsId { get; set; }
         public string Name { get; set; }
     }
 }

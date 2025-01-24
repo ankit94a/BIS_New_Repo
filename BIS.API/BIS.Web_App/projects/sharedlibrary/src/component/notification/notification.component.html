@@ -1,59 +1,26 @@
-<li class="nav-item dropdown">
-    <button
-      mat-icon-button (click)="getAllNotification($event,currentPage,notificationDropdown)"
-      type="button"
-      class="dropdown-toggle no-arrow" 
-      data-bs-toggle="dropdown"
-      aria-expanded="false">
-      <mat-icon [matBadge]="allNotifications.length > 0 ? allNotifications.length : ''">
-        notification_important
-      </mat-icon>
-    </button>
-    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications" #notificationDropdown>
-      <li class="dropdown-header">
-        <span class="unreadCount">
-          <b>{{ allNotifications.length }}</b> unread notifications
-        </span>
-        <span class="filter-unread">
-          <!-- {{ 'ShowOnlyUnread' | translate }}
-          <mat-slide-toggle (change)="filterUnread($event)">
-          </mat-slide-toggle> -->
-        </span>
-      </li>
-      <li>
-        <hr class="dropdown-divider" />
-      </li>
-      <div class="notification-list">
-        <div *ngFor="let item of allNotifications">
-          <li
-            class="notification-item"
-            (click)="openNotification(item)"
-            [ngClass]="{ 'dark-class': !item.isReaded }">
-            <div>
-              <h4>{{ item }}</h4>
-              <!-- <p>{{ item.content }}</p> -->
-              <!-- <p>{{ item.createdOn | timeDifference }}</p> -->
-            </div>
-            <ng-container *ngIf="item.isReaded; else unreadIcon">
-              <i class="fa-solid fa-circle-dot text-success"></i>
-            </ng-container>
-            <ng-template #unreadIcon>
-              <i class="fa-solid fa-circle-dot text-warning"></i>
-            </ng-template>
-          </li>
-          <li>
-            <hr class="dropdown-divider" />
-          </li>
-        </div>
-        <li *ngIf="isNotifcationAlertMessage">
-          <!-- {{ NotificationEmpty}} -->
-        </li>
+<div class="bell-container" (click)="openNotifications()">
+  <i class="fa-solid fa-bell fa-1x" style="color:#fff;"  [@bounce]="animState" (@bounce.done)="animDone($event)"></i>
+  <span class="badge" *ngIf="notifications.length>0"> {{notifications.length}}</span>
+</div>
+<div class="popup" *ngIf="dropdownVisible">
+  <div class="header">
+    <span>Notifications</span>
+  </div>
+  <div class="notification-list" id="notificationList" *ngFor="let notification of notifications;">
+    <div class="notification-item"  (click)="openNotification(notification)">
+      <i class="fa-solid fa-envelope"></i>
+      <div class="notification-content">
+        <div class="notification-type">{{ notification.title }}</div>
+        <div class="notification-message" [ngClass]="{'unread': !notification.isReaded}">{{ notification.content }}</div>
+        <div class="notification-timestamp">{{ notification.createdOn | timeDifference}}</div>
       </div>
-      <li class="dropdown-footer">
-        <!-- <a class="btn-link" (click)="getAllNotification($event, currentPage,undefined)">Show more notifications</a> -->
-      </li>
-    </ul>
-  </li>
-
-
-  
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+  <!-- <div class="spinner" *ngIf="loading">
+    <mat-spinner diameter="40"></mat-spinner>
+  </div> -->
+  <!-- <div *ngIf="!hasMore && !loading" class="end-message">
+    No more notifications.
+  </div> -->
+</div>

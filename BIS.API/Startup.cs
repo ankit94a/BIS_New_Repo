@@ -56,16 +56,18 @@ namespace BIS.API
             });
             JwtTokenConfig.AddJwtTokenAuthentication(services, Configuration);
             services.AddSwaggerConfiguration();
+            // Configure Newtonsoft.Json settings
+            var nullValueSettings = new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore,
+                MissingMemberHandling = MissingMemberHandling.Ignore
+            };
+
             services.AddMvc(options =>
             {
                 options.Filters.Add(typeof(ValidateModelFilter));
             }).AddDataAnnotationsLocalization()
-            .AddNewtonsoftJson(
-                o =>
-                {
-                    o.SerializerSettings.NullValueHandling = NullValueHandling.Include;
-                    o.SerializerSettings.MissingMemberHandling = MissingMemberHandling.Ignore;
-                });
+            .AddNewtonsoftJson();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

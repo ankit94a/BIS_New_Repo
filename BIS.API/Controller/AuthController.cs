@@ -32,7 +32,7 @@ namespace BIS.API.Controller
                 var jwtToken = _jwtManager.GenerateJwtToken(user);
                 var model = new
                 {
-                    corpsName = _corpsManager.GetNameByCorpsId(user.CorpsId),
+                    corpsName = _corpsManager.GetNameByCorpsId(Convert.ToInt64(user.CorpsId)),
                     divisionName = _corpsManager.GetNameByDivisionId(user.DivisionId),
                     userName = user.Name,
                     roleType = user.RoleType

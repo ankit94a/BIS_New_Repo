@@ -11,6 +11,7 @@ namespace BIS.Manager.Interfaces
     // Handling both Frmn & Aspect Chart in One Method
     public interface IDashboardManager
     {
+        public DashboardInputCount GetInputCounts(int corpsId,int divisionId);
         public DashboardChart GetAllFmnOrAspectData(long corpsId,long divisionId,RoleType roleType, FilterModel filterModel,bool isFrmn = true);
         public DashboardChart Get30DaysFmnOrAspectData(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel,bool isFrmn = true);
         public DashboardChart GetTodayFmnOrAspectData(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel, bool isFrmn = true);

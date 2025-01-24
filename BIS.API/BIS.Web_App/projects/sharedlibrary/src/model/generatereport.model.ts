@@ -12,5 +12,5 @@ export class GenerateReport extends BaseEntity {
   startDate: string;
   endDate:string
   masterData:masterData[]
-  MasterDataIds:string;
+  masterDataIds:string;
 }

@@ -4,7 +4,7 @@ export const environment = {
     apiUrl: 'https://localhost:44338/api/',
     // apiUrl:'https://bisapi1.jayceetechsoftwares.com/api/'
     // apiUrl: 'http://localhost:8080/api/'
-
+    baseUrl:'https://localhost:44338/',
     firebaseConfig: {
         apiKey: "AIzaSyBkV4Yc7xU353I1dZYk32Ac1IamViLiRvY",
         authDomain: "bisnotification-ce77b.firebaseapp.com",

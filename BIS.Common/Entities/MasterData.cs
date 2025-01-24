@@ -5,19 +5,30 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BIS.Common.Enum.Enum;
 
 namespace BIS.Common.Entities
 {
-    public class MasterData : BaseEntity
+    public class MasterData 
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
+        public int CreatedBy { get; set; }
+        public int? UpdatedBy { get; set; }
+        public Status? Status { get; set; }
+        public DateTime? CreatedOn { get; set; }
+        public DateTime? UpdatedOn { get; set; }
+        public bool IsActive { get; set; }
+        public bool IsDeleted { get; set; }
+        public int CorpsId { get; set; }
+        public int? DivisionId { get; set; }
+        public string InputLevel { get; set; }
         public DateTime ReportedDate { get; set; } = DateTime.Now.Date;
         public DateTime? RptDate { get; set; }
-        [Column("Input Level")]
-        [Display(Name = "Input Lvl")]
-        public string Name { get; set; }
+        //[Column("Input Level")]
+        //[Display(Name = "Input Lvl")]
+        //public string Name { get; set; }
         public string Sector { get; set; }
         public int Fmn { get; set; }
 
@@ -749,4 +760,27 @@ namespace BIS.Common.Entities
 
     }
 
+    public class MasterSector : CommonModel
+    {
+        public int CorpsId { get; set; }
+        public string Name { get; set; }
+    }
+    public class MasterInputLevel : CommonModel
+    {
+        public string Name { get; set; }
+        public bool? IfDeleted { get; set; }
+    }
+    public class Source : CommonModel
+    {
+        public string Name { get; set; }
+    }
+    public class MasterLocation : CommonModel
+    {
+        public string Name { get; set; }
+        public CategoryLoc CategoryLoc { get; set; }
+    }
+    public class EnemyLocation : CommonModel
+    {
+        public string Name { get; set; }
+    }
 }

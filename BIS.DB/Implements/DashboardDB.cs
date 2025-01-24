@@ -17,6 +17,40 @@ namespace BIS.DB.Implements
         {
             _dbContext = dbContext;
         }
+        public DashboardInputCount GetInputCounts(int corpsId, int divisionId = 0)
+        {
+            var result = new DashboardInputCount();
+            var currentTime = DateTime.Now;
+            var last7Days = currentTime.AddDays(-7);
+
+            var query = _dbContext.MasterDatas.Where(ms => ms.CorpsId == corpsId);
+            if (divisionId > 0)
+            {
+                query = query.Where(ms => ms.DivisionId == divisionId);
+            }
+
+            var counts = query
+                .GroupBy(ms => new
+                {
+                    IsToday = ms.CreatedOn >= currentTime,
+                    IsLast7Days = ms.CreatedOn >= last7Days
+                })
+                .Select(g => new
+                {
+                    g.Key.IsToday,
+                    g.Key.IsLast7Days,
+                    Count = g.Count()
+                })
+                .ToList();
+
+            // Extract counts from the grouped data
+            result.TotalInputCount = query.Count();
+            result.Last7DaysCount = counts.Where(c => c.IsLast7Days).Sum(c => c.Count);
+            result.TodayCount = counts.Where(c => c.IsToday).Sum(c => c.Count);
+
+            return result;
+        }
+
         public DashboardChart GetAllMasterDataCount(long corpsId, long divisionId)
         {
             // use it for monthly chart

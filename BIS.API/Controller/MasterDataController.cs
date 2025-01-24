@@ -29,22 +29,64 @@ namespace BIS.API.Controller
         {
             RoleType roleType = HttpContext.GetRoleType();
             int CorpsId = HttpContext.GetCorpsId();
-            int DivisonId = HttpContext.GetDivisionId();
-            return Ok(_masterDataManager.GetAllMasterData(CorpsId, roleType, DivisonId));
+            int DivisionId = HttpContext.GetDivisionId();
+            return Ok(_masterDataManager.GetAllMasterData(CorpsId, roleType, DivisionId));
         }
         [HttpPost]
         public IActionResult AddData(MasterData masterData)
         {
-            int CorpsId = HttpContext.GetCorpsId();
-            int DivisonId = HttpContext.GetDivisionId();
-            int userId = HttpContext.GetUserId();
-            masterData.CreatedBy = userId;
-            return Ok(_masterDataManager.Add(masterData));
+            masterData.CorpsId = HttpContext.GetCorpsId();
+            masterData.DivisionId = HttpContext.GetDivisionId();
+            masterData.CreatedBy = HttpContext.GetUserId();            
+            return Ok(_masterDataManager.AddMasterData(masterData,HttpContext.GetRoleType()));
+        }
+        [HttpGet, Route("getbyid{id}")]
+        public IActionResult GetById(int id)
+        {
+            var corpsId = HttpContext.GetCorpsId();
+            return Ok(_masterDataManager.GetBy(id, corpsId));
         }
         [HttpGet,Route("idsList{idsList}")]
         public IActionResult GetByIds(string idsList)
         {
             return Ok(_masterDataManager.GetByIds(idsList));
+        }
+        [HttpPost,Route("dateRange")]
+        public IActionResult GetBetweenDateRange(FilterModel filterModel)
+        {
+            int CorpsId = HttpContext.GetCorpsId();
+            int DivisionId = HttpContext.GetDivisionId();
+            return Ok(_masterDataManager.GetBetweenDateRange(filterModel,CorpsId,DivisionId));
+        }
+
+        // Common Fields for MasterData
+        [HttpGet, Route("inputlevels")]
+        public IActionResult GetInputLevels ()
+        {
+            return Ok(_masterDataManager.GetInputLevels());
+        }
+        [HttpGet, Route("sector")]
+        public IActionResult GetSectorByCorpsId()
+        {
+            var corpsId = HttpContext.GetCorpsId();
+            return Ok(_masterDataManager.GetSectorByCorpsId(corpsId));
+        }
+        [HttpGet, Route("source")]
+        public IActionResult GetSources()
+        {
+            return Ok(_masterDataManager.GetSources());
+        }
+
+        [HttpGet, Route("loc/{isSourceLoc}")]
+        public IActionResult GetLocation(bool isSourceLoc)
+        {
+            return Ok(_masterDataManager.GetLocation(isSourceLoc));
+        }
+
+        [HttpGet, Route("enloc")]
+        public IActionResult GetAllEnemyLocation()
+        {
+            return Ok(_masterDataManager.GetAllEnemyLocation());
         }
     }
 }

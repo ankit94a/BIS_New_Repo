@@ -24,6 +24,8 @@ namespace BIS.Manager.IOC
                 { typeof(ISmartAnalysisManager), typeof(SmartAnalysisManager) },
                 { typeof(IDashboardManager), typeof(DashboardManager) },
                 { typeof(ICdrDashboardManager), typeof(CdrDashboardManager) },
+                { typeof(IAttributeManager), typeof(AttributeManager) },
+                { typeof(INotificationManager), typeof(NotificationManager) },
             };
             return dic;
         }

@@ -22,7 +22,7 @@ namespace BIS.DB.Implements
         {
             try
             {
-                var user = dbContext.UserDetails.Where(us => us.Username == username && us.Password == password).FirstOrDefault();
+                    var user = dbContext.UserDetails.Where(us => us.Username == username && us.Password == password).FirstOrDefault();
                 return user;
             }
             catch (Exception ex) 
@@ -56,11 +56,17 @@ namespace BIS.DB.Implements
         }
         public int GetUserIdByRoleType(RoleType roleType)
         {
-            var user = dbContext.UserDetails
-                       .Where(us => us.RoleType == roleType)
-                       .FirstOrDefault();
-
-            return user?.Id ?? 0;
+            try
+            {
+                var user = dbContext.UserDetails.Where(us => us.RoleType == roleType).FirstOrDefault();
+                return user?.Id ?? 0;
+            }
+            catch (Exception ex)
+            {
+                BISLogger.Error(ex, "Getting user list error in for CorpsId = " );
+                throw;
+            }
+            
         }
         public List<UserDetail> GetUserByCoprs(long corpsId)
         {
@@ -78,7 +84,7 @@ namespace BIS.DB.Implements
         {
             try
             {
-                BISLogger.Info("Adding user for corpsId = " + user.CorpsId + "and DivisonId = " + user.DivisionId, "UserController", "AddUser");
+                BISLogger.Info("Adding user for corpsId = " + user.CorpsId + "and DivisionId = " + user.DivisionId, "UserController", "AddUser");
                 dbContext.Add(user);
                 dbContext.SaveChanges();
                 return user.Id;

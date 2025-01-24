@@ -1,4 +1,4 @@
-import { BaseEntity } from "./base.model"
+import { BaseEntity, CommonModel } from "./base.model"
 
 export class masterData extends BaseEntity {
   inputLevel: string
@@ -474,4 +474,20 @@ export interface searchMast {
   Name: string;
   Sector: string;
   ReportedDate: any;
+}
+export class MasterSector extends BaseEntity{
+  name:string;
+}
+export class MasterInputLevels extends CommonModel{
+  name:string;
+  ifDeleted:boolean;
+}
+export class Source extends CommonModel{
+  name:string;
+}
+export class MasterLoc extends CommonModel{
+  name:string;
+}
+export class EnemyLocation extends CommonModel{
+  name:string;
 }
