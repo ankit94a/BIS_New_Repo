@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit{
     username: ['', [Validators.required]],
     password: ['', [Validators.required]],
   });}
-
   ngOnInit(): void {
   
   }
@@ -49,7 +48,12 @@ export class LoginComponent implements OnInit{
         debugger
         this.authService.setToken(res.token);
         this.authService.setUserDetails(res.user);
-        this.router.navigateByUrl('/dashboard');
+        if(this.authService.getRoleType() == '1'){
+          this.router.navigateByUrl('/master-data');
+        }else{
+          this.router.navigateByUrl('/dashboard');
+        }
+        
       }else{
         this.router.navigateByUrl('/');
       }

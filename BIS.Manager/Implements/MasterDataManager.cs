@@ -15,10 +15,12 @@ namespace BIS.Manager.Implements
     {
         private IMasterDataDB _masterDataDB;
         private readonly IUserDB _userDB;
-        public MasterDataManager(IMasterDataDB masterDataDB, IUserDB userDB)
+        private readonly INotificationDB _notificationDB;
+        public MasterDataManager(IMasterDataDB masterDataDB, IUserDB userDB, INotificationDB notificationDB)
         {
             _masterDataDB = masterDataDB;
             _userDB = userDB;
+            _notificationDB = notificationDB;
         }
         public List<MasterData> GetAll(int corpsId,int divisionId)
         {
@@ -40,7 +42,6 @@ namespace BIS.Manager.Implements
 
                 foreach (var item in Enum.GetValues(typeof(RoleType)).Cast<RoleType>().OrderByDescending(e => (int)e))
                 {
-                    Console.WriteLine(item);
                     if ((int)item <= (int)roleType)
                     {
                         var userId = _userDB.GetUserIdByRoleType(item);
@@ -52,17 +53,77 @@ namespace BIS.Manager.Implements
                         }                      
                     }
                 }
-
-
-
             }
             return masterDataList;
         }
         public List<MasterData> GetByIds(string idsList)
         {
-            // in idsList there is value "[18,55,90]" convert this string into array
             var idsArray = idsList.Trim('[', ']').Split(',')  .Select(id => int.Parse(id)).ToList();
             return _masterDataDB.GetByIds(idsArray);
+        }
+
+        public List<MasterData> GetBetweenDateRange(FilterModel model,int corpsId, int divisionId = 0)
+        {
+            // for division roles
+            if(divisionId > 0)
+            {
+                return _masterDataDB.GetBetweenDateRange(model,corpsId, divisionId);
+            }
+            // for corps roles
+            else
+            {
+                return new List<MasterData>();
+            }
+        }
+        public List<MasterSector> GetSectorByCorpsId(int corpsId)
+        {
+            return _masterDataDB.GetSectorByCorpsId(corpsId);
+        }
+        public List<MasterInputLevel> GetInputLevels()
+        {
+            return _masterDataDB.GetInputLevels();
+        }
+        public List<Source> GetSources()
+        {
+            return _masterDataDB.GetSources();
+        }
+        public List<MasterLocation> GetLocation(bool isSourceLoc = true)
+        {
+            return _masterDataDB.GetLocation(isSourceLoc);
+        }
+        public List<EnemyLocation> GetAllEnemyLocation()
+        {
+            return _masterDataDB.GetAllEnemyLocation();
+        }
+        public long AddMasterData(MasterData masterData,RoleType roleType)
+        {
+            masterData.Status = Status.Progress;
+            masterData.CreatedOn = DateTime.Now;
+            var id = _masterDataDB.Add(masterData);
+            if (id > 0)
+            {
+                var notification = new Notification();
+                notification.SenderId = masterData.CreatedBy;
+                notification.SenderEntityType = roleType;
+                foreach (var item in Enum.GetValues(typeof(RoleType)).Cast<RoleType>().OrderByDescending(e => (int)e))
+                {
+                    if ((int)item == (int)roleType + 1)
+                    {
+                        notification.ReceiverId = _userDB.GetUserIdByRoleType(item);
+                        notification.ReceiverEntityType = item;
+                        notification.NotificationType = NotificationType.MasterData;
+                        notification.Title = "Master Form Submitted";
+                        notification.Content = $"Input filled by {roleType}. Please review and respond!";
+                        notification.CreatedBy = masterData.CreatedBy;
+                        notification.CreatedOn = DateTime.UtcNow;
+                        notification.CorpsId = masterData.CorpsId;
+                        notification.DivisionId = masterData.DivisionId;
+                        notification.DataId = Convert.ToInt32(id);
+                        return _notificationDB.AddNotification(notification);
+                    }
+                }
+            }
+            return 0;
         }
         public long Add(MasterData masterData)
         {
@@ -74,7 +135,7 @@ namespace BIS.Manager.Implements
         }
         public MasterData GetBy(int Id, int CorpsId)
         {
-            throw new NotImplementedException();
+            return _masterDataDB.GetBy(Id, CorpsId);
         }
 
     }

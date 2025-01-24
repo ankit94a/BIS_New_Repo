@@ -11,3 +11,8 @@ export class FilterModel{
     startDate:Date;
     endDate:Date;
 }
+export class DashboardInputCount{
+    totalInputCount:number;
+    last7DaysCount:number;
+    todayCount:number;
+}

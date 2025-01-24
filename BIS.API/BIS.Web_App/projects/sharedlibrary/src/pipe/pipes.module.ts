@@ -1,6 +1,7 @@
 import { CommonModule, DatePipe } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BisdefaultDatePipe } from './bisdefault-date.pipe';
+import { TimeDifferencePipe } from './time-difference.pipe';
 
 @NgModule({
    declarations: [
@@ -8,9 +9,12 @@ import { BisdefaultDatePipe } from './bisdefault-date.pipe';
    ],
    imports: [
       CommonModule,
+      TimeDifferencePipe,
+      BisdefaultDatePipe
    ],
    exports: [
-      BisdefaultDatePipe
+      BisdefaultDatePipe,
+      TimeDifferencePipe
      
    ],
    providers: [DatePipe]

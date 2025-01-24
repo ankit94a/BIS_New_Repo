@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 
 namespace BIS.Common.Entities
 {
+    public class DashboardInputCount
+    {
+        public long TotalInputCount { get; set; }
+        public long Last7DaysCount { get; set; }
+        public long TodayCount { get;set; }
+    }
     public class DashboardChart
     {
         public List<int>? Count { get; set; } = new List<int>();

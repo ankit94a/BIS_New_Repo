@@ -619,7 +619,10 @@
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
-          "BIS.Common.dll": {}
+          "BIS.Common.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "BIS.DB/1.0.0": {
@@ -630,7 +633,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10"
         },
         "runtime": {
-          "BIS.DB.dll": {}
+          "BIS.DB.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

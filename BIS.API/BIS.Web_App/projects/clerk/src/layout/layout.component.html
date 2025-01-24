@@ -5,7 +5,10 @@
       </mat-toolbar>
       <app-sidebar (isloaded)="isLoaded($event)"></app-sidebar>
     </mat-drawer>
-    <mat-drawer-content >
+    <mat-drawer-content 
+    style="margin-left: 188px;"
+    class="drawer-container"
+    >
       <app-header (toggleSideBarForMe)="sideBarToggler()"></app-header>
       <div class="content">
         <!-- <ngx-spinner  size = "large"  type="ball-scale-multiple" [fullScreen] = "true">

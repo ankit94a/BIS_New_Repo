@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
+import { FilterModel } from 'projects/sharedlibrary/src/model/dashboard.model';
 import { GenerateReport } from 'projects/sharedlibrary/src/model/generatereport.model';
 import { ApiService } from 'projects/sharedlibrary/src/services/api.service';
 import { SharedLibraryModule } from 'projects/sharedlibrary/src/shared-library.module';
@@ -20,13 +21,14 @@ export class GenerateReportsAddComponent implements OnInit {
   isNoDataFoundAlert: boolean = false;
   tableHeader = [];
   isAllChecked = false;
+  filterModel:FilterModel= new FilterModel();
   constructor(@Inject(MAT_DIALOG_DATA) data, private apiService: ApiService, private toastr: ToastrService, private _formBuilder: FormBuilder, private dialogRef: MatDialogRef<GenerateReportsAddComponent>) {
-    if(data.id > 0){
-      this.report = data;
-      this.getReportById(data.masterDataIds);
-    }else{
+    // if(data.id > 0){
+    //   this.report = data;
+    //   this.getReportById(data.masterDataIds);
+    // }else{
       this.createForm()
-    }
+    // }
   }
   ngOnInit(): void {
     
@@ -88,8 +90,9 @@ export class GenerateReportsAddComponent implements OnInit {
     const start = startDate.value;
     const end = endDate.value;
     if (start <= end) {
-      const url = `masterdata/masterdatabetweendaterange?startDate=${start}&endDate=${end}`;
-      this.apiService.getWithHeaders(url).subscribe(res => {
+      this.filterModel.startDate = start;
+      this.filterModel.endDate = end; 
+      this.apiService.postWithHeader('masterdata/dateRange',this.filterModel).subscribe(res => {
         if (res) {
           this.masterDataList = res;
           let uniqueHeader = new Set();
@@ -122,23 +125,25 @@ export class GenerateReportsAddComponent implements OnInit {
     // You can perform additional logic here, like updating other form values, making API calls, etc.
   }
   save() {
-    debugger
-    const generateReportList = {
-      reportType: this.reportForm.value.reportType!,
-      notes: this.reportForm.value.notes!,
-      reportDate: this.reportForm.value.reportDate!,
-      reportTitle: this.reportForm.value.reportTitle!,
-      startDate: this.reportForm.value.startDate!,
-      endDate: this.reportForm.value.endDate!,
-      masterData: this.masterDataList.filter(item => item.selected)
-    }
-    console.log(generateReportList)
-    // this.apiService.postWithHeader('GenerateReport', generateReportList).subscribe(res => {
-    //   if (res) {
-    //     this.toastr.success("Report Created Successfully", 'Success');
-    //     this.dialogRef.close(true);
-    //   }
-    // })
+    var selected = this.masterDataList.filter(item => item.selected)
+    var idsString = JSON.stringify(selected.map(item => item.id));
+    this.report = new GenerateReport();
+      this.report.reportType= this.reportForm.value.reportType,
+      this.report.notes= this.reportForm.value.notes,
+      this.report.reportDate= this.reportForm.value.reportDate,
+      this.report.reportTitle= this.reportForm.value.reportTitle,
+      this.report.startDate =this.reportForm.value.startDate,
+      this.report.endDate=this.reportForm.value.endDate,
+      // masterData: this.masterDataList.filter(item => item.selected)
+      this.report.masterDataIds=idsString
+
+    console.log(this.report)
+    this.apiService.postWithHeader('GenerateReport', this.report).subscribe(res => {
+      if (res) {
+        this.toastr.success("Report Created Successfully", 'Success');
+        this.dialogRef.close(true);
+      }
+    })
   }
   resetObj() {
     this.createForm();

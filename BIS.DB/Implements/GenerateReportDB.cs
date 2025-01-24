@@ -30,6 +30,18 @@ namespace BIS.DB.Implements
             _dbContext.SaveChanges();
             return report.Id;
         }
+        public GenerateReport GetById(int id, int corpsId, int divisionId = 0)
+        {
+            var query = _dbContext.GenerateReports.Where(re => re.Id == id && re.CorpsId == corpsId);
+
+            if (divisionId > 0)
+            {
+                query = query.Where(re => re.DivisionId == divisionId);
+            }
+
+            return query.FirstOrDefault();
+        }
+
         public long Update(GenerateReport report)
         {
             throw new NotImplementedException();

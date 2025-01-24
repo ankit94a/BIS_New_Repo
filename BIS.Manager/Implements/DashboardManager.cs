@@ -17,6 +17,10 @@ namespace BIS.Manager.Implements
         {
             _dashboardDB = dashboardDB;
         }
+        public DashboardInputCount GetInputCounts(int corpsId, int divisionId = 0)
+        {
+            return _dashboardDB.GetInputCounts(corpsId, divisionId);
+        }
         public DashboardChart GetAllFmnOrAspectData(long corpsId, long divisionId, RoleType roleType, FilterModel filterModel,bool isFrmn)
         {
             //case 1 role is belonging to division

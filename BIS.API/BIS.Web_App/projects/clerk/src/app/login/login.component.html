@@ -21,7 +21,7 @@
             <div class="row">
               <mat-form-field>
                 <mat-label>username</mat-label>
-                <input formControlName="username" matInput placeholder="Enter your username" required />
+                <input formControlName="username" type="text" matInput placeholder="Enter your username" required />
                 <mat-error *ngIf="loginform.get('username')?.touched && loginform.get('username')?.invalid">
                   Username is required
                 </mat-error>
@@ -32,13 +32,8 @@
             <div class="row">
               <mat-form-field class="password-field">
                 <mat-label>Password</mat-label>
-                <input
-                  formControlName="password"
-                  [type]="showPassword ? 'text' : 'password'"
-                  matInput
-                  placeholder="Enter your password"
-                  required
-                />
+                <input formControlName="password" [type]="showPassword ? 'text' : 'password'" matInput 
+                  placeholder="Enter your password" required/>
                 <button mat-icon-button matSuffix (click)="togglePasswordVisibility()"  type="button">
                   <mat-icon>{{ showPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
                 </button>

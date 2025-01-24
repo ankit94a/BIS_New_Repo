@@ -8,13 +8,14 @@ export class EnumBase {
       public get RoleType(){
         return RoleType;
       }
-      public get NotifType(){
-        return NotifType;
+      public get NotificationType(){
+        return NotificationType;
       }
 }
 
-export enum NotifType {
-  GenerateReport = "GenerateReport"
+export enum NotificationType {
+  MasterData = 1,
+  GenerateReport = 2
 }
 
 export enum PermissionItem {

@@ -43,7 +43,6 @@ namespace BIS.Common.Enum
         public enum RoleType
         {
             Staff1 = 1,
-            Staff2,
             G1Int,
             Colgs,
             ColInt,
@@ -52,6 +51,26 @@ namespace BIS.Common.Enum
             Goc,
             Admin,
             SuperAdmin
+        }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum NotificationType 
+        { 
+            MasterData = 1,
+            GenerateReport
+        }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum Status
+        {
+            Created = 1,
+            Progress,
+            Approved,
+            Rejected
+        }
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum CategoryLoc : short
+        {
+            SourceLoc = 1,
+            TypeOfLoc
         }
         public enum DaysMonthFilter
         {

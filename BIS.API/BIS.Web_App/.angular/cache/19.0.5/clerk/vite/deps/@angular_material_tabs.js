@@ -1,23 +1,23 @@
 import {
-  SharedResizeObserver
-} from "./chunk-VLR6PJK3.js";
-import {
   CdkPortal,
   CdkPortalOutlet,
   TemplatePortal
-} from "./chunk-LVUK5HLG.js";
+} from "./chunk-EKJD2TS4.js";
+import {
+  CdkScrollable,
+  ViewportRuler
+} from "./chunk-CKER62HD.js";
+import {
+  SharedResizeObserver
+} from "./chunk-IXHDGF53.js";
 import {
   animate,
   state,
   style,
   transition,
   trigger
-} from "./chunk-L5TWVI7M.js";
-import {
-  CdkScrollable,
-  ViewportRuler
-} from "./chunk-26X3URFV.js";
-import "./chunk-TYFKFLWK.js";
+} from "./chunk-ZUYCH4E5.js";
+import "./chunk-D4HAMN5A.js";
 import {
   CdkMonitorFocus,
   CdkObserveContent,
@@ -32,13 +32,13 @@ import {
   _IdGenerator,
   _StructuralStylesLoader,
   hasModifierKey
-} from "./chunk-O2LZADZT.js";
+} from "./chunk-BXB3IDUS.js";
 import {
   Directionality,
   Platform,
   normalizePassiveListenerOptions
-} from "./chunk-2UEFV3SB.js";
-import "./chunk-7TOTBSK6.js";
+} from "./chunk-XUHAILLY.js";
+import "./chunk-M2O7PU5V.js";
 import {
   ANIMATION_MODULE_TYPE,
   ChangeDetectionStrategy,
@@ -106,7 +106,7 @@ import {
   ɵɵtext,
   ɵɵtextInterpolate,
   ɵɵviewQuery
-} from "./chunk-ZK73YBZS.js";
+} from "./chunk-N43CZOJN.js";
 import {
   BehaviorSubject,
   EMPTY,
@@ -124,7 +124,7 @@ import {
   takeUntil,
   timer
 } from "./chunk-ZSY7TSMJ.js";
-import "./chunk-WDMUDEB6.js";
+import "./chunk-J25FJFZE.js";
 
 // node_modules/@angular/material/fesm2022/tabs.mjs
 var _c0 = ["*"];

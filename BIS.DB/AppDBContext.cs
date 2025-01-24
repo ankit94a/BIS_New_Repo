@@ -16,5 +16,14 @@ namespace BIS.DB
         public DbSet<Role> Roles { get; set; }
         public DbSet<Menus> UserMenus { get; set; }
         public DbSet<GenerateReport> GenerateReports { get; set; }
+        public DbSet<Aspect> Aspect { get; set; }
+        public DbSet<Indicator> Indicator { get; set; }
+        public DbSet<IndicatorSubFields> IndicatorSubField { get; set; }
+        public DbSet<MasterSector> MasterSectors { get; set; }
+        public DbSet<MasterInputLevel> MasterInputLevels { get; set; }
+        public DbSet<Source> MasterSources { get; set; }
+        public DbSet<MasterLocation> MasterLocations { get; set; }
+        public DbSet<EnemyLocation> MasterEnLocName { get; set; }
+        public DbSet<Notification> Notification { get; set; }
     }
 }

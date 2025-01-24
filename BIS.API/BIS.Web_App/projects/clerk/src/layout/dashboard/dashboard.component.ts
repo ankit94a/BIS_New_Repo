@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { SharedLibraryModule } from '../../../../sharedlibrary/src/shared-library.module';
 import { ApiService } from '../../../../sharedlibrary/src/services/api.service';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartData, ChartOptions } from 'chart.js';
 import { DashboardFmnAspect } from 'projects/sharedlibrary/src/model/dashboard-fmn-aspect';
-import { DasboardChart, FilterModel } from 'projects/sharedlibrary/src/model/dashboard.model';
+import { DasboardChart, DashboardInputCount, FilterModel } from 'projects/sharedlibrary/src/model/dashboard.model';
 import { AuthService } from 'projects/sharedlibrary/src/services/auth.service';
 
 @Component({
@@ -14,10 +14,16 @@ import { AuthService } from 'projects/sharedlibrary/src/services/auth.service';
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent implements OnInit {
-  totalRecords: number = 0;
-  totalRecordsToday: number = 0;
-  totalRecordsOneWeek: number = 0;
-  // fmnList: string[] = ["33 Corps", "27 Mtn Div", "17 Mtn Div", "111 Sub Area", "20 Mtn Div", "3 Corps", "2 Mtn Div", "56 Mtn Div", "57 Mtn Div", "4 Corps", "5 Mtn Div", "21 Mtn Div", "71 Mtn Div", "17 Corps", "59 Mtn Div", "23 Mtn Div"];
+  dashboardCount:DashboardInputCount = new DashboardInputCount();
+  @ViewChildren(BaseChartDirective) charts!: QueryList<BaseChartDirective>;
+  // Map to track selected charts by their IDs
+  selectedCharts: { [key: string]: boolean } = {
+    chart0: false,
+    chart1: false,
+    chart2: false,
+    chart3: false,
+  };
+  
   frmnList:string[]=[];
   sectorList: any = [];
   filterModel: FilterModel = new FilterModel();
@@ -59,11 +65,59 @@ export class DashboardComponent implements OnInit {
     }
   }
   ngOnInit(): void {
+    this.getCount();
     // this.getTodayCount();
     // this.getTotalCount();
     // this.getWeekCount();
     // this.getFrmInputData()
   }
+  isAnyCheckboxSelected(): boolean {
+    return Object.values(this.selectedCharts).some(selected => selected);
+  }
+
+  downloadSelectedGraphs(): void {
+    Object.keys(this.selectedCharts).forEach(chartId => {
+      if (this.selectedCharts[chartId]) {
+        this.download(chartId);
+      }
+    });
+  }
+  download(chartId: string): void {
+    let index = 0;
+    switch(chartId){
+      case 'chart0' :index = 0; break;
+      case 'chart1': index = 1; break;
+      case 'chart2' : index = 2; break;
+      case 'chart3' : index = 3; break;
+      // fmn chart
+      case 'chart4' :index = 4; break;
+      case 'chart5': index = 5; break;
+      case 'chart6' : index = 6; break;
+      case 'chart7' : index = 7; break;
+      // aspect chart
+      case 'chart8' : index = 8; break;
+      case 'chart9' : index = 9; break;
+      case 'chart10' : index = 10; break;
+      case 'chart11' : index = 11; break;
+      // indicator chart
+      case 'chart12' : index = 12; break;
+      case 'chart13' : index = 13; break;
+      case 'chart14' : index = 14; break;
+      case 'chart15' : index = 15; break;
+    }
+    const chartDirective = this.charts.toArray()[index];
+  
+    if (chartDirective?.chart) {
+      const base64Image = chartDirective.chart.toBase64Image(); 
+      const link = document.createElement('a');
+      link.href = base64Image;
+      link.download = `${chartId}.png`;
+      link.click();
+    } else {
+      console.error(`Chart instance not found or not ready for ${chartId}`);
+    }
+  }
+  
   getFrmAndAspect(){
     this.getFrmInputData();
     this.getFrm30DaysData();
@@ -79,6 +133,14 @@ export class DashboardComponent implements OnInit {
     this.getTop5IndicatorData();
     this.getTop5EnLocationData();
     this.getTop5EnLoc7DaysData();
+  }
+  // Getting Input Counts
+  getCount(){
+    this.apiService.getWithHeaders('dashboard/count').subscribe(res =>{
+      if(res){
+        this.dashboardCount = res;
+      }
+    })
   }
   // Getting Frmn Chart Data
   getFrmInputData(){
@@ -382,57 +444,57 @@ export class DashboardComponent implements OnInit {
       this.sectorList = [...this.sectorList, ...item];
     }
   }
-  getTotalCount() {
-    this.apiService.getWithHeaders('Rpt/count/').subscribe(res => {
-      if (res) {
-        this.totalRecords = res.result;
-      }
-    })
-  }
-  getTodayCount() {
-    this.apiService.getWithHeaders('Rpt/count/today').subscribe(res => {
-      if (res) {
-        this.totalRecordsToday = res.count;
-      }
-    })
-  }
-  getWeekCount() {
-    this.apiService.getWithHeaders('Rpt/count/lastweek').subscribe(res => {
-      if (res) {
-        this.totalRecordsOneWeek = res.count;
-      }
-    })
-  }
-
-  charts = [
-    {
-      title: 'Chart 1',
-      data: [30, 70],
-      labels: ['Category A', 'Category B'],
-      values: [
-        { label: 'Category A', value: '30%' },
-        { label: 'Category B', value: '70%' }
-      ]
-    },
-    {
-      title: 'Chart 2',
-      data: [50, 50],
-      labels: ['Category C', 'Category D'],
-      values: [
-        { label: 'Category C', value: '50%' },
-        { label: 'Category D', value: '50%' }
-      ]
-    },
-    {
-      title: 'Chart 3',
-      data: [20, 80],
-      labels: ['Category E', 'Category F'],
-      values: [
-        { label: 'Category E', value: '20%' },
-        { label: 'Category F', value: '80%' }
-      ]
-    }
-  ];
+  // getTotalCount() {
+  //   this.apiService.getWithHeaders('Rpt/count/').subscribe(res => {
+  //     if (res) {
+  //       this.totalRecords = res.result;
+  //     }
+  //   })
+  // }
+  // getTodayCount() {
+  //   this.apiService.getWithHeaders('Rpt/count/today').subscribe(res => {
+  //     if (res) {
+  //       this.totalRecordsToday = res.count;
+  //     }
+  //   })
+  // }
+  // getWeekCount() {
+  //   this.apiService.getWithHeaders('Rpt/count/lastweek').subscribe(res => {
+  //     if (res) {
+  //       this.totalRecordsOneWeek = res.count;
+  //     }
+  //   })
+  // }
+ 
+  // charts = [
+  //   {
+  //     title: 'Chart 1',
+  //     data: [30, 70],
+  //     labels: ['Category A', 'Category B'],
+  //     values: [
+  //       { label: 'Category A', value: '30%' },
+  //       { label: 'Category B', value: '70%' }
+  //     ]
+  //   },
+  //   {
+  //     title: 'Chart 2',
+  //     data: [50, 50],
+  //     labels: ['Category C', 'Category D'],
+  //     values: [
+  //       { label: 'Category C', value: '50%' },
+  //       { label: 'Category D', value: '50%' }
+  //     ]
+  //   },
+  //   {
+  //     title: 'Chart 3',
+  //     data: [20, 80],
+  //     labels: ['Category E', 'Category F'],
+  //     values: [
+  //       { label: 'Category E', value: '20%' },
+  //       { label: 'Category F', value: '80%' }
+  //     ]
+  //   }
+  // ];
 
   chartData: ChartData<'pie', number[], string | string[]> = {
     labels: ['Label 1', 'Label 2'],

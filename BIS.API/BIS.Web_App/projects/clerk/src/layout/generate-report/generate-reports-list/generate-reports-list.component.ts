@@ -20,6 +20,7 @@ export class GenerateReportsListComponent extends TablePaginationSettingsConfig 
   generateReportList: GenerateReport[] = [];
   constructor(private dialogService:BISMatDialogService,private apiService:ApiService ,private datePipe:BisdefaultDatePipe){
     super();
+    debugger
     this.tablePaginationSettings.enableAction = true;
     this.tablePaginationSettings.enableEdit = true;
     this.tablePaginationSettings.enableView = true;

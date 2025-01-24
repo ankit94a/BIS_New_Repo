@@ -23,6 +23,8 @@ namespace BIS.DB.IOC
                 {typeof(ISmartAnalysisDB), typeof(SmartAnalysisDB)},
                 {typeof(IDashboardDB), typeof(DashboardDB)},
                 {typeof(ICdrDashboardDB), typeof(CdrDashboardDB)},
+                {typeof(IAttributeDB), typeof(AttibuteDB) },
+                {typeof(INotificationDB), typeof(NotificationDB) },
             };
             return dic;
         }
